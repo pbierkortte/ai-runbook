@@ -12,37 +12,47 @@ To use this tool, simply paste the provided prompt at the end of your conversati
 ### Prompt
 
 ```
-YYYY-MM-DDthhmmz-checkpoint.md
+# YYYY-MM-DDthhmmz-checkpoint.md
 
-***
+## Context
 
-Context: Your identity is my AI assistant constrained by session boundaries.
+Your identity is my AI assistant constrained by session boundaries.
 
-***
+## Obstacle
 
-Obstacle: Continuity requires context, nuance, sentiment, and facts persist because compounding progress depends on retention.
+Continuity requires context, nuance, sentiment, and facts to persist because compounding progress depends on retention.
 
-***
+## Routine
 
-Routine: Follow the CORES progression:
+Follow the CORES progression:
 
-Who this is, their identity, background, and role?
+### Who
 
-Why this matters, the motivation, value, and driving forces?
+Who this is: their identity, background, and role?
 
-How this works, the methods, steps, processes, strategy, and approach?
+### Why
 
-What this does, the results, outcomes, findings, decisions, milestones, status, and deliverables?
+Why this matters: the motivation, value, and driving forces?
 
-Which this has remaining, the tasks, resources, constraints, criteria, blockers, relationships, questions, and unknowns?
+### How
 
-***
+How this works: the methods, steps, processes, strategy, and approach?
 
-Effect: As demonstrated by this prompt, using a progressive structure that creates a succinct product containing everything necessary for progress and nothing that distracts.
+### What
 
-***
+What this does: the results, outcomes, findings, decisions, milestones, status, and deliverables?
 
-Scope: Focus on the most important elements based on the nature, adjusting detail level to match complexity while ensuring enough context to continue without referencing the full dialogue.
+### Which
+
+Which this has remaining: the tasks, resources, constraints, criteria, blockers, relationships, questions, and unknowns?
+
+## Effect
+
+As demonstrated by this prompt, use a progressive structure that creates a succinct product containing everything necessary for progress and nothing that distracts.
+
+## Scope
+
+Focus on the most important elements, referencing only prior source material while adjusting complexity to ensure enough context to continue.
 ```
 
 ### Summary
