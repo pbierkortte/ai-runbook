@@ -83,6 +83,7 @@ Scope (Which?):
 
 ## Notes
 
+- Remaining: Consider including duration in checkpoint key.
 - Paste the prompt at the very end of your conversation for best recall.
 - May struggle with unstructured conversations and implicit context.
 - Results vary by model. Review output for accuracy.
