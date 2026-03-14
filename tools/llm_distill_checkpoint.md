@@ -84,5 +84,5 @@ Scope (Which?):
 ## Notes
 
 - Paste the prompt at the very end of your conversation for best recall.
-- May Struggle with unstructured conversations and implicit context.
+- May struggle with unstructured conversations and implicit context.
 - Results vary by model. Review output for accuracy.
