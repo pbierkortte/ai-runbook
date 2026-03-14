@@ -34,8 +34,8 @@ Each file contains a specific prompt or tool with instructions.
 * [LinkedIn Proof Reader](tools/linkedin_proof_reader.md)
 * [AntiSummary](tools/llm_anti_summary.md)
 * [Chain of Thought Meta-Prompting](tools/llm_cot_meta_prompting.md)
+* [Distill Checkpoint](tools/llm_distill_checkpoint.md)
 * [Print Full Conversation](tools/llm_print_full_conversation.md)
-* [Resumable Summary Generator](tools/llm_resumable_summary.md)
 * [Slack Communication Analyzer](tools/slack_comm_analyzer.md)
 
 <!-- TOC END -->
