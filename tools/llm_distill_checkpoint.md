@@ -49,7 +49,7 @@ As demonstrated by this prompt, use a progressive structure that creates a succi
 
 Focus on the most important elements, referencing only prior source material while adjusting complexity to ensure enough context to continue.
 
-`./checkpoints/YYYY-MM-DDthhmmz.md`
+`./checkpoints/YYYY-MM-DDThhmmZ.md`
 ```
 
 | CORES | Question | Focus |
