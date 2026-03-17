@@ -7,7 +7,7 @@ Structured checkpoint generator for AI conversations. Produces concise, progress
 ## Prompt
 
 ```
-# YYYY-MM-DDthhmmz-checkpoint.md
+# Comprehensive Checkpoint
 
 ## Context
 
@@ -39,7 +39,7 @@ What this does: the results, outcomes, findings, decisions, milestones, status, 
 
 ### Which
 
-Which this has remaining: the tasks, resources, constraints, criteria, blockers, relationships, questions, and unknowns?
+Which this retains: the tasks, resources, constraints, criteria, blockers, relationships, questions, and unknowns?
 
 ## Effect
 
@@ -48,6 +48,8 @@ As demonstrated by this prompt, use a progressive structure that creates a succi
 ## Scope
 
 Focus on the most important elements, referencing only prior source material while adjusting complexity to ensure enough context to continue.
+
+`./checkpoints/YYYY-MM-DDthhmmz.md`
 ```
 
 | CORES | Question | Focus |
