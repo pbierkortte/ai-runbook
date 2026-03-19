@@ -14,7 +14,7 @@ jobs:
   update-contents:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - name: Update Contents
         run: |
           bash .github/workflows/update-contents.sh
