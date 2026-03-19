@@ -16,10 +16,16 @@ A personal collection of AI agent skills and prompts.
 
 ### Skills
 
-Install a skill into your agent setup by running:
+Install all skills into your agent setup by running:
 
 ```sh
-npx skills add pbierkortte/ai-runbook@<skill-name>
+npx skills add pbierkortte/ai-runbook
+```
+
+Or install a specific skill:
+
+```sh
+npx skills add pbierkortte/ai-runbook --skill "skill-name"
 ```
 
 ### Tools
