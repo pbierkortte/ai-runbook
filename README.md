@@ -39,6 +39,8 @@ Each tool file contains a specific prompt with instructions. Browse them directl
 <!-- SKILLS START -->
 
 * [Distill Checkpoint](skills/llm-distill-checkpoint/SKILL.md)
+* [Generate Descriptive Filename](skills/llm-name-file/SKILL.md)
+* [Verbatim Audio Transcription](skills/llm-transcribe-audio/SKILL.md)
 
 <!-- SKILLS END -->
 
