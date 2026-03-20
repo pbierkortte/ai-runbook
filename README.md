@@ -30,7 +30,7 @@ npx skills add pbierkortte/ai-runbook --skill "skill-name"
 
 ### Tools
 
-Each tool file contains a specific prompt with instructions. Browse them directly in the `tools/` directory.
+Each tool file contains a specific prompt with instructions.
 
 ## Contents
 
