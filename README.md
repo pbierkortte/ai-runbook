@@ -66,6 +66,10 @@ Each tool file contains a specific prompt with instructions.
 
 ## Resources
 
+### Ecosystem 
+
+- [OpenRouter SDK Skill](https://github.com/OpenRouterTeam/agent-skills)
+
 ### Links
 
 - [Agent Skills Specification](https://skills.md)
