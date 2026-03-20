@@ -72,8 +72,3 @@ Each tool file contains a specific prompt with instructions.
 - [Anthropic's Prompt Engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
 - [Anthropic's Prompt Library](https://docs.anthropic.com/en/prompt-library/library)
 - [Anthropic's Interactive Prompt Engineering Tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial)
-
-### License
-
-This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
-
