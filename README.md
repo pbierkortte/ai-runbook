@@ -69,6 +69,7 @@ Each tool file contains a specific prompt with instructions.
 ### Ecosystem 
 
 - [OpenRouter SDK Skill](https://github.com/OpenRouterTeam/agent-skills)
+- [Cloudflare Skills](https://github.com/cloudflare/skills)
 
 ### Links
 
