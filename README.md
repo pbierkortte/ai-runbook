@@ -8,7 +8,7 @@ A personal collection of AI agent skills and prompts.
 ## Purpose
 
 - Share AI that's too good to keep to myself.
-- Wanted to see if I could make the docs update themselves.
+- Update docs automatically so I don't have to.
 - Make it easier to install and reuse skills.
 - Show people how to actually use these things.
 
