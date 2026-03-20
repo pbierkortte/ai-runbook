@@ -66,7 +66,7 @@ Each tool file contains a specific prompt with instructions.
 
 ## Resources
 
-### Further Reading
+### Links
 
 - [Agent Skills Specification](https://skills.md)
 - [Anthropic's Prompt Engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
