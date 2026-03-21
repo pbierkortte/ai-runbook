@@ -14,6 +14,23 @@ A personal collection of AI agent skills and prompts.
 
 ## Usage
 
+### CORES
+
+An identity-engineering framework built around a meta mnemonic.
+
+It keeps the persona model coherent, consistent, explainable, and easy to extend.
+
+Fill the 5 slots (C/O/R/E/S):
+- Context: Who this is
+- Obstacle: Why this matters
+- Routine: How this works
+- Effect: What this does
+- Scope: What this retains
+
+The result is a reusable structure for defining and evolving personality modules. 
+
+Curiously, this aligns with the “personality spheres” concept from a certain puzzle game.
+
 ### Skills
 
 Install all skills into your agent setup by running:
