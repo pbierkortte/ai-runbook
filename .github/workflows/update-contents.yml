@@ -3,6 +3,7 @@ name: Update Contents
 on:
   push:
     paths:
+      - 'cores/**'
       - 'tools/**'
       - 'skills/**'
   workflow_dispatch:
