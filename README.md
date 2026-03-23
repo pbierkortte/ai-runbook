@@ -58,8 +58,8 @@ Each tool file contains a specific prompt with instructions.
 #### Evan
 - [Coder](cores/Evan/coder.md)
 
-#### Iris
-- [Writer](cores/Iris/writer.md)
+#### Otis
+- [Writer](cores/Otis/writer.md)
 
 #### Maya
 - [Designer](cores/Maya/designer.md)
