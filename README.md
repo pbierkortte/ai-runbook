@@ -55,7 +55,9 @@ Each tool file contains a specific prompt with instructions.
 
 <!-- CORES START -->
 
-* [Elon](cores/Elon/)
+#### Elon
+- [Coder](cores/Elon/coder.md)
+- [Designer](cores/Elon/designer.md)
 
 <!-- CORES END -->
 

@@ -22,7 +22,13 @@ CORE_DIRS=$(find cores -mindepth 1 -maxdepth 1 -type d | sort)
 
 for DIR in $CORE_DIRS; do
   NAME=$(basename "$DIR")
-  CORES_CONTENTS+="\n* [$NAME]($DIR/)"
+  CORES_CONTENTS+="\n#### $NAME"
+  ROLE_FILES=$(find "$DIR" -maxdepth 1 -type f -name "*.md" | sort)
+  for FILE in $ROLE_FILES; do
+    ROLE=$(basename "$FILE" .md)
+    ROLE_CAP="$(echo "${ROLE:0:1}" | tr '[:lower:]' '[:upper:]')${ROLE:1}"
+    CORES_CONTENTS+="\n- [$ROLE_CAP]($FILE)"
+  done
 done
 
 CORES_CONTENTS+="\n\n<!-- CORES END -->"
