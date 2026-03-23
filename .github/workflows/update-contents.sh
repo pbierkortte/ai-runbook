@@ -6,6 +6,35 @@ if [ ! -f README.md ]; then
   exit 1
 fi
 
+# --- CORES SECTION ---
+
+# Check if CORES markers are present
+if ! grep -q "<!-- CORES START -->" README.md || ! grep -q "<!-- CORES END -->" README.md; then
+  echo "CORES markers not found in README.md!"
+  exit 1
+fi
+
+# Generate the cores contents
+CORES_CONTENTS="<!-- CORES START -->\n"
+
+# Find all name directories under cores/
+CORE_DIRS=$(find cores -mindepth 1 -maxdepth 1 -type d | sort)
+
+for DIR in $CORE_DIRS; do
+  NAME=$(basename "$DIR")
+  CORES_CONTENTS+="\n* [$NAME]($DIR/)"
+done
+
+CORES_CONTENTS+="\n\n<!-- CORES END -->"
+
+# Replace the contents between the CORES markers
+awk -v CONTENTS="$CORES_CONTENTS" '
+  BEGIN { in_section=0 }
+  /^<!-- CORES START -->/ { print CONTENTS; in_section=1; next }
+  /^<!-- CORES END -->/ { in_section=0; next }
+  !in_section { print }
+' README.md > README.tmp && mv README.tmp README.md
+
 # --- SKILLS SECTION ---
 
 # Check if SKILLS markers are present

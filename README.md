@@ -51,6 +51,14 @@ Each tool file contains a specific prompt with instructions.
 
 ## Contents
 
+### Cores
+
+<!-- CORES START -->
+
+* [Elon](cores/Elon/)
+
+<!-- CORES END -->
+
 ### Skills
 
 <!-- SKILLS START -->
