@@ -74,7 +74,7 @@ for DIR in $SKILL_DIRS; do
     TITLE=$(basename "$DIR")
   fi
 
-  SKILLS_CONTENTS+="\n* [$TITLE]($SKILL_FILE)"
+  SKILLS_CONTENTS+="\n- [$TITLE]($SKILL_FILE)"
 done
 
 SKILLS_CONTENTS+="\n\n<!-- SKILLS END -->"
@@ -110,7 +110,7 @@ for FILE in $TOOLS_FILES; do
   if [ -z "$TITLE" ]; then
     TITLE=$(basename "$FILE" .md)
   fi
-  CONTENTS+="\n* [$TITLE]($FILE_PATH)"
+  CONTENTS+="\n- [$TITLE]($FILE_PATH)"
 done
 
 CONTENTS+="\n\n<!-- TOOLS END -->"
