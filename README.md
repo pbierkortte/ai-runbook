@@ -90,7 +90,7 @@ Each tool file contains a specific prompt with instructions.
 * [OpenRouter SDK Skill](https://github.com/OpenRouterTeam/agent-skills)
 * [Cloudflare Skills](https://github.com/cloudflare/skills)
 * [Humanizer AI Slop Cleanup](https://github.com/blader/humanizer)
-* [Skill Directory for OpenClaw](clawhub.ai)
+* [Skill Directory for OpenClaw](https://clawhub.ai)
 
 
 ### Links
