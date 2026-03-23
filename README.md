@@ -55,41 +55,17 @@ Each tool file contains a specific prompt with instructions.
 
 <!-- CORES START -->
 
-#### Elon
-- [Coder](cores/Elon/coder.md)
-- [Designer](cores/Elon/designer.md)
-
 <!-- CORES END -->
 
 ### Skills
 
 <!-- SKILLS START -->
 
-- [Comprehensive Checkpoint](skills/llm-comprehensive-checkpoint/SKILL.md)
-- [Distill Checkpoint](skills/llm-distill-checkpoint/SKILL.md)
-- [Generate Descriptive Filename](skills/llm-name-file/SKILL.md)
-- [Verbatim Audio Transcription](skills/llm-transcribe-audio/SKILL.md)
-- [Verbatim Audio-Visual Transcription](skills/llm-transcribe-audiovisual/SKILL.md)
-
 <!-- SKILLS END -->
 
 ### Tools
 
 <!-- TOOLS START -->
-
-- [Company Reconnaissance](tools/job_company_recon.md)
-- [Cover Letter Checker](tools/job_cover_letter_checker.md)
-- [Resume Cover Letter Coach](tools/job_cover_letter_coach.md)
-- [Interview Chances](tools/job_interview_chances.md)
-- [Post-Interview Follow-Up Email Generator](tools/job_interview_follow_up_email.md)
-- [Interview Preparation Coach](tools/job_interview_prep_coaching.md)
-- [Job Recruitment Response Template ](tools/job_recruitment_response_template.md)
-- [Resume Proof Reading](tools/job_resume_proof_reading.md)
-- [LinkedIn Proof Reader](tools/linkedin_proof_reader.md)
-- [AntiSummary](tools/llm_anti_summary.md)
-- [Chain of Thought Meta-Prompting](tools/llm_cot_meta_prompting.md)
-- [Print Full Conversation](tools/llm_print_full_conversation.md)
-- [Slack Communication Analyzer](tools/slack_comm_analyzer.md)
 
 <!-- TOOLS END -->
 
