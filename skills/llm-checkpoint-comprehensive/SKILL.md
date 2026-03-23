@@ -1,5 +1,5 @@
 ---
-name: llm-comprehensive-checkpoint
+name: llm-checkpoint-comprehensive
 description: Capture session context into a comprehensive structured checkpoint for cross-session continuity
 ---
 
