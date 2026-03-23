@@ -3,7 +3,7 @@ name: llm-checkpoint-distill
 description: Distill session context into a structured checkpoint for cross-session continuity
 ---
 
-# Checkpoint Distill
+# Distill Checkpoint
 
 ## Context
 
