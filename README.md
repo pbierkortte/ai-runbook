@@ -58,12 +58,16 @@ One who wears many hats, i.e. `cores/<who>/<hat>.md`.
 <!-- CORES START -->
 
 #### Evan
+- [Architect](cores/Evan/architect.md)
 - [Coder](cores/Evan/coder.md)
+- [Debugger](cores/Evan/debugger.md)
 
 #### Maya
 - [Designer](cores/Maya/designer.md)
+- [Tester](cores/Maya/tester.md)
 
 #### Otis
+- [Editor](cores/Otis/editor.md)
 - [Writer](cores/Otis/writer.md)
 
 <!-- CORES END -->
