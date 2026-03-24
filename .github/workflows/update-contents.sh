@@ -17,17 +17,16 @@ fi
 # Generate the cores contents
 CORES_CONTENTS="<!-- CORES START -->"
 
-# Find all name directories under cores/
-CORE_DIRS=$(find cores -mindepth 1 -maxdepth 1 -type d | sort)
+# Find all who directories under cores/
+WHO_DIRS=$(find cores -mindepth 1 -maxdepth 1 -type d | sort)
 
-for DIR in $CORE_DIRS; do
-  NAME=$(basename "$DIR")
-  CORES_CONTENTS+="\n\n#### $NAME"
-  ROLE_FILES=$(find "$DIR" -maxdepth 1 -type f -name "*.md" | sort)
-  for FILE in $ROLE_FILES; do
-    ROLE=$(basename "$FILE" .md)
-    ROLE_CAP="$(echo "${ROLE:0:1}" | tr '[:lower:]' '[:upper:]')${ROLE:1}"
-    CORES_CONTENTS+="\n- [$ROLE_CAP]($FILE)"
+for DIR in $WHO_DIRS; do
+  WHO=$(basename "$DIR")
+  CORES_CONTENTS+="\n\n#### $WHO"
+  HAT_FILES=$(find "$DIR" -maxdepth 1 -type f -name "*.md" | sort)
+  for FILE in $HAT_FILES; do
+    HAT=$(grep '^# ' "$FILE" | head -n 1 | sed 's/^# //')
+    CORES_CONTENTS+="\n- [$HAT]($FILE)"
   done
 done
 
