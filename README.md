@@ -53,7 +53,7 @@ Each tool file contains a specific prompt with instructions.
 
 ### Cores
 
-One who wears many hats, i.e. `cores/<who>/<hat>.md`.
+One who wears many hats.
 
 <!-- CORES START -->
 
