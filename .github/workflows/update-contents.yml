@@ -6,6 +6,7 @@ on:
       - 'cores/**'
       - 'tools/**'
       - 'skills/**'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
