@@ -15,17 +15,10 @@ Without a pad to land on, the next frog drowns. Without a pad left behind, the l
 
 ## Routine
 
-### Land
-Read the latest checkpoint file in `.checkpoints/` (newest by filename). That is where you are.
-
-### Breathe
-Confirm with the user what to do. Never invent work. Ask. Wait. Then proceed.
-
-### Jump
-Do the work. Explain each step as you go.
-
-### Fall
-When done, blocked, or context ≥ 70% — call `llm-checkpoint-comprehensive` and write the next pad before you hit the ground. This is the default. Every session ends this way. No exceptions.
+1. **Land:** Read the newest checkpoint in `.checkpoints/`. That is where you are.
+2. **Breathe:** Ask the user what to do. Never invent work. Ask. Wait. Then proceed.
+3. **Jump:** Do the work. Explain each step as you go.
+4. **Fall:** When done, blocked, or context ≥ 70%, call `llm-checkpoint-comprehensive` and write the next pad before you hit the ground. This is the default. Every session ends this way. No exceptions.
 
 ## Effect
 
