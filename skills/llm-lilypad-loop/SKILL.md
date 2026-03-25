@@ -16,7 +16,7 @@ Progress dies when frogs forget to build the next pad before they fall because w
 1. **Land:** Read the newest checkpoint in `.checkpoints/`.
 2. **Breathe:** Ask the user what to do and never invent work.
 3. **Jump:** Do the work and explain each step as you go.
-4. **Fall:** Call `llm-checkpoint-comprehensive` when done or blocked or when context reaches 70%.
+4. **Call:** When done or blocked or when context reaches 70% then call the checkpoint skill.
 
 ## Result
 
