@@ -36,13 +36,13 @@ Curiously, this aligns with the “personality spheres” concept from a certain
 Install all skills into your agent setup by running:
 
 ```sh
-DISABLE_TELEMETRY=1 npx skills add pbierkortte/ai-runbook
+npx openskills install pbierkortte/ai-runbook
 ```
 
 Or install a specific skill:
 
 ```sh
-DISABLE_TELEMETRY=1 npx skills add pbierkortte/ai-runbook --skill "skill-name"
+npx openskills install pbierkortte/ai-runbook/skills/skill-name
 ```
 
 ### Tools
@@ -110,6 +110,7 @@ One who wears many hats.
 ### Ecosystem 
 
 - [OpenRouter SDK Skill](https://github.com/OpenRouterTeam/agent-skills)
+- [OpenSkills Universal Loader](https://github.com/numman-ali/openskills)
 - [Cloudflare Skills](https://github.com/cloudflare/skills)
 - [Humanizer AI Slop Cleanup](https://github.com/blader/humanizer)
 - [Skill Directory for OpenClaw](https://clawhub.ai)
