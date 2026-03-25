@@ -1,9 +1,9 @@
 ---
-name: llm-lilipad-loop
+name: llm-lilypad-loop
 description: Session continuity loop. Land, breathe, jump, fall. The frog is disposable. The pad is not.
 ---
 
-# Lilipad Loop
+# Lilypad Loop
 
 ## Context
 
