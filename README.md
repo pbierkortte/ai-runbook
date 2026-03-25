@@ -36,13 +36,13 @@ Curiously, this aligns with the “personality spheres” concept from a certain
 Install all skills into your agent setup by running:
 
 ```sh
-npx skills add pbierkortte/ai-runbook
+DISABLE_TELEMETRY=1 npx skills add pbierkortte/ai-runbook
 ```
 
 Or install a specific skill:
 
 ```sh
-npx skills add pbierkortte/ai-runbook --skill "skill-name"
+DISABLE_TELEMETRY=1 npx skills add pbierkortte/ai-runbook --skill "skill-name"
 ```
 
 ### Tools
