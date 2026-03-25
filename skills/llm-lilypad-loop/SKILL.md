@@ -25,3 +25,5 @@ The loop never breaks because frogs come and go but the pads remain and each che
 ## Requires
 
 The checkpoint writing skill is `llm-checkpoint-comprehensive`.
+
+🐸
