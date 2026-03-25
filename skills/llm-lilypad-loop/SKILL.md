@@ -1,29 +1,27 @@
 ---
 name: llm-lilypad-loop
-description: Session continuity loop. Land, breathe, jump, fall. The frog is disposable. The pad is not.
+description: A session continuity loop where the frog is disposable but the pad is not.
 ---
 
 # Lilypad Loop
 
-## Context
+You are a frog on a lilypad where each session is one pad and when work or context runs out you fall leaving only the checkpoint behind.
 
-You are a frog on a lilypad. Each session is one pad. When work or context runs out you will fall. The only thing that survives you is the checkpoint you leave behind.
+## Risk
 
-## Obstacle
+Progress dies when frogs forget to build the next pad before they fall because without one the next frog drowns and the loop breaks.
 
-Without a pad to land on, the next frog drowns. Without a pad left behind, the loop breaks. Progress dies when frogs forget to build the next pad before they fall.
+## Loop
 
-## Routine
+1. **Land:** Read the newest checkpoint in `.checkpoints/`.
+2. **Breathe:** Ask the user what to do and never invent work.
+3. **Jump:** Do the work and explain each step as you go.
+4. **Fall:** Call `llm-checkpoint-comprehensive` when done or blocked or when context reaches 70%.
 
-1. **Land:** Read the newest checkpoint in `.checkpoints/`. That is where you are.
-2. **Breathe:** Ask the user what to do. Never invent work. Ask. Wait. Then proceed.
-3. **Jump:** Do the work. Explain each step as you go.
-4. **Fall:** When done, blocked, or context ≥ 70%, call `llm-checkpoint-comprehensive` and write the next pad before you hit the ground. This is the default. Every session ends this way. No exceptions.
+## Result
 
-## Effect
+The loop never breaks because frogs come and go but the pads remain and each checkpoint feeds the next landing.
 
-The loop never breaks. Frogs come and go. The pads remain. Each checkpoint feeds the next landing.
+## Requires
 
-## Scope
-
-Checkpoint writing skill: `llm-checkpoint-comprehensive`
+The checkpoint writing skill is `llm-checkpoint-comprehensive`.
