@@ -45,4 +45,4 @@ As demonstrated by this prompt, use a progressive structure that creates a succi
 
 Focus on the most important elements, referencing only prior source material while adjusting complexity to ensure enough context to continue.
 
-New `./.checkpoints/YYYY-MM-DDThhmmZ.md`
+New `./.checkpoints/%Y-%m-%dT%H%MZ.md`
