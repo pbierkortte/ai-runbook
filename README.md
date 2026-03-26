@@ -77,7 +77,7 @@ One who wears many hats.
 <!-- SKILLS START -->
 
 - [Comprehensive Checkpoint](skills/llm-checkpoint-comprehensive/SKILL.md)
-- [Distill Checkpoint](skills/llm-checkpoint-distill/SKILL.md)
+- [Distilled Checkpoint](skills/llm-checkpoint-distilled/SKILL.md)
 - [Lilypad Loop](skills/llm-lilypad-loop/SKILL.md)
 - [Generate Descriptive Filename](skills/llm-name-file/SKILL.md)
 - [Verbatim Audio Transcription](skills/llm-transcribe-audio/SKILL.md)
