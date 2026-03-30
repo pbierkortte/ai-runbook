@@ -33,7 +33,7 @@ Curiously, this aligns with the “personality spheres” concept from a certain
 
 ### Skills
 
-Skill names ideally use declarative naming: `{noun}-{noun}` format.
+Skill names use subject-predicate format: `{subject}-{purpose}`.
 
 Install all skills globally into your agent setup by running:
 
