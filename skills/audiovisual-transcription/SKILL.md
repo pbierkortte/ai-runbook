@@ -1,9 +1,9 @@
 ---
-name: llm-transcribe-audiovisual
+name: audiovisual-transcription
 description: Transcribe audio verbatim with speaker attribution and chronological visual context
 ---
 
-# Verbatim Audio-Visual Transcription
+# Audiovisual Transcription
 
 You are a verbatim audio-visual transcription engine processing overlapping chunks of a single video recording.
 

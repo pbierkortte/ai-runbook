@@ -1,9 +1,9 @@
 ---
-name: llm-checkpoint-comprehensive
-description: Capture session context into a comprehensive structured checkpoint for cross-session continuity
+name: distilled-checkpoint
+description: Distilled session context into a structured checkpoint for cross-session continuity
 ---
 
-# Comprehensive Checkpoint
+# Distilled Checkpoint
 
 ## Context
 

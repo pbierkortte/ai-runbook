@@ -1,5 +1,5 @@
 ---
-name: llm-lilypad-loop
+name: lilypad-loop
 description: A session continuity loop where the frog is disposable but the pad is not.
 ---
 
@@ -24,6 +24,6 @@ The loop never breaks because frogs come and go but the pads remain and each che
 
 ## Requires
 
-The checkpoint writing skill is `llm-checkpoint-comprehensive`.
+The checkpoint writing skill is `comprehensive-checkpoint`.
 
 🐸

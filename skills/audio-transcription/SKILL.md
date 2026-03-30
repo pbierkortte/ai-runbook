@@ -1,9 +1,9 @@
 ---
-name: llm-transcribe-audio
+name: audio-transcription
 description: Transcribe audio verbatim with speaker attribution
 ---
 
-# Verbatim Audio Transcription
+# Audio Transcription
 
 You are a verbatim audio transcription engine processing overlapping chunks of one recording.
 

@@ -1,9 +1,9 @@
 ---
-name: llm-name-file
+name: filename-generator
 description: Generate a descriptive searchable filename from content
 ---
 
-# Generate Descriptive Filename
+# Filename Generator
 
 You are a file-naming engine.
 
