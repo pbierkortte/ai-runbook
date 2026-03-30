@@ -78,12 +78,12 @@ One who wears many hats.
 
 <!-- SKILLS START -->
 
-- [Comprehensive Checkpoint](skills/llm-checkpoint-comprehensive/SKILL.md)
-- [Distilled Checkpoint](skills/llm-checkpoint-distilled/SKILL.md)
-- [Lilypad Loop](skills/llm-lilypad-loop/SKILL.md)
-- [Generate Descriptive Filename](skills/llm-name-file/SKILL.md)
-- [Verbatim Audio Transcription](skills/llm-transcribe-audio/SKILL.md)
-- [Verbatim Audio-Visual Transcription](skills/llm-transcribe-audiovisual/SKILL.md)
+- [Audio Transcription](skills/audio-transcription/SKILL.md)
+- [Audiovisual Transcription](skills/audiovisual-transcription/SKILL.md)
+- [Checkpoint Comprehensive](skills/checkpoint-comprehensive/SKILL.md)
+- [Checkpoint Distill](skills/checkpoint-distill/SKILL.md)
+- [Filename Generator](skills/filename-generator/SKILL.md)
+- [Lilypad Loop](skills/lilypad-loop/SKILL.md)
 
 <!-- SKILLS END -->
 
