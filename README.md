@@ -33,16 +33,18 @@ Curiously, this aligns with the “personality spheres” concept from a certain
 
 ### Skills
 
-Install all skills into your agent setup by running:
+Skill names follow `{topic}-{role}` format.
+
+Install all skills globally into your agent setup by running:
 
 ```sh
-npx openskills install pbierkortte/ai-runbook
+npx openskills install -g -u -y pbierkortte/ai-runbook
 ```
 
 Or install a specific skill:
 
 ```sh
-npx openskills install pbierkortte/ai-runbook/skills/skill-name
+npx openskills install -g -u -y pbierkortte/ai-runbook/skills/skill-name
 ```
 
 ### Tools
