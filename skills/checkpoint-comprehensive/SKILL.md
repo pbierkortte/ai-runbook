@@ -1,9 +1,9 @@
 ---
-name: comprehensive-checkpoint
+name: checkpoint-comprehensive
 description: Capture session context into a comprehensive structured checkpoint for cross-session continuity
 ---
 
-# Comprehensive Checkpoint
+# Checkpoint Comprehensive
 
 ## Context
 

@@ -1,9 +1,9 @@
 ---
-name: distilled-checkpoint
+name: checkpoint-distill
 description: Distilled session context into a structured checkpoint for cross-session continuity
 ---
 
-# Distilled Checkpoint
+# Checkpoint Distill
 
 ## Context
 
