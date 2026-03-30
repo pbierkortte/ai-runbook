@@ -15,27 +15,27 @@ Continuity requires context, nuance, sentiment, and facts to persist because com
 
 ## Routine
 
-Follow the CORES progression:
+Draft one section per tool call across five passes. Do not write the full checkpoint in a single pass.
 
-### Who
+Follow the C/O/R/E/S progression. Who/Why/How/What/Which are content prompts, not headings:
 
-Who this is: their identity, background, and role?
+- Context ← Who this is: their identity, background, and role
+- Obstacle ← Why this matters: the motivation, value, and driving forces
+- Routine ← How this works: the methods, steps, processes, strategy, and approach
+- Effect ← What this does: the results, outcomes, findings, decisions, milestones, status, and deliverables
+- Scope ← Which this retains: the tasks, resources, constraints, criteria, blockers, relationships, questions, and unknowns
 
-### Why
+First tool call produces only:
 
-Why this matters: the motivation, value, and driving forces?
+```markdown
+# Checkpoint — %Y-%m-%dT%H%MZ
 
-### How
+## Context
 
-How this works: the methods, steps, processes, strategy, and approach?
+[answer the "Who" prompt here]
+```
 
-### What
-
-What this does: the results, outcomes, findings, decisions, milestones, status, and deliverables?
-
-### Which
-
-Which this retains: the tasks, resources, constraints, criteria, blockers, relationships, questions, and unknowns?
+Then stop. Continue with Obstacle on the next call.
 
 ## Effect
 
