@@ -82,6 +82,7 @@ One who wears many hats.
 - [Audiovisual Transcription](skills/audiovisual-transcription/SKILL.md)
 - [Checkpoint Comprehensive](skills/checkpoint-comprehensive/SKILL.md)
 - [Checkpoint Distill](skills/checkpoint-distill/SKILL.md)
+- [Codebase Analysis](skills/codebase-analysis/SKILL.md)
 - [Filename Generator](skills/filename-generator/SKILL.md)
 - [Lilypad Loop](skills/lilypad-loop/SKILL.md)
 - [Repo to Prompt](skills/repo-to-prompt/SKILL.md)
