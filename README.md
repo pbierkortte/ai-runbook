@@ -113,7 +113,6 @@ One who wears many hats.
 
 ### Ecosystem 
 
-- [Agent Skills Specification](https://agentskills.io)
 - [OpenRouter SDK Skill](https://github.com/OpenRouterTeam/agent-skills)
 - [OpenSkills Universal Loader](https://github.com/numman-ali/openskills)
 - [Cloudflare Skills](https://github.com/cloudflare/skills)
@@ -123,7 +122,7 @@ One who wears many hats.
 
 ### Links
 
-- [Agent Skills Specification](https://skills.md)
+- [Agent Skills Specification](https://agentskills.io)
 - [Anthropic's Prompt Engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
 - [Anthropic's Prompt Library](https://docs.anthropic.com/en/prompt-library/library)
 - [Anthropic's Interactive Prompt Engineering Tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial)
