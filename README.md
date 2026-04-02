@@ -84,6 +84,7 @@ One who wears many hats.
 - [Checkpoint Distill](skills/checkpoint-distill/SKILL.md)
 - [Filename Generator](skills/filename-generator/SKILL.md)
 - [Lilypad Loop](skills/lilypad-loop/SKILL.md)
+- [Repo to Prompt](skills/repo-to-promp/SKILL.md)
 
 <!-- SKILLS END -->
 
