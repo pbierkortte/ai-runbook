@@ -113,6 +113,7 @@ One who wears many hats.
 
 ### Ecosystem 
 
+- [Agent Skills Specification](https://agentskills.io)
 - [OpenRouter SDK Skill](https://github.com/OpenRouterTeam/agent-skills)
 - [OpenSkills Universal Loader](https://github.com/numman-ali/openskills)
 - [Cloudflare Skills](https://github.com/cloudflare/skills)
