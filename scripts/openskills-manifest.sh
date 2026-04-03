@@ -12,6 +12,7 @@ set -euo pipefail
 MANIFEST=".agents/openskills-manifest.json"
 
 for dir in $(jq -r '.[].source' "$MANIFEST"); do
+  mkdir -p "$dir"
   jq --arg d "$dir" '.[] | select(.source == $d)' "$MANIFEST" > "$dir/.openskills.json"
 done
 
