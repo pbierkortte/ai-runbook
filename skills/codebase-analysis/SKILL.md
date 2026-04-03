@@ -24,7 +24,7 @@ The first helps someone make decisions. The second lists facts. This skill exist
 Explore in three passes then write when you can answer five questions. Each pass narrows focus. Do not write until all three are done.
 
 **Pass 1: Orient.** Get the shape of the project before reading any implementation code.
-- List the full file tree recursively. Study the directory structure. It reveals the architecture before you read a line of code.
+- List the full file tree recursively using `tree`. Study the directory structure. It reveals the architecture before you read a line of code.
 - Read the build config: package.json, Cargo.toml, go.mod, pyproject.toml, Makefile, Dockerfile, or whatever exists. This shows real dependencies, entry points, scripts, and deploy targets.
 - Skim the README for framing. Treat it as a claim to verify, not a source of truth.
 
