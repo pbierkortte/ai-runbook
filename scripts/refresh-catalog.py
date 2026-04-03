@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-refresh_catalog.py — Card Catalog for AI Agents
+refresh-catalog.py — Card Catalog for AI Agents
 
 Generates a heading-only index of all docs into docs/AGENTS.md.
 Any AI agent reads the catalog, knows what exists, drills into
@@ -9,7 +9,7 @@ the full doc on demand via read_file.
 Scales to 1000s of docs with basically no context usage and no
 special dbs. No vector DB, no embeddings, just this script.
 
-Usage: python3 scripts/refresh_catalog.py
+Usage: python3 scripts/refresh-catalog.py
 """
 import re
 from pathlib import Path
@@ -59,7 +59,7 @@ def to_yaml(tree, indent=0):
 
 def main():
     yaml = to_yaml(build_tree())
-    header = "# Refresh: python3 scripts/refresh_catalog.py\n\n"
+    header = "# Refresh: python3 scripts/refresh-catalog.py\n\n"
     OUT.write_text(header + yaml + "\n", encoding="utf-8")
     print(f"Refreshed {OUT}")
 
