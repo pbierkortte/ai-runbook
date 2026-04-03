@@ -1,29 +1,25 @@
-name: Update Contents
+name: Update Generated Files
 
 on:
   push:
-    paths:
-      - 'cores/**'
-      - 'tools/**'
-      - 'skills/**'
-      - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  update-contents:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - name: Update Contents
-        run: |
-          bash .github/workflows/update-contents.sh
+        run: bash .github/workflows/update-contents.sh
+      - name: Update Manifest
+        run: bash .github/workflows/update-manifest.sh
       - name: Commit changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add README.md
-          git diff --cached --quiet || git commit -m "Update Contents"
+          git add -A
+          git diff --cached --quiet || git commit -m "Update generated files"
           git push
