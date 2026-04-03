@@ -1,0 +1,26 @@
+name: Update Manifest
+
+on:
+  push:
+    paths:
+      - 'skills/**'
+      - '.github/workflows/update-manifest.*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Update Manifest
+        run: bash .github/workflows/update-manifest.sh
+      - name: Commit changes
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add .agents/openskills-manifest.json
+          git diff --cached --quiet || git commit -m "Update Manifest"
+          git push
