@@ -59,8 +59,8 @@ def to_yaml(tree, indent=0):
 
 def main():
     yaml = to_yaml(build_tree())
-    header = "# Refresh: python3 scripts/refresh-catalog.py\n\n"
-    OUT.write_text(header + yaml + "\n", encoding="utf-8")
+    header = "# refresh-catalog.py generated DO NOT EDIT!"
+    OUT.write_text(header + "\n" + yaml + "\n", encoding="utf-8")
     print(f"Refreshed {OUT}")
 
 if __name__ == "__main__":
