@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Update Contents
-        run: bash .github/workflows/update-contents.sh
+        run: bash scripts/update-contents.sh
       - name: Update Manifest
-        run: bash .github/workflows/update-manifest.sh
+        run: bash scripts/update-manifest.sh
       - name: Collate Indexes
         run: bash scripts/agents-collate.sh
       - name: Commit changes
