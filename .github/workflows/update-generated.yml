@@ -16,6 +16,8 @@ jobs:
         run: bash .github/workflows/update-contents.sh
       - name: Update Manifest
         run: bash .github/workflows/update-manifest.sh
+      - name: Collate Indexes
+        run: bash scripts/agents-collate.sh
       - name: Commit changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
