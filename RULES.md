@@ -1,4 +1,4 @@
-s## Setup commands
+## Setup commands
 ### Install deps: `npm install`
 ### Start dev server: `npm dev`
 ### Run tests: `npm test`
