@@ -11,6 +11,7 @@ set -euo pipefail
 
 MANIFEST=".agents/openskills-manifest.yml"
 
+echo "# update-manifest.sh generated DO NOT EDIT!" > "$MANIFEST"
 find skills -name SKILL.md -printf '%h\n' | sort |
   jq -R '{source: ., sourceType: "local", localPath: .}' |
-  jq -s '.' | yq -y '.' > "$MANIFEST"
+  jq -s '.' | yq -y '.' >> "$MANIFEST"
