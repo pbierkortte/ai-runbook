@@ -23,9 +23,9 @@ else
 fi
 
 
-for dir in $(yq -r '.[].source' "$manifest"); do
+for dir in $(yq '.[].source' "$manifest"); do
   mkdir -p "$dir"
-  yq --arg d "$dir" '.[] | select(.source == $d)' "$manifest" > "$dir/.openskills.json"
+  yq -o=json ".[] | select(.source == \"$dir\")" "$manifest" > "$dir/.openskills.json"
 done
 
 npx openskills update

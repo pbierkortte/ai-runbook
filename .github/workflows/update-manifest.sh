@@ -22,7 +22,9 @@ else
   exit 1
 fi
 
-echo "# update-manifest.sh generated DO NOT EDIT!" > "$manifest"
-find skills -name SKILL.md -printf '%h\n' | sort |
+output="# update-manifest.sh generated DO NOT EDIT!"
+output+=$'\n'$(find skills -name SKILL.md -printf '%h\n' | sort |
   jq -R '{source: ., sourceType: "local", localPath: .}' |
-  jq -s '.' | yq -y '.' >> "$manifest"
+  jq -s '.' | yq -P -p=json '.')
+
+echo "$output" > "$manifest"
