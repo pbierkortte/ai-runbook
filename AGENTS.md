@@ -23,6 +23,7 @@ README.md:
     - Links
 
 RULES.md:
+- Example Rules
   - Setup commands
     - Install deps: `npm install`
     - Start dev server: `npm dev`
