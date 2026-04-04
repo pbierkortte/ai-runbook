@@ -9,11 +9,11 @@
 #
 set -euo pipefail
 
-MANIFEST=".agents/openskills-manifest.yml"
+manifest=".agents/openskills-manifest.yml"
 
-for dir in $(yq -r '.[].source' "$MANIFEST"); do
+for dir in $(yq -r '.[].source' "$manifest"); do
   mkdir -p "$dir"
-  yq --arg d "$dir" '.[] | select(.source == $d)' "$MANIFEST" > "$dir/.openskills.json"
+  yq --arg d "$dir" '.[] | select(.source == $d)' "$manifest" > "$dir/.openskills.json"
 done
 
 npx openskills update
