@@ -51,6 +51,26 @@ npx openskills install -g -u -y pbierkortte/ai-runbook/skills/skill-name
 
 Each tool file contains a specific prompt with instructions.
 
+### Adaptive Indexing
+
+Let your docs tell agents what exists so you never hand-write instructions again.
+
+#### AGENTS.md Files
+
+An `AGENTS.md` at the repo root activates agent features in supported IDEs. It doubles as a table of contents agents read on first contact.
+
+#### Surfacing Rules
+
+Rules live in `RULES.md` files scoped to the directory they apply to. Write them as headings and they surface into the index automatically.
+
+#### Collate Script
+
+Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty `AGENTS.md` to a directory and the docs there get noticed.
+
+```sh
+bash scripts/agents-collate.sh
+```
+
 ## Contents
 
 ### Cores
@@ -126,3 +146,4 @@ One who wears many hats.
 - [Anthropic's Prompt Engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
 - [Anthropic's Prompt Library](https://docs.anthropic.com/en/prompt-library/library)
 - [Anthropic's Interactive Prompt Engineering Tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial)
+

@@ -7,6 +7,10 @@ README.md:
     - CORES
     - Skills
     - Tools
+    - Adaptive Indexing
+      - AGENTS.md Files
+      - Surfacing Rules
+      - Collate Script
   - Contents
     - Cores
       - Evan
@@ -17,4 +21,13 @@ README.md:
   - Resources
     - Ecosystem 
     - Links
+
+RULES.md:
+    - Install deps: `npm install`
+    - Start dev server: `npm dev`
+    - Run tests: `npm test`
+  - TypeScript code style
+    - TypeScript strict mode
+    - Single quotes, no semicolons
+    - Use functional patterns where possible
 
