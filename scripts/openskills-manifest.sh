@@ -9,7 +9,19 @@
 #
 set -euo pipefail
 
-manifest=".agents/openskills-manifest.yml"
+manifest_path=".agents/openskills-manifest.yml"
+
+if [[ -n "${OPENSKILLS_MANIFEST_PATH:-}" ]]; then
+  manifest="$OPENSKILLS_MANIFEST_PATH"
+elif [[ -f "$HOME/$manifest_path" ]]; then
+  manifest="$HOME/$manifest_path"
+elif [[ -f "$manifest_path" ]]; then
+  manifest="$manifest_path"
+else
+  echo "error: openskills manifest not found" >&2
+  exit 1
+fi
+
 
 for dir in $(yq -r '.[].source' "$manifest"); do
   mkdir -p "$dir"
