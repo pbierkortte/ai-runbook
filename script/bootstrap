@@ -32,3 +32,6 @@ BASH_ENV_LINE='export BASH_ENV="$HOME/.bashrc"'
 for rc in ~/.bashrc ~/.bash_profile; do
   grep -qsF "$BASH_ENV_LINE" "$rc" || echo "$BASH_ENV_LINE" >> "$rc"
 done
+
+OPENSKILLS="$(cd "$(dirname "$0")" && pwd)/openskills-manifest.sh"
+[ -f "$OPENSKILLS" ] && bash "$OPENSKILLS"
