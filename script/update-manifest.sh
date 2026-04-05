@@ -9,7 +9,7 @@
 #
 set -euo pipefail
 
-which yq > /dev/null 2>&1 || snap install yq
+which yq > /dev/null 2>&1 || { echo "error: yq not found — run script/bootstrap to install" >&2; exit 1; }
 
 manifest_path="agents/openskills-manifest.yml"
 
