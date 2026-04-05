@@ -1,4 +1,16 @@
-# Example Rules
+# Rules
+
+## This file rules
+### Use plain language
+### Under 16 words per line
+### Split compound phrases into separate lines for clarity
+### No semicolons
+### No em-dashes
+### No parentheticals
+### Each rule states what to do followed by why
+
+## Read skills
+### Run `npx openskills read <skill-name>` to load instructions into context
 
 ## Setup commands
 ### Install deps: `npm install`
