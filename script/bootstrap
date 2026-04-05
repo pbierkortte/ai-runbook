@@ -26,7 +26,7 @@ export PATH="$_bindir:$PATH"
 # Install Cline if OPENROUTER_API_KEY is set
 if [ -n "${OPENROUTER_API_KEY:-}" ]; then
   npm i -g cline
-  cline auth -p openrouter -k "$OPENROUTER_API_KEY"
+  cline auth -p openrouter -k "$OPENROUTER_API_KEY" -m openrouter/auto
 fi
 
 # Install Claude Code if CLAUDE_CODE_OAUTH_TOKEN is set
