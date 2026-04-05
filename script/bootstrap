@@ -36,5 +36,7 @@ for rc in ~/.bashrc ~/.bash_profile; do
   grep -qsF "$BASH_ENV_LINE" "$rc" || echo "$BASH_ENV_LINE" >> "$rc"
 done
 
+[ -n "${GITHUB_REPOSITORY:-}" ] && export OPENSKILLS_MANIFEST_PATH="/workspaces/${GITHUB_REPOSITORY#*/}/agents/openskills-manifest.yml"
+
 OPENSKILLS="$(cd "$(dirname "$0")" && pwd)/openskills-manifest.sh"
 [ -f "$OPENSKILLS" ] && bash "$OPENSKILLS"
