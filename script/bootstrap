@@ -23,6 +23,17 @@ if [[ ! -f "${_bindir}/yq" ]]; then
 fi
 export PATH="$_bindir:$PATH"
 
+# Install Cline if OPENROUTER_API_KEY is set
+if [ -n "${OPENROUTER_API_KEY:-}" ]; then
+  npm i -g cline
+  cline auth -p openrouter -k "$OPENROUTER_API_KEY"
+fi
+
+# Install Claude Code if CLAUDE_CODE_OAUTH_TOKEN is set
+if [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+  npm i -g @anthropic-ai/claude-code
+fi
+
 COLLATE="$(cd "$(dirname "$0")" && pwd)/agents-collate.sh"
 LINE="[ -f \"$COLLATE\" ] && bash \"$COLLATE\""
 
