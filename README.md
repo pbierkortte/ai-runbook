@@ -74,7 +74,7 @@ bash script/agents-collate.sh
 For local development or CI environments without dotfiles config, use the dev setup script:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/script/agents-collate.sh | bash
+curl -fsSL https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/script/dev-setup.sh | bash
 ```
 
 ## Contents
