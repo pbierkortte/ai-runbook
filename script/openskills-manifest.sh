@@ -47,4 +47,4 @@ for dir in $(yq '.[].source' "$manifest"); do
   yq -o=json ".[] | select(.source == \"$dir\")" "$manifest" > "$dir/.openskills.json"
 done
 
-npx openskills install -g -u -y pbierkortte/ai-runbook
+npx openskills install -g -u -y ./
