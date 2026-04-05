@@ -2,14 +2,14 @@
 #
 # openskills-manifest.sh — Skills Metadata Generator
 #
-# Splits .agents/openskills-manifest.yml into per-skill .openskills.json
+# Splits agents/openskills-manifest.yml into per-skill .openskills.json
 # files then runs openskills update.
 #
 # Usage: bash scripts/openskills-manifest.sh
 #
 set -euo pipefail
 
-manifest_path=".agents/openskills-manifest.yml"
+manifest_path="agents/openskills-manifest.yml"
 
 if [[ -n "${OPENSKILLS_MANIFEST_PATH:-}" ]]; then
   manifest="$OPENSKILLS_MANIFEST_PATH"

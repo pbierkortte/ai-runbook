@@ -2,14 +2,14 @@
 #
 # update-manifest.sh — Manifest Generator
 #
-# Gathers skill directories into .agents/openskills-manifest.yml.
+# Gathers skill directories into agents/openskills-manifest.yml.
 # Reverse of scripts/openskills-manifest.sh which splits it back out.
 #
 # Usage: bash scripts/update-manifest.sh
 #
 set -euo pipefail
 
-manifest_path=".agents/openskills-manifest.yml"
+manifest_path="agents/openskills-manifest.yml"
 
 if [[ -n "${OPENSKILLS_MANIFEST_PATH:-}" ]]; then
   manifest="$OPENSKILLS_MANIFEST_PATH"
