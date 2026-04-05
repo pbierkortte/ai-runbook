@@ -71,6 +71,13 @@ Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty
 source script/agents-collate.sh
 ```
 
+### Environment Variables
+
+Set these to install and configure AI agents automatically.
+
+Cline: `OPENROUTER_API_KEY`
+Claude: `CLAUDE_CODE_OAUTH_TOKEN`
+
 ## Contents
 
 ### Cores
