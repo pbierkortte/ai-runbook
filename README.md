@@ -68,13 +68,7 @@ Rules live in `RULES.md` files scoped to the directory they apply to. Write them
 Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty `AGENTS.md` to a directory and the docs there get noticed.
 
 ```sh
-bash script/agents-collate.sh
-```
-
-For local development or CI environments without dotfiles config, use the dev setup script:
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/script/dev-setup.sh | bash
+source script/dev-setup.sh
 ```
 
 ## Contents
