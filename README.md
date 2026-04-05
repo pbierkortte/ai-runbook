@@ -71,6 +71,12 @@ Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty
 bash script/agents-collate.sh
 ```
 
+For local development or CI environments without dotfiles config, use the dev setup script:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/script/agents-collate.sh | bash
+```
+
 ## Contents
 
 ### Cores
