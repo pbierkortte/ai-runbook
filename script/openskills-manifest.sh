@@ -9,6 +9,8 @@
 #
 set -euo pipefail
 
+which yq > /dev/null 2>&1 || snap install yq
+
 manifest_path="agents/openskills-manifest.yml"
 
 if [[ -n "${OPENSKILLS_MANIFEST_PATH:-}" ]]; then
