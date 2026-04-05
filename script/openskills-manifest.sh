@@ -47,4 +47,19 @@ for dir in $(yq '.[].source' "$manifest"); do
   yq -o=json ".[] | select(.source == \"$dir\")" "$manifest" > "$dir/.openskills.json"
 done
 
-npx openskills install -g -u -y ./
+# Check if manifest has remote entries (repoUrl) or local entries
+has_remote=$(yq '.[0].repoUrl // ""' "$manifest")
+if [[ -n "$has_remote" ]]; then
+  # Remote: install each skill individually by owner/repo/subpath
+  count=$(yq 'length' "$manifest")
+  for i in $(seq 0 $((count - 1))); do
+    repo=$(yq ".[$i].repoUrl" "$manifest" | sed 's|https://github.com/||')
+    subpath=$(yq ".[$i].subpath" "$manifest")
+    install_path="${repo}/${subpath}"
+    echo "Installing: $install_path"
+    npx openskills install -g -u -y "$install_path" || echo "  ⚠ Failed: $install_path"
+  done
+else
+  # Local: SKILL.md files exist in current tree
+  npx openskills install -g -u -y ./
+fi
