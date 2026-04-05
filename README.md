@@ -14,6 +14,13 @@ A personal collection of AI agent skills and prompts.
 
 ## Usage
 
+### Environment Variables
+
+Set these to install and configure AI agents automatically.
+
+Cline: `OPENROUTER_API_KEY`
+Claude: `CLAUDE_CODE_OAUTH_TOKEN`
+
 ### CORES
 
 An identity-engineering framework built around a meta mnemonic.
@@ -70,13 +77,6 @@ Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty
 ```sh
 source script/agents-collate.sh
 ```
-
-### Environment Variables
-
-Set these to install and configure AI agents automatically.
-
-Cline: `OPENROUTER_API_KEY`
-Claude: `CLAUDE_CODE_OAUTH_TOKEN`
 
 ## Contents
 
