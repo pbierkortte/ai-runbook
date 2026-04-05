@@ -9,3 +9,7 @@
 ### TypeScript strict mode
 ### Single quotes, no semicolons
 ### Use functional patterns where possible
+
+## Agent behavior
+### Delegate everything complex to subagents
+### Don't commit until the user has reviewed the changes
