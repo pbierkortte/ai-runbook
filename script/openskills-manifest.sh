@@ -9,7 +9,9 @@
 #
 set -euo pipefail
 
-if ! which yq > /dev/null 2>&1; then
+_bindir="${HOME}/.local/bin"
+mkdir -p "$_bindir"
+if [[ ! -f "${_bindir}/yq" ]]; then
   _os="$(uname -s | tr '[:upper:]' '[:lower:]')"
   _arch="$(uname -m)"
   case "$_os" in
@@ -21,12 +23,13 @@ if ! which yq > /dev/null 2>&1; then
     x86_64|amd64) _arch="amd64" ;;
     arm64|aarch64) _arch="arm64" ;;
   esac
-  _bin="/usr/local/bin/yq"
+  _bin="${_bindir}/yq"
   _url="https://github.com/mikefarah/yq/releases/latest/download/yq_${_os}_${_arch}"
-  [[ "$_os" == "windows" ]] && { _bin="/usr/local/bin/yq.exe"; _url="${_url}.exe"; }
+  [[ "$_os" == "windows" ]] && { _bin="${_bindir}/yq.exe"; _url="${_url}.exe"; }
   wget "$_url" -O "$_bin"
   chmod +x "$_bin"
 fi
+export PATH="$_bindir:$PATH"
 
 manifest_path="agents/openskills-manifest.yml"
 

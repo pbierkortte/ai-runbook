@@ -1,7 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-if ! which yq > /dev/null 2>&1; then
+_bindir="${HOME}/.local/bin"
+mkdir -p "$_bindir"
+if [[ ! -f "${_bindir}/yq" ]]; then
   _os="$(uname -s | tr '[:upper:]' '[:lower:]')"
   _arch="$(uname -m)"
   case "$_os" in
@@ -13,15 +15,13 @@ if ! which yq > /dev/null 2>&1; then
     x86_64|amd64) _arch="amd64" ;;
     arm64|aarch64) _arch="arm64" ;;
   esac
-  _bindir="${HOME}/.local/bin"
-  mkdir -p "$_bindir"
   _bin="${_bindir}/yq"
   _url="https://github.com/mikefarah/yq/releases/latest/download/yq_${_os}_${_arch}"
   [[ "$_os" == "windows" ]] && { _bin="${_bindir}/yq.exe"; _url="${_url}.exe"; }
   wget "$_url" -O "$_bin"
   chmod +x "$_bin"
-  export PATH="$_bindir:$PATH"
 fi
+export PATH="$_bindir:$PATH"
 
 COLLATE="$(cd "$(dirname "$0")" && pwd)/agents-collate.sh"
 LINE="[ -f \"$COLLATE\" ] && bash \"$COLLATE\""
