@@ -5,7 +5,7 @@
 # Splits agents/openskills-manifest.yml into per-skill .openskills.json
 # files then runs openskills update.
 #
-# Usage: bash scripts/openskills-manifest.sh
+# Usage: bash script/openskills-manifest.sh
 #
 set -euo pipefail
 

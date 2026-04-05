@@ -15,7 +15,7 @@ This library extends the AI assistant's capabilities with reusable rules that ca
 ## Steps
 1. Scan available files list below for relevant topics
 2. Read the full rule file using `read_file` when topic matches current task
-3. If file not found, fetch it (`scripts/fetch-rule.sh <path>`)
+3. If file not found, fetch it (`script/fetch-rule.sh <path>`)
 4. Apply the rule's guidance to your work
 5. Continue checking library as new topics arise
 

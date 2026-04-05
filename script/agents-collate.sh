@@ -9,7 +9,7 @@
 # Scales to 1000s of docs with no context overhead and no special dbs.
 # No vector DB, no embeddings, just this script.
 #
-# Usage: bash scripts/agents-collate.sh
+# Usage: bash script/agents-collate.sh
 
 set -euo pipefail
 

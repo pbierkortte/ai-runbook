@@ -13,11 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Update Contents
-        run: bash scripts/update-contents.sh
+        run: bash script/update-contents.sh
       - name: Update Manifest
-        run: bash scripts/update-manifest.sh
+        run: bash script/update-manifest.sh
       - name: Collate Indexes
-        run: bash scripts/agents-collate.sh
+        run: bash script/agents-collate.sh
       - name: Commit changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
