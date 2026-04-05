@@ -3,7 +3,7 @@
 # openskills-manifest.sh — Skills Metadata Generator
 #
 # Splits agents/openskills-manifest.yml into per-skill .openskills.json
-# files then runs openskills update.
+# files then runs openskills install.
 #
 # Usage: bash script/openskills-manifest.sh
 #
@@ -47,4 +47,4 @@ for dir in $(yq '.[].source' "$manifest"); do
   yq -o=json ".[] | select(.source == \"$dir\")" "$manifest" > "$dir/.openskills.json"
 done
 
-npx openskills update
+npx openskills install -g -u -y pbierkortte/ai-runbook
