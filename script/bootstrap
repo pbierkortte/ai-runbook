@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+which yq > /dev/null 2>&1 || snap install yq
+
 COLLATE="$(cd "$(dirname "$0")" && pwd)/agents-collate.sh"
 LINE="[ -f \"$COLLATE\" ] && bash \"$COLLATE\""
 
