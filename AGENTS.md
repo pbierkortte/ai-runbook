@@ -5,6 +5,7 @@ README.md:
   - Purpose
   - Usage
     - CORES
+    - Environment Variables
     - Skills
     - Tools
     - Adaptive Indexing

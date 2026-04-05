@@ -14,13 +14,6 @@ A personal collection of AI agent skills and prompts.
 
 ## Usage
 
-### Environment Variables
-
-Set these to install and configure AI agents automatically.
-
-Cline: `OPENROUTER_API_KEY`
-Claude: `CLAUDE_CODE_OAUTH_TOKEN`
-
 ### CORES
 
 An identity-engineering framework built around a meta mnemonic.
@@ -37,6 +30,13 @@ Fill the 5 slots (C/O/R/E/S):
 The result is a reusable structure for defining and evolving personality modules. 
 
 Curiously, this aligns with the “personality spheres” concept from a certain puzzle game.
+
+### Environment Variables
+
+Set these to install and configure AI agents automatically.
+
+Cline: `OPENROUTER_API_KEY`
+Claude: `CLAUDE_CODE_OAUTH_TOKEN`
 
 ### Skills
 
