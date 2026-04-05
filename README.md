@@ -74,6 +74,8 @@ Rules live in `RULES.md` files scoped to the directory they apply to. Write them
 
 Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty `AGENTS.md` to a directory and the docs there get noticed.
 
+Runs automatically on shell startup or manually with:
+
 ```sh
 source script/agents-collate.sh
 ```
