@@ -9,7 +9,24 @@
 #
 set -euo pipefail
 
-which yq > /dev/null 2>&1 || { echo "error: yq not found — run script/bootstrap to install" >&2; exit 1; }
+if ! which yq > /dev/null 2>&1; then
+  _os="$(uname -s | tr '[:upper:]' '[:lower:]')"
+  _arch="$(uname -m)"
+  case "$_os" in
+    linux*)           _os="linux"   ;;
+    darwin*)          _os="darwin"  ;;
+    mingw*|msys*|cygwin*) _os="windows" ;;
+  esac
+  case "$_arch" in
+    x86_64|amd64) _arch="amd64" ;;
+    arm64|aarch64) _arch="arm64" ;;
+  esac
+  _bin="/usr/local/bin/yq"
+  _url="https://github.com/mikefarah/yq/releases/latest/download/yq_${_os}_${_arch}"
+  [[ "$_os" == "windows" ]] && { _bin="/usr/local/bin/yq.exe"; _url="${_url}.exe"; }
+  wget "$_url" -O "$_bin"
+  chmod +x "$_bin"
+fi
 
 manifest_path="agents/openskills-manifest.yml"
 
