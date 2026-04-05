@@ -40,3 +40,18 @@ done
 
 OPENSKILLS="$(cd "$(dirname "$0")" && pwd)/openskills-manifest.sh"
 [ -f "$OPENSKILLS" ] && bash "$OPENSKILLS"
+
+# Skills
+
+## Global
+mkdir -p "$HOME/.agents/skills"
+
+## Cline
+mkdir -p "$HOME/.cline"
+rm -f "$HOME/.cline/skills"
+ln -s "$HOME/.agents/skills" "$HOME/.cline/skills"
+
+## Claude
+mkdir -p "$HOME/.claude"
+rm -f "$HOME/.claude/skills"
+ln -s "$HOME/.agents/skills" "$HOME/.claude/skills"
