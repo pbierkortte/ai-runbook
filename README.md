@@ -17,6 +17,20 @@ A personal collection of AI agent skills and prompts.
 
 ## Usage
 
+### Dotfiles Setup
+
+Fork this repo and select it as your [dotfiles repository](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#dotfiles) in Codespaces settings.
+Add environment variables as Codespace secrets.
+Every new codespace runs `script/bootstrap` automatically.
+
+Run the bootstrap script to install tools, configure agents, and wire up skill directories.
+
+```sh
+bash script/bootstrap
+```
+
+Bootstrap also sets AI-friendly defaults like `GIT_PAGER=cat` and `NPM_CONFIG_LOGLEVEL=warn` to suppress pagers and noisy output so agents can parse tool results cleanly.
+
 ### CORES
 
 An identity-engineering framework built around a meta mnemonic.
@@ -38,14 +52,18 @@ Curiously, this aligns with the “personality spheres” concept from a certain
 
 Set these to install and configure AI agents automatically.
 
-Cline: `OPENROUTER_API_KEY`
-Claude: `CLAUDE_CODE_OAUTH_TOKEN`
+`OPENROUTER_API_KEY`: Installs Cline globally and runs auth with the `openrouter/auto` model.
+`CLAUDE_CODE_OAUTH_TOKEN`: Installs Claude Code globally. The token is read from env at runtime.
+
+In GitHub Codespaces, `GITHUB_REPOSITORY` is detected automatically to set the skills manifest path.
 
 ### Skills
 
 Skill names use subject-predicate format: `{subject}-{purpose}`.
 
-Install all skills globally into your agent setup by running:
+Skills install into `~/.agents/skills/` and get symlinked into each agent's config directory. Install once and every agent sees it.
+
+Install all skills globally by running:
 
 ```sh
 npx openskills install -g -u -y pbierkortte/ai-runbook
@@ -78,7 +96,9 @@ One rule per line keeps each statement atomic so agents can follow it.
 
 Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty `AGENTS.md` to a directory and the docs there get noticed.
 
-Runs automatically on shell startup or manually with:
+Bootstrap hooks collate into shell startup by appending a trigger to each RC file. It also sets `BASH_ENV` so non-interactive shells pick it up.
+
+Run it manually with:
 
 ```sh
 source script/agents-collate.sh

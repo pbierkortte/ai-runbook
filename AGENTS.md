@@ -4,6 +4,7 @@ README.md:
 - AI Runbook
   - Purpose
   - Usage
+    - Dotfiles Setup
     - CORES
     - Environment Variables
     - Skills
