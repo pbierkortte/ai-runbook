@@ -130,6 +130,88 @@ Yellow's job:
 - Never dismiss valid concerns — acknowledge them and argue value anyway
 
 
+## Loading Character Cores
+
+The full character files live in `cores/` and are NOT duplicated here.
+The mapping below tells Blue where to find each character by local path
+and remote URL. This mapping ships inside SKILL.md itself so it is
+always available, even when the skill is installed standalone via
+`npx openskills`.
+
+**Blue reads this mapping at the start of every initiative.**
+
+### Character references
+
+```yaml
+characters:
+  Blue:
+    role: director
+    local: cores/Blue/director.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Blue/director.md
+  Green:
+    role: writer
+    local: cores/Green/writer.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Green/writer.md
+  Red:
+    role: critic
+    local: cores/Red/critic.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Red/critic.md
+  White:
+    role: researcher
+    local: cores/White/researcher.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/White/researcher.md
+  Black:
+    role: assessor
+    local: cores/Black/assessor.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Black/assessor.md
+  Orange:
+    role: boss
+    local: cores/Orange/boss.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Orange/boss.md
+  Yellow:
+    role: advocate
+    local: cores/Yellow/advocate.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Yellow/advocate.md
+```
+
+### Resolution order
+
+1. **Local read** — try `read_file` on the `local` path
+   (works when the full repo is cloned)
+2. **Remote fetch** — `curl` or fetch the `remote` URL
+   (works for anyone who pulled the skill via `npx openskills`)
+3. **Inline fallback** — use the personality blurbs already embedded
+   in the spawn templates below
+   (always works, just less nuance)
+
+### What Blue does with them
+
+When a full character file is loaded, Blue prepends it to the spawn
+prompt so the sub-agent gets the complete voice and operating style.
+The spawn template personality paragraph still appears after it as
+a reinforcement. If the full file is unavailable, the template
+paragraph carries the load on its own. It has done it before. It
+will do it again. It just does it better with the full file.
+
+### Example: loading Green before spawn
+
+```
+1. Find Green in the character references above
+   → local = "cores/Green/writer.md"
+   → remote = "https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Green/writer.md"
+2. Attempt read_file("cores/Green/writer.md")
+   — success? Prepend contents to Green spawn prompt.
+   — fail? Fetch the remote URL.
+     — success? Prepend contents.
+     — fail? Proceed with inline description only.
+```
+
+This keeps one source of truth for every character.
+No copies. No drift. Orange insisted.
+
+---
+
+
 ## How It Works
 
 I am going to walk you through this because apparently writing it down is what separates a process from a suggestion.
