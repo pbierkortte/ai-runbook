@@ -1,5 +1,15 @@
 #!/bin/bash
+# bootstrap
+#
+# Sets up an AI-friendly dev environment.
+# Installs tools, configures shells, and wires up skill dirs.
+#
+# Usage: bash script/bootstrap
+
 set -euo pipefail
+
+# Dependencies
+# Install yq if missing (also in openskills-manifest.sh for standalone use)
 
 _bindir="${HOME}/.local/bin"
 mkdir -p "$_bindir"
@@ -23,6 +33,20 @@ if [[ ! -f "${_bindir}/yq" ]]; then
 fi
 export PATH="$_bindir:$PATH"
 
+# AI-friendly environment defaults
+# Suppress pagers and noisy output so agents parse stdout cleanly
+
+# Git: disable pager and use a simple editor
+command -v git &>/dev/null && export GIT_PAGER=cat GIT_EDITOR="nano"
+
+# Python: silence pip and skip .pyc to keep logs clean
+command -v pip &>/dev/null && export PIP_QUIET=1 PYTHONDONTWRITEBYTECODE=1
+
+# npm: reduce log noise so agents focus on errors
+command -v npm &>/dev/null && export NPM_CONFIG_LOGLEVEL=warn
+
+# Agents
+
 # Install Cline if OPENROUTER_API_KEY is set
 if [ -n "${OPENROUTER_API_KEY:-}" ]; then
   npm i -g cline
@@ -30,10 +54,12 @@ if [ -n "${OPENROUTER_API_KEY:-}" ]; then
 fi
 
 # Install Claude Code if CLAUDE_CODE_OAUTH_TOKEN is set
+# Claude reads the token from env at runtime, no auth command needed
 if [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
   npm i -g @anthropic-ai/claude-code
 fi
 
+# Hook collate into shell startup so agents always see fresh indexes
 COLLATE="$(cd "$(dirname "$0")" && pwd)/agents-collate.sh"
 LINE="[ -f \"$COLLATE\" ] && bash \"$COLLATE\""
 
@@ -41,18 +67,21 @@ for rc in ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zprofile; do
   grep -qsF "$LINE" "$rc" || echo "$LINE" >> "$rc"
 done
 
-# Non-interactive Bash shells source BASH_ENV
+# BASH_ENV makes non-interactive bash source .bashrc for collate to run
 BASH_ENV_LINE='export BASH_ENV="$HOME/.bashrc"'
 for rc in ~/.bashrc ~/.bash_profile; do
   grep -qsF "$BASH_ENV_LINE" "$rc" || echo "$BASH_ENV_LINE" >> "$rc"
 done
 
+# In Codespaces, point the manifest at the workspace copy
 [ -n "${GITHUB_REPOSITORY:-}" ] && export OPENSKILLS_MANIFEST_PATH="/workspaces/${GITHUB_REPOSITORY#*/}/agents/openskills-manifest.yml"
 
+# Run the OpenSkills manifest to install per-skill metadata
 OPENSKILLS="$(cd "$(dirname "$0")" && pwd)/openskills-manifest.sh"
 [ -f "$OPENSKILLS" ] && bash "$OPENSKILLS"
 
 # Skills
+# One shared dir symlinked into each agent so all see the same skills
 
 ## Global
 mkdir -p "$HOME/.agents/skills"
