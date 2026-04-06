@@ -45,20 +45,6 @@ command -v pip &>/dev/null && export PIP_QUIET=1 PYTHONDONTWRITEBYTECODE=1
 # npm: reduce log noise so agents focus on errors
 command -v npm &>/dev/null && export NPM_CONFIG_LOGLEVEL=warn
 
-# Agents
-
-# Install Cline if OPENROUTER_API_KEY is set
-if [ -n "${OPENROUTER_API_KEY:-}" ]; then
-  npm i -g cline
-  cline auth -p openrouter -k "$OPENROUTER_API_KEY" -m openrouter/auto
-fi
-
-# Install Claude Code if ANTHROPIC_API_KEY is set
-# Claude reads the key from env at runtime.
-if [ -n "${ANTHROPIC_API_KEY:-}" ]; then
-  curl -fsSL https://claude.ai/install.sh | bash
-fi
-
 # Hook collate into shell startup so agents always see fresh indexes
 COLLATE="$(cd "$(dirname "$0")" && pwd)/agents-collate.sh"
 LINE="[ -f \"$COLLATE\" ] && bash \"$COLLATE\""
@@ -95,3 +81,26 @@ ln -s "$HOME/.agents/skills" "$HOME/.cline/skills"
 mkdir -p "$HOME/.claude"
 rm -f "$HOME/.claude/skills"
 ln -s "$HOME/.agents/skills" "$HOME/.claude/skills"
+
+# Agents
+
+# Install Cline if OPENROUTER_API_KEY is set
+if [ -n "${OPENROUTER_API_KEY:-}" ]; then
+  npm i -g cline
+  cline auth -p openrouter -k "$OPENROUTER_API_KEY" -m openrouter/auto
+fi
+
+# Install Claude Code if either auth method is available
+if [ -n "${ANTHROPIC_API_KEY:-}" ] || [ -n "${CLAUDE_CODE_OAUTH_REFRESH_TOKEN:-}" ]; then
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
+
+# Refresh token auth: requires scopes and an explicit login to exchange the token
+if [ -n "${CLAUDE_CODE_OAUTH_REFRESH_TOKEN:-}" ] && [ -z "${ANTHROPIC_API_KEY:-}" ]; then
+  if [ -z "${CLAUDE_CODE_OAUTH_SCOPES:-}" ]; then
+    echo "Error: CLAUDE_CODE_OAUTH_SCOPES is required with CLAUDE_CODE_OAUTH_REFRESH_TOKEN" >&2
+    echo "See docs/claude-code-codespaces-auth.md for setup" >&2
+    exit 1
+  fi
+  claude auth login
+fi
