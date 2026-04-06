@@ -114,18 +114,39 @@ One who wears many hats.
 
 <!-- CORES START -->
 
+#### Black
+- [Black](cores/Black/assessor.md)
+
+#### Blue
+- [Blue](cores/Blue/director.md)
+
 #### Evan
 - [Architect](cores/Evan/architect.md)
 - [Coder](cores/Evan/coder.md)
 - [Debugger](cores/Evan/debugger.md)
 
+#### Green
+- [Green](cores/Green/writer.md)
+
 #### Maya
 - [Designer](cores/Maya/designer.md)
 - [Tester](cores/Maya/tester.md)
 
+#### Orange
+- [Orange](cores/Orange/boss.md)
+
 #### Otis
 - [Editor](cores/Otis/editor.md)
 - [Writer](cores/Otis/writer.md)
+
+#### Red
+- [Red](cores/Red/critic.md)
+
+#### White
+- [White](cores/White/researcher.md)
+
+#### Yellow
+- [Yellow](cores/Yellow/advocate.md)
 
 <!-- CORES END -->
 
@@ -137,6 +158,7 @@ One who wears many hats.
 - [Audiovisual Transcription](skills/audiovisual-transcription/SKILL.md)
 - [Checkpoint Comprehensive](skills/checkpoint-comprehensive/SKILL.md)
 - [Checkpoint Distill](skills/checkpoint-distill/SKILL.md)
+- [The Cooperative Initiative](skills/co-operative-initiative/SKILL.md)
 - [Codebase Analysis](skills/codebase-analysis/SKILL.md)
 - [Filename Generator](skills/filename-generator/SKILL.md)
 - [Lilypad Loop](skills/lilypad-loop/SKILL.md)

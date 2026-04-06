@@ -11,6 +11,9 @@
 - source: skills/checkpoint-distill
   sourceType: local
   localPath: skills/checkpoint-distill
+- source: skills/co-operative-initiative
+  sourceType: local
+  localPath: skills/co-operative-initiative
 - source: skills/codebase-analysis
   sourceType: local
   localPath: skills/codebase-analysis

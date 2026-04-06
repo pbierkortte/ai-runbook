@@ -15,9 +15,16 @@ README.md:
       - Collate Script
   - Contents
     - Cores
+      - Black
+      - Blue
       - Evan
+      - Green
       - Maya
+      - Orange
       - Otis
+      - Red
+      - White
+      - Yellow
     - Skills
     - Tools
   - Resources
