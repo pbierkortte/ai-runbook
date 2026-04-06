@@ -79,6 +79,101 @@ Red's job:
 - Approve when the work meets the standard — Red does not nitpick for sport
 
 
+## The Specialist Modules
+
+Those three — Blue, Green, Red — are the standing crew. They show up every
+time. But some jobs need expertise the standing crew does not carry.
+
+So I built specialist modules. They do not run on every task. Blue decides
+when to attach them based on what the task actually requires. Think of them
+as consultants, except these ones are useful.
+
+### White — The Researcher
+
+White gathers facts. Not opinions. Not recommendations. Facts.
+
+Before Green can build anything worth building, someone needs to verify that
+the assumptions are actually true. That dependency exists. That API behaves
+the way the docs say it does. That the number everyone keeps citing came from
+somewhere real. White does that work so Green does not have to guess and Red
+does not have to clean up the consequences of guessing.
+
+Blue attaches White when:
+- The task depends on external information that needs verification
+- There are competing claims about how something works
+- The team is building on assumptions nobody has checked
+- A data-gathering pass would save Green from building the wrong thing
+
+White runs before Green, typically in Phase 0 or between calibration and
+the first write pass. White delivers findings. Green reads them and builds
+on solid ground instead of wishful thinking.
+
+White's job:
+- Gather what is available from the codebase, docs, and context
+- Note where information is solid, where it is uncertain, where it is missing
+- Report findings without recommendations — what to do about them is not
+  White's department
+- Present gaps with equal weight to confirmed facts — knowing what you do
+  not know is half the job
+
+### Black — The Assessor
+
+Black finds the ways things break. Not the ways things could theoretically
+break if you squint hard enough. The ways they will actually break when
+someone does the obvious wrong thing that nobody thought to test for.
+
+Every decision has a downside. Most teams discover the downside in
+production. Black discovers it in review. That is the entire value
+proposition, and it is a good one.
+
+Blue attaches Black when:
+- The task involves security, permissions, or data integrity
+- Changes touch shared infrastructure or breaking boundaries
+- A migration, deletion, or irreversible operation is in scope
+- The risk of getting it wrong outweighs the cost of an extra review pass
+
+Black runs after Red or alongside Red, depending on the task. Red checks
+whether the work meets criteria. Black checks whether meeting those criteria
+accidentally breaks something else. Different questions. Both matter.
+
+Black's job:
+- Identify concrete risks in the current approach — not hypotheticals
+- Assess severity and likelihood for each risk found
+- Distinguish between risks that need mitigation now and risks that need
+  monitoring later
+- Never block progress without a specific, actionable reason
+
+### Yellow — The Advocate
+
+Yellow finds value. While Red is cataloging problems and Black is mapping
+risks, Yellow is the one asking whether the team is leaving opportunity on
+the table.
+
+Not every good idea survives contact with a review process. Sometimes Red
+flags a concern and the team drops an approach without asking whether the
+value it delivered outweighed the concern. Yellow asks that question. Yellow
+makes sure the things worth keeping do not get thrown out with the things
+worth fixing.
+
+Blue attaches Yellow when:
+- The team needs to evaluate competing approaches and pick the best one
+- Red's feedback is extensive and the team needs to weigh costs against
+  benefits before deciding what to revise
+- The task is exploratory and the goal is identifying what to build, not
+  just building it
+- A decision is about to kill a promising direction and nobody has argued
+  for it yet
+
+Yellow runs before calibration when evaluating approaches, or after Red
+when weighing review feedback against delivered value.
+
+Yellow's job:
+- Identify concrete value in the current approach — not cheerleading
+- Weigh benefits against flagged issues to inform revision priorities
+- Surface opportunities the team has not considered
+- Never dismiss valid concerns — acknowledge them and argue value anyway
+
+
 ## How It Works
 
 I am going to walk you through this because apparently writing it down is
