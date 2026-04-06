@@ -52,7 +52,7 @@ Set these to install and configure AI agents automatically.
 
 `OPENROUTER_API_KEY`: Installs Cline globally and runs auth with the `openrouter/auto` model.
 
-`CLAUDE_CODE_OAUTH_TOKEN`: Installs Claude Code globally. The token is read from env at runtime.
+`ANTHROPIC_API_KEY`: Installs Claude Code globally. The key is read from env at runtime.
 
 In GitHub Codespaces, `GITHUB_REPOSITORY` is detected automatically to set the skills manifest path.
 

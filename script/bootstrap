@@ -53,10 +53,10 @@ if [ -n "${OPENROUTER_API_KEY:-}" ]; then
   cline auth -p openrouter -k "$OPENROUTER_API_KEY" -m openrouter/auto
 fi
 
-# Install Claude Code if CLAUDE_CODE_OAUTH_TOKEN is set
-# Claude reads the token from env at runtime, no auth command needed
-if [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
-  npm i -g @anthropic-ai/claude-code
+# Install Claude Code if ANTHROPIC_API_KEY is set
+# Claude reads the key from env at runtime.
+if [ -n "${ANTHROPIC_API_KEY:-}" ]; then
+  curl -fsSL https://claude.ai/install.sh | bash
 fi
 
 # Hook collate into shell startup so agents always see fresh indexes
