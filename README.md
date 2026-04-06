@@ -11,6 +11,9 @@ A personal collection of AI agent skills and prompts.
 - Update docs automatically so I don't have to.
 - Make it easier to install and reuse skills.
 - Show people how to actually use these things.
+- Treat agent behavior like infrastructure.
+- Keep it versioned, diffable, and deployable.
+- Let naming conventions and file placement do the work of configuration.
 
 ## Usage
 
@@ -60,15 +63,16 @@ Each tool file contains a specific prompt with instructions.
 
 ### Adaptive Indexing
 
-Let your docs tell agents what exists so you never hand-write instructions again.
+Runs on markdown and one bash script. Let docs tell agents what exists so you never hand-write instructions again.
 
 #### AGENTS.md Files
 
-An `AGENTS.md` at the repo root activates agent features in supported IDEs. It doubles as a table of contents agents read on first contact.
+An `AGENTS.md` at the repo root activates agent features in supported IDEs. It doubles as a table of contents agents read on first contact. It writes itself.
 
 #### Surfacing Rules
 
-Rules live in `RULES.md` files scoped to the directory they apply to. Write them as headings and they surface into the index automatically.
+Rules live in `RULES.md` files scoped to the directory they apply to. Write them as headings and they surface into the index automatically. RULES.md follows its own rules and serves as the example.
+One rule per line keeps each statement atomic so agents can follow it.
 
 #### Collate Script
 
