@@ -99,20 +99,14 @@ Your goal is to create a flawless, highly personalized cover letter that would s
 
 ## FAQ
 
-**Q: Can this tool write a cover letter from scratch?**
-**A:** Yes, the tool can generate a complete cover letter draft based on the information you provide in the prompt.
+**Q: Can this tool write a cover letter from scratch?** **A:** Yes, the tool can generate a complete cover letter draft based on the information you provide in the prompt.
 
-**Q: How can I ensure the letter reflects my unique voice and style?**
-**A:** Edit the generated draft to incorporate your personal writing style, specific examples, and relevant anecdotes that highlight your personality and experience.
+**Q: How can I ensure the letter reflects my unique voice and style?** **A:** Edit the generated draft to incorporate your personal writing style, specific examples, and relevant anecdotes that highlight your personality and experience.
 
-**Q: Should I use the generated letter as-is?** 
-**A:** It's highly recommended to use the generated letter as a strong foundation and customize it further. Tailor the content to perfectly match your individual strengths, the specific requirements of the job, and the company culture.
+**Q: Should I use the generated letter as-is?** **A:** It's highly recommended to use the generated letter as a strong foundation and customize it further. Tailor the content to perfectly match your individual strengths, the specific requirements of the job, and the company culture.
 
-**Q: Can this tool help identify areas where I need to improve my application materials?**
-**A:** Yes, by analyzing the job description and your resume, the tool can indirectly highlight potential gaps in your skills or experience that you may want to address.
+**Q: Can this tool help identify areas where I need to improve my application materials?** **A:** Yes, by analyzing the job description and your resume, the tool can indirectly highlight potential gaps in your skills or experience that you may want to address.
 
-**Q: How long does the cover letter generation process take?**
-**A:** The initial draft is generated quickly. However, the time required for the iterative refinement process to achieve a truly polished and personalized letter will vary depending on the level of customization you choose to implement. 
+**Q: How long does the cover letter generation process take?** **A:** The initial draft is generated quickly. However, the time required for the iterative refinement process to achieve a truly polished and personalized letter will vary depending on the level of customization you choose to implement.
 
-**Q: Can I use this tool for different industries and job levels?**
-**A:** Yes, the tool is designed to be flexible and can adapt to various industries and job levels based on the specific information you provide in the prompt.
+**Q: Can I use this tool for different industries and job levels?** **A:** Yes, the tool is designed to be flexible and can adapt to various industries and job levels based on the specific information you provide in the prompt.

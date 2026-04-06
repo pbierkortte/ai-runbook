@@ -19,9 +19,7 @@ A personal collection of AI agent skills and prompts.
 
 ### Dotfiles Setup
 
-Fork this repo and select it as your [dotfiles repository](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#dotfiles) in Codespaces settings.
-Add environment variables as Codespace secrets.
-Every new codespace runs `script/bootstrap` automatically.
+Fork this repo and select it as your [dotfiles repository](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#dotfiles) in Codespaces settings. Add environment variables as Codespace secrets. Every new codespace runs `script/bootstrap` automatically.
 
 Run the bootstrap script to install tools, configure agents, and wire up skill directories.
 
@@ -53,6 +51,7 @@ Curiously, this aligns with the “personality spheres” concept from a certain
 Set these to install and configure AI agents automatically.
 
 `OPENROUTER_API_KEY`: Installs Cline globally and runs auth with the `openrouter/auto` model.
+
 `CLAUDE_CODE_OAUTH_TOKEN`: Installs Claude Code globally. The token is read from env at runtime.
 
 In GitHub Codespaces, `GITHUB_REPOSITORY` is detected automatically to set the skills manifest path.
@@ -90,6 +89,7 @@ An `AGENTS.md` at the repo root activates agent features in supported IDEs. It d
 #### Surfacing Rules
 
 Rules live in `RULES.md` files scoped to the directory they apply to. Write them as headings and they surface into the index automatically. RULES.md follows its own rules and serves as the example.
+
 One rule per line keeps each statement atomic so agents can follow it.
 
 #### Collate Script

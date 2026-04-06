@@ -20,16 +20,12 @@ File cleanup preserves AI assistant focus by eliminating irrelevant artifacts th
 
 ## Examples
 
-✅ Good:
-Dependency verification: Check imports before deleting `utils/deprecated_helper.py` with `grep -r "deprecated_helper" src/`
+✅ Good: Dependency verification: Check imports before deleting `utils/deprecated_helper.py` with `grep -r "deprecated_helper" src/`
 
-✅ Good:
-Obsolete file removal: Remove empty directory after file deletion with `rmdir utils/`
+✅ Good: Obsolete file removal: Remove empty directory after file deletion with `rmdir utils/`
 
-❌ Bad:
-Batch deletion: Delete entire `legacy/` folder without checking active imports
+❌ Bad: Batch deletion: Delete entire `legacy/` folder without checking active imports
 
-❌ Bad:
-Cleanup avoidance: Skip cleanup because "it still works with the extra files"
+❌ Bad: Cleanup avoidance: Skip cleanup because "it still works with the extra files"
 
 ---
