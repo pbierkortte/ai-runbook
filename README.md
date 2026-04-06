@@ -52,7 +52,9 @@ Set these to install and configure AI agents automatically.
 
 `OPENROUTER_API_KEY`: Installs Cline globally and runs auth with the `openrouter/auto` model.
 
-`ANTHROPIC_API_KEY`: Installs Claude Code globally. The key is read from env at runtime.
+`ANTHROPIC_API_KEY`: Installs Claude Code globally. Pay-as-you-go via the Anthropic Console.
+
+`CLAUDE_CODE_OAUTH_REFRESH_TOKEN` + `CLAUDE_CODE_OAUTH_SCOPES` **Experimental**: Installs Claude Code globally for subscription users. See [Claude Code Authentication for GitHub Codespaces](docs/claude-code-codespaces-auth.md) for setup.
 
 In GitHub Codespaces, `GITHUB_REPOSITORY` is detected automatically to set the skills manifest path.
 
