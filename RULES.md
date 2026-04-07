@@ -23,5 +23,5 @@
 ### Use functional patterns where possible
 
 ## Agent behavior
-### Delegate everything complex to subagents
+### Use sub-agents to do several things at once.
 ### Don't commit until the user has reviewed the changes
