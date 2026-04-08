@@ -60,20 +60,40 @@ In GitHub Codespaces, `GITHUB_REPOSITORY` is detected automatically to set the s
 
 ### Skills
 
-Skill names use subject-predicate format: `{subject}-{purpose}`.
+#### Naming
 
-Skills install into `~/.agents/skills/` and get symlinked into each agent's config directory. Install once and every agent sees it.
+_Generally_ skills follow the format: `{subject…}-{predicate…}`.
 
-Install all skills globally by running:
+#### Install
 
-```sh
-npx openskills install -g -u -y pbierkortte/ai-runbook
+```shell
+npx openskills install anthropics/skills
 ```
 
-Or install a specific skill:
+#### Update
 
-```sh
-npx openskills install -g -u -y pbierkortte/ai-runbook/skills/skill-name
+```shell
+npx openskills update
+```
+
+#### Invoke
+
+Slash command:
+
+```shell
+/conventional-commit
+```
+
+Or just ask naturally:
+
+```shell
+do a conventional commit
+```
+
+#### List
+
+```shell
+/skills
 ```
 
 ### Tools
@@ -204,4 +224,3 @@ One who wears many hats.
 - [Anthropic's Prompt Engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
 - [Anthropic's Prompt Library](https://docs.anthropic.com/en/prompt-library/library)
 - [Anthropic's Interactive Prompt Engineering Tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial)
-
