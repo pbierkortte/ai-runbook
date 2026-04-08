@@ -180,6 +180,7 @@ One who wears many hats.
 - [Checkpoint Distill](skills/checkpoint-distill/SKILL.md)
 - [The Cooperative Initiative](skills/co-operative-initiative/SKILL.md)
 - [Codebase Analysis](skills/codebase-analysis/SKILL.md)
+- [continuous-improvement-initiative](skills/continuous-improvement-initiative/SKILL.md)
 - [Filename Generator](skills/filename-generator/SKILL.md)
 - [Lilypad Loop](skills/lilypad-loop/SKILL.md)
 - [Slack Personality Self-Assessment](skills/mbti-self-assessment-slack/SKILL.md)

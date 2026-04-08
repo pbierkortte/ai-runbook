@@ -17,6 +17,9 @@
 - source: skills/codebase-analysis
   sourceType: local
   localPath: skills/codebase-analysis
+- source: skills/continuous-improvement-initiative
+  sourceType: local
+  localPath: skills/continuous-improvement-initiative
 - source: skills/filename-generator
   sourceType: local
   localPath: skills/filename-generator
