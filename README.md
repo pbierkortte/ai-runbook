@@ -162,6 +162,7 @@ One who wears many hats.
 - [Codebase Analysis](skills/codebase-analysis/SKILL.md)
 - [Filename Generator](skills/filename-generator/SKILL.md)
 - [Lilypad Loop](skills/lilypad-loop/SKILL.md)
+- [Slack Personality Self-Assessment](skills/mbti-self-assessment-slack/SKILL.md)
 - [Repo to Prompt](skills/repo-to-prompt/SKILL.md)
 
 <!-- SKILLS END -->

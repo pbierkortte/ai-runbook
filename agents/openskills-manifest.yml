@@ -23,6 +23,9 @@
 - source: skills/lilypad-loop
   sourceType: local
   localPath: skills/lilypad-loop
+- source: skills/mbti-self-assessment-slack
+  sourceType: local
+  localPath: skills/mbti-self-assessment-slack
 - source: skills/repo-to-prompt
   sourceType: local
   localPath: skills/repo-to-prompt
