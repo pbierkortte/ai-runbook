@@ -8,6 +8,11 @@
 #### CORES
 #### Environment Variables
 #### Skills
+- Naming
+- Install
+- Update
+- Invoke
+- List
 #### Tools
 #### Adaptive Indexing
 - AGENTS.md Files
