@@ -67,7 +67,7 @@ _Generally_ skills follow the format: `{subject…}-{predicate…}`.
 #### Install
 
 ```shell
-npx openskills install anthropics/skills
+npx openskills install pbierkortte/ai-runbook
 ```
 
 #### Update
