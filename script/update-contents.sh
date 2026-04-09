@@ -1,16 +1,18 @@
 #!/bin/bash
 
-# Check if README.md exists
-if [ ! -f README.md ]; then
-  echo "README.md not found!"
+readme_file=docs/README.md
+
+# Check if $readme_file exists
+if [ ! -f $readme_file ]; then
+  echo "$readme_file not found!"
   exit 1
 fi
 
 # --- CORES SECTION ---
 
 # Check if CORES markers are present
-if ! grep -q "<!-- CORES START -->" README.md || ! grep -q "<!-- CORES END -->" README.md; then
-  echo "CORES markers not found in README.md!"
+if ! grep -q "<!-- CORES START -->" $readme_file || ! grep -q "<!-- CORES END -->" $readme_file; then
+  echo "CORES markers not found in $readme_file!"
   exit 1
 fi
 
@@ -38,13 +40,13 @@ awk -v CONTENTS="$CORES_CONTENTS" '
   /^<!-- CORES START -->/ { print CONTENTS; in_section=1; next }
   /^<!-- CORES END -->/ { in_section=0; next }
   !in_section { print }
-' README.md > README.tmp && mv README.tmp README.md
+' $readme_file > README.tmp && mv README.tmp $readme_file
 
 # --- SKILLS SECTION ---
 
 # Check if SKILLS markers are present
-if ! grep -q "<!-- SKILLS START -->" README.md || ! grep -q "<!-- SKILLS END -->" README.md; then
-  echo "SKILLS markers not found in README.md!"
+if ! grep -q "<!-- SKILLS START -->" $readme_file || ! grep -q "<!-- SKILLS END -->" $readme_file; then
+  echo "SKILLS markers not found in $readme_file!"
   exit 1
 fi
 
@@ -84,13 +86,13 @@ awk -v CONTENTS="$SKILLS_CONTENTS" '
   /^<!-- SKILLS START -->/ { print CONTENTS; in_section=1; next }
   /^<!-- SKILLS END -->/ { in_section=0; next }
   !in_section { print }
-' README.md > README.tmp && mv README.tmp README.md
+' $readme_file > README.tmp && mv README.tmp $readme_file
 
 # --- TOOLS SECTION ---
 
 # Check if TOOLS markers are present
-if ! grep -q "<!-- TOOLS START -->" README.md || ! grep -q "<!-- TOOLS END -->" README.md; then
-  echo "TOOLS markers not found in README.md!"
+if ! grep -q "<!-- TOOLS START -->" $readme_file || ! grep -q "<!-- TOOLS END -->" $readme_file; then
+  echo "TOOLS markers not found in $readme_file!"
   exit 1
 fi
 
@@ -120,4 +122,4 @@ awk -v CONTENTS="$CONTENTS" '
   /^<!-- TOOLS START -->/ { print CONTENTS; in_toc=1; next }
   /^<!-- TOOLS END -->/ { in_toc=0; next }
   !in_toc { print }
-' README.md > README.tmp && mv README.tmp README.md
+' $readme_file > README.tmp && mv README.tmp $readme_file
