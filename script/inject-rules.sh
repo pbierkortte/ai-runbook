@@ -20,9 +20,11 @@ RULES_DIR="$DIR/../rules"
 # Only use /workspaces path when the directory exists (Codespaces)
 if [[ -n "${GITHUB_REPOSITORY:-}" ]] && [[ -d "/workspaces/$(basename "$GITHUB_REPOSITORY")" ]]; then
   TARGET="/workspaces/$(basename "$GITHUB_REPOSITORY")"
-else
+elif [[ -d /workspaces ]]; then
   TARGET="$(find /workspaces -mindepth 1 -maxdepth 1 -type d 2>/dev/null | head -1)"
   TARGET="${TARGET:-$PWD}"
+else
+  TARGET="$PWD"
 fi
 
 REPO_NAME="$(basename "$TARGET")"
