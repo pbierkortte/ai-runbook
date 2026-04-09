@@ -26,7 +26,7 @@
 - Run one tool per turn: prevent execution errors
 - Pause for tool output: avoid broken processes
 - Pause for user review: prevent bad commits
-- Deploy separate agents: run tasks concurrently
+- Spawn agents for parallelizable work: not to read files
 
 ## Write reliable software
 - Enable TypeScript strict mode: prevent codebase errors
