@@ -11,6 +11,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source "$DIR/install-deps.sh"
 source "$DIR/env-vars.sh"
+source "$DIR/inject-rules.sh"
 source "$DIR/shell-hooks.sh"
 source "$DIR/openskills-manifest.sh"
 source "$DIR/setup-skills.sh"

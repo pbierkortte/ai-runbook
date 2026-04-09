@@ -36,6 +36,7 @@
 ### Scripts
 - install-deps.sh
 - env-vars.sh
+- inject-rules.sh
 - shell-hooks.sh
 - openskills-manifest.sh
 - setup-skills.sh

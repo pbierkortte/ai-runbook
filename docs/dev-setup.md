@@ -13,6 +13,7 @@ bootstrap
   dev-setup.sh
     install-deps.sh
     env-vars.sh
+    inject-rules.sh
     shell-hooks.sh
     openskills-manifest.sh
     setup-skills.sh
@@ -32,6 +33,14 @@ Runs first because other scripts depend on `yq`.
 Sets AI-friendly environment defaults.
 Suppresses pagers and noisy output so agents parse stdout cleanly.
 Sets `OPENSKILLS_MANIFEST_PATH` when the Codespaces dotfiles path exists.
+
+### inject-rules.sh
+
+Copies personal rule files into the current working directory before collate runs.
+Checks whether `rules/MY_RULES.md` exists relative to the script; exits early if not.
+Detects a dotfiles install by checking if the script path contains `dotfiles`.
+In a dotfiles install, copies only `MY_RULES.md` to CWD.
+In a local install, copies all `*RULES.md` files to CWD.
 
 ### shell-hooks.sh
 
