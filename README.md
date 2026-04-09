@@ -1,6 +1,6 @@
 # AI Runbook
 
-A personal collection of AI agent skills and prompts.
+A dotfiles repo that treats AI agent behavior as infrastructure.
 
 > [!IMPORTANT]
 > The contents of this repository, including skills, prompts, rules, documentation, code, and generated outputs, are likely AI-generated or AI-assisted (this note included 😄).
