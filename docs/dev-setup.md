@@ -14,6 +14,7 @@ bootstrap
     install-deps.sh
     env-vars.sh
     inject-rules.sh
+    agents-collate.sh
     shell-hooks.sh
     openskills-manifest.sh
     setup-skills.sh
@@ -42,6 +43,12 @@ Detects self mode when the target workspace has `rules/MY_RULES.md`.
 In self mode, copies all `*RULES.md` files to the project root.
 In sidecar mode, copies only `MY_RULES.md` to the target workspace.
 Works for any repo name.
+
+### agents-collate.sh
+
+Regenerates all AGENTS.md files from markdown headings.
+Runs after inject-rules so copied files are included in the index.
+Processes each directory that contains an AGENTS.md file.
 
 ### shell-hooks.sh
 

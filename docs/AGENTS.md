@@ -55,6 +55,7 @@
 - Overview
 - Purpose
 - Mechanism
+- Execution Order
 - Effect
 - Source
 
@@ -73,6 +74,7 @@
 - install-deps.sh
 - env-vars.sh
 - inject-rules.sh
+- agents-collate.sh
 - shell-hooks.sh
 - openskills-manifest.sh
 - setup-skills.sh
