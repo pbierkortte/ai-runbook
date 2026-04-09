@@ -29,3 +29,16 @@
 - Why Refresh Token Over Access Token
 - The Docs
 
+# dev-setup.md
+## Dev Setup
+### Overview
+### Entry Point Chain
+### Scripts
+- install-deps.sh
+- env-vars.sh
+- shell-hooks.sh
+- openskills-manifest.sh
+- setup-skills.sh
+- install-agents.sh
+### Usage
+
