@@ -36,11 +36,12 @@ Sets `OPENSKILLS_MANIFEST_PATH` when the Codespaces dotfiles path exists.
 
 ### inject-rules.sh
 
-Copies personal rule files into the current working directory before collate runs.
-Checks whether `rules/MY_RULES.md` exists relative to the script; exits early if not.
-Detects a dotfiles install by checking if the script path contains `dotfiles`.
-In a dotfiles install, copies only `MY_RULES.md` to CWD.
-In a local install, copies all `*RULES.md` files to CWD.
+Copies personal rule files into the target workspace root.
+Derives the target from `$GITHUB_REPOSITORY` or the first `/workspaces` directory.
+Detects self mode when the target workspace has `rules/MY_RULES.md`.
+In self mode, copies all `*RULES.md` files to the project root.
+In sidecar mode, copies only `MY_RULES.md` to the target workspace.
+Works for any repo name.
 
 ### shell-hooks.sh
 

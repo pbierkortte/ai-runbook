@@ -4,33 +4,36 @@
 # Copies rules into the current project.
 #
 # Sidecar mode (running from a dotfiles clone):
-#   - Copies MY_RULES.md into the target workspace derived from $GITHUB_REPOSITORY.
-#   - Works for any repo: Mono, Bonkers, ai-runbook, etc.
-#   - Silently skips if MY_RULES.md does not exist (personal file, not committed).
+#   - Copies MY_RULES.md into the target workspace.
+#   - Works for any repo name.
+#   - Silently skips if MY_RULES.md does not exist.
 #
-# Self mode (running inside ai-runbook itself):
-#   - Copies all *RULES.md files into the current directory.
+# Self mode (running inside the sidecar repo itself):
+#   - Copies all *RULES.md files into the project root.
+#   - Detected when the target workspace has rules/MY_RULES.md.
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RULES_DIR="$DIR/../rules"
 
-if [[ "$DIR" == *dotfiles* ]]; then
-  # Sidecar mode: inject MY_RULES.md into the target workspace
-  if [[ ! -f "$RULES_DIR/MY_RULES.md" ]]; then
-    return 0  # No personal rules to inject — that's fine
-  fi
-
-  # Derive the target workspace from GITHUB_REPOSITORY (set by Codespaces)
-  # Falls back to the first /workspaces/* dir found, then CWD
-  if [[ -n "${GITHUB_REPOSITORY:-}" ]]; then
-    TARGET="/workspaces/$(basename "$GITHUB_REPOSITORY")"
-  else
-    TARGET="$(find /workspaces -mindepth 1 -maxdepth 1 -type d | head -1)"
-    TARGET="${TARGET:-$PWD}"
-  fi
-
-  cp "$RULES_DIR/MY_RULES.md" "$TARGET/"
+# Determine the target workspace
+if [[ -n "${GITHUB_REPOSITORY:-}" ]]; then
+  TARGET="/workspaces/$(basename "$GITHUB_REPOSITORY")"
 else
-  # Self mode: copy all *RULES.md files into the current directory
-  cp "$RULES_DIR"/*RULES.md .
+  TARGET="$(find /workspaces -mindepth 1 -maxdepth 1 -type d 2>/dev/null | head -1)"
+  TARGET="${TARGET:-$PWD}"
+fi
+
+REPO_NAME="$(basename "$TARGET")"
+
+if [[ -f "$TARGET/rules/MY_RULES.md" ]]; then
+  # Self mode: target workspace has rules/MY_RULES.md
+  cp "$RULES_DIR"/*RULES.md "$TARGET/"
+  echo "inject-rules: copied *RULES.md to $REPO_NAME"
+else
+  # Sidecar mode: target is a regular project
+  if [[ ! -f "$RULES_DIR/MY_RULES.md" ]]; then
+    return 0
+  fi
+  cp "$RULES_DIR/MY_RULES.md" "$TARGET/"
+  echo "inject-rules: copied MY_RULES.md to $REPO_NAME"
 fi
