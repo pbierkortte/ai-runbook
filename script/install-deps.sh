@@ -1,0 +1,25 @@
+#!/bin/bash
+# install-deps.sh
+# Installs required tools (yq) if missing.
+
+_bindir="${HOME}/.local/bin"
+mkdir -p "$_bindir"
+if [[ ! -f "${_bindir}/yq" ]]; then
+  _os="$(uname -s | tr '[:upper:]' '[:lower:]')"
+  _arch="$(uname -m)"
+  case "$_os" in
+    linux*)               _os="linux"   ;;
+    darwin*)              _os="darwin"  ;;
+    mingw*|msys*|cygwin*) _os="windows" ;;
+  esac
+  case "$_arch" in
+    x86_64|amd64)  _arch="amd64" ;;
+    arm64|aarch64) _arch="arm64" ;;
+  esac
+  _bin="${_bindir}/yq"
+  _url="https://github.com/mikefarah/yq/releases/latest/download/yq_${_os}_${_arch}"
+  [[ "$_os" == "windows" ]] && { _bin="${_bindir}/yq.exe"; _url="${_url}.exe"; }
+  wget "$_url" -O "$_bin"
+  chmod +x "$_bin"
+fi
+export PATH="$_bindir:$PATH"

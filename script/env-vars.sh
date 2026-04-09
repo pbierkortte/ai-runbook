@@ -1,0 +1,19 @@
+#!/bin/bash
+# env-vars.sh
+# AI-friendly environment defaults.
+# Suppresses pagers and noisy output so agents parse stdout cleanly.
+
+# Git: disable pager and use a simple editor
+command -v git &>/dev/null && export GIT_PAGER=cat GIT_EDITOR="nano"
+
+# Python: silence pip and skip .pyc to keep logs clean
+command -v pip &>/dev/null && export PIP_QUIET=1 PYTHONDONTWRITEBYTECODE=1
+
+# npm: reduce log noise so agents focus on errors
+command -v npm &>/dev/null && export NPM_CONFIG_LOGLEVEL=warn
+
+# In Codespaces, point the manifest at the dotfiles copy
+_dotfiles_dir="/workspaces/.codespaces/.persistedshare/dotfiles"
+if [[ -f "$_dotfiles_dir/agents/openskills-manifest.yml" ]]; then
+  export OPENSKILLS_MANIFEST_PATH="$_dotfiles_dir/agents/openskills-manifest.yml"
+fi

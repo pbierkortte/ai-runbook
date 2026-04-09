@@ -1,0 +1,16 @@
+#!/bin/bash
+# shell-hooks.sh
+# Hooks agents-collate into shell startup so agents always see fresh indexes.
+
+COLLATE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/agents-collate.sh"
+LINE="[ -f \"$COLLATE\" ] && bash \"$COLLATE\""
+
+for rc in ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zprofile; do
+  grep -qsF "$LINE" "$rc" || echo "$LINE" >> "$rc"
+done
+
+# BASH_ENV makes non-interactive bash source .bashrc so collate runs
+BASH_ENV_LINE='export BASH_ENV="$HOME/.bashrc"'
+for rc in ~/.bashrc ~/.bash_profile; do
+  grep -qsF "$BASH_ENV_LINE" "$rc" || echo "$BASH_ENV_LINE" >> "$rc"
+done
