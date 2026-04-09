@@ -59,8 +59,11 @@ for rc in ~/.bashrc ~/.bash_profile; do
   grep -qsF "$BASH_ENV_LINE" "$rc" || echo "$BASH_ENV_LINE" >> "$rc"
 done
 
-# In Codespaces, point the manifest at the workspace copy
-[ -n "${GITHUB_REPOSITORY:-}" ] && export OPENSKILLS_MANIFEST_PATH="/workspaces/${GITHUB_REPOSITORY#*/}/agents/openskills-manifest.yml"
+# In Codespaces, point the manifest at the dotfiles copy
+_dotfiles_dir="/workspaces/.codespaces/.persistedshare/dotfiles"
+if [[ -f "$_dotfiles_dir/agents/openskills-manifest.yml" ]]; then
+  export OPENSKILLS_MANIFEST_PATH="$_dotfiles_dir/agents/openskills-manifest.yml"
+fi
 
 # Run the OpenSkills manifest to install per-skill metadata
 OPENSKILLS="$(cd "$(dirname "$0")" && pwd)/openskills-manifest.sh"

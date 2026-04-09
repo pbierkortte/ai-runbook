@@ -40,8 +40,8 @@ elif [[ -f "$HOME/$manifest_path" ]]; then
 elif [[ -f "$manifest_path" ]]; then
   manifest="$manifest_path"
 else
-  echo "error: openskills manifest not found" >&2
-  exit 1
+  echo "warning: openskills manifest not found, skipping" >&2
+  exit 0
 fi
 
 
