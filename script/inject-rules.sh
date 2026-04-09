@@ -16,7 +16,9 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RULES_DIR="$DIR/../rules"
 
 # Determine the target workspace
-if [[ -n "${GITHUB_REPOSITORY:-}" ]]; then
+# GITHUB_REPOSITORY is set in both Codespaces and GitHub Actions
+# Only use /workspaces path when the directory exists (Codespaces)
+if [[ -n "${GITHUB_REPOSITORY:-}" ]] && [[ -d "/workspaces/$(basename "$GITHUB_REPOSITORY")" ]]; then
   TARGET="/workspaces/$(basename "$GITHUB_REPOSITORY")"
 else
   TARGET="$(find /workspaces -mindepth 1 -maxdepth 1 -type d 2>/dev/null | head -1)"
