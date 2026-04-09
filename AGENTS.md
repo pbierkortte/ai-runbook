@@ -37,19 +37,24 @@
 #### Links
 
 # mind_dump.md
-## Mind Dump — Context Debug Snapshot
-- Identity
-- System Information
-- Context Window
-- Current Task
-- Available Tools
-- Available Skills
-- Detected CLI Tools
-- Workspace Configuration
-- Project File Structure
-- Active Terminals
-- Open Files / Tabs
-- Conversation History (this session)
-- Key Behavioral Rules (summary)
-- MCP Servers
+## Mind Dump — Debug Context Snapshot
+### Identity
+### System Information
+### Workspace Configuration
+### Current Task
+### Task Progress
+### Project: ai-runbook
+- Purpose
+- File Structure (at time of snapshot)
+### AGENTS.md Rules in Effect
+- From `/workspaces/ai-runbook/AGENTS.md`
+- From `/workspaces/ai-runbook/docs/AGENTS.md`
+### Available Skills
+### Available Tools (Cline)
+### Detected CLI Tools
+### Active Terminals
+### Open Files / Tabs
+### Conversation History (this session)
+### Key Behavioral Rules (summary)
+### MCP Servers
 
