@@ -60,9 +60,9 @@ if [[ -n "$has_remote" ]]; then
     subpath=$(yq ".[$i].subpath" "$manifest")
     install_path="${repo}/${subpath}"
     echo "Installing: $install_path"
-    npx openskills install -g -u -y "$install_path" || echo "  ⚠ Failed: $install_path"
+    npx -y openskills install -g -u -y "$install_path" || echo "  ⚠ Failed: $install_path"
   done
 else
   # Local: SKILL.md files exist in current tree
-  npx openskills install -g -u -y ./
+  npx -y openskills install -g -u -y ./
 fi
