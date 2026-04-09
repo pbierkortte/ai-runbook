@@ -1,0 +1,4 @@
+{
+  "name": "ai-runbook",
+  "postCreateCommand": "bash script/bootstrap"
+}
