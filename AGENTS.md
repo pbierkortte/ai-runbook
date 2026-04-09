@@ -45,7 +45,3 @@
 #### Ecosystem 
 #### Links
 
-# TEST_RULES.md
-## Test Rules
-- Verify injection pipeline
-
