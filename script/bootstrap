@@ -1,5 +1,7 @@
 #!/bin/bash
 # bootstrap
+# Exports AGENTS_INCLUDE_DIR so agents-collate.sh picks up personal AI rules
+# from the dotfiles repo (conventionally at $HOME/ai-runbook in Codespaces).
 #
 # Sets up an AI-friendly dev environment.
 # Installs tools, configures shells, and wires up skill dirs.
@@ -7,6 +9,8 @@
 # Usage: bash script/bootstrap
 
 set -euo pipefail
+
+export AGENTS_INCLUDE_DIR="${AGENTS_INCLUDE_DIR:-$HOME/ai-runbook}"
 
 # Dependencies
 # Install yq if missing (also in openskills-manifest.sh for standalone use)
