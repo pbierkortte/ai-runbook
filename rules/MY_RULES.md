@@ -10,6 +10,9 @@
 # This Document
 
 ## Maintain clear instructions
+### Head with noun: Name the subject being addressed
+### Lead with verb: State the action to take
+### Trail with effect: Enforce meaning beyond its parts
 ### Split compound ideas: Map instructions clearly
 ### Exclude text semicolons: Maintain uncluttered text
 ### Exclude long dashes: Prevent symbol encoding issues
