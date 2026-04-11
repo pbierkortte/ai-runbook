@@ -1,5 +1,5 @@
 #!/bin/bash
-# install-agents.sh
+# install-agents
 # Installs AI agents when credentials are available.
 
 # Install Cline if OPENROUTER_API_KEY is set

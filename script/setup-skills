@@ -1,5 +1,5 @@
 #!/bin/bash
-# setup-skills.sh
+# setup-skills
 # Creates a shared skills directory and symlinks it into each agent.
 #
 # Canonical location: ~/.agent/skills

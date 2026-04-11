@@ -1,5 +1,5 @@
 #!/bin/bash
-# agents-collate.sh 
+# agents-collate 
 #
 # A Card Catalog for AI Agents
 #
@@ -9,7 +9,7 @@
 # Scales to 1000s of docs with no context overhead and no special dbs.
 # No vector DB, no embeddings, just this script.
 #
-# Usage: bash script/agents-collate.sh
+# Usage: bash script/agents-collate
 
 set -euo pipefail
 

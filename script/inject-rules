@@ -1,5 +1,5 @@
 #!/bin/bash
-# inject-rules.sh
+# inject-rules
 #
 # Copies rules into the current project.
 #

@@ -1,4 +1,4 @@
-# update-manifest.sh generated DO NOT EDIT!
+# update-manifest generated DO NOT EDIT!
 - source: skills/audio-transcription
   sourceType: local
   localPath: skills/audio-transcription

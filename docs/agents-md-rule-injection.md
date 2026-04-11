@@ -22,4 +22,4 @@ Agents get full content without opening source files. AGENTS.md contains the ful
 
 ## Source
 
-MY_RULES.md lives in `rules/` and is copied to the project root by `script/inject-rules.sh`. The collate script lives at `script/agents-collate.sh`. Both run in sequence via `script/dev-setup.sh`.
+MY_RULES.md lives in `rules/` and is copied to the project root by `script/inject-rules`. The collate script lives at `script/agents-collate`. Both run in sequence via `script/dev-setup`.

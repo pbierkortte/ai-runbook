@@ -1,5 +1,5 @@
 #!/bin/bash
-# install-deps.sh
+# install-deps
 # Installs required tools (yq) if missing.
 
 _bindir="${HOME}/.local/bin"

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# update-manifest.sh — Manifest Generator
+# openskills-manifest — Skills Metadata Generator
 #
-# Gathers skill directories into agents/openskills-manifest.yml.
-# Reverse of script/openskills-manifest.sh which splits it back out.
+# Splits agents/openskills-manifest.yml into per-skill .openskills.json
+# files then runs openskills install.
 #
-# Usage: bash script/update-manifest.sh
+# Usage: bash script/openskills-manifest
 #
 set -euo pipefail
 
@@ -44,9 +44,25 @@ else
   exit 0
 fi
 
-output="# update-manifest.sh generated DO NOT EDIT!"
-output+=$'\n'$(find skills -name SKILL.md -printf '%h\n' | sort |
-  jq -R '{source: ., sourceType: "local", localPath: .}' |
-  jq -s '.' | yq -P -p=json '.')
 
-echo "$output" > "$manifest"
+for dir in $(yq '.[].source' "$manifest"); do
+  mkdir -p "$dir"
+  yq -o=json ".[] | select(.source == \"$dir\")" "$manifest" > "$dir/.openskills.json"
+done
+
+# Check if manifest has remote entries (repoUrl) or local entries
+has_remote=$(yq '.[0].repoUrl // ""' "$manifest")
+if [[ -n "$has_remote" ]]; then
+  # Remote: install each skill individually by owner/repo/subpath
+  count=$(yq 'length' "$manifest")
+  for i in $(seq 0 $((count - 1))); do
+    repo=$(yq ".[$i].repoUrl" "$manifest" | sed 's|https://github.com/||')
+    subpath=$(yq ".[$i].subpath" "$manifest")
+    install_path="${repo}/${subpath}"
+    echo "Installing: $install_path"
+    npx -y openskills install -g -u -y "$install_path" || echo "  ⚠ Failed: $install_path"
+  done
+else
+  # Local: SKILL.md files exist in current tree
+  npx -y openskills install -g -u -y ./
+fi

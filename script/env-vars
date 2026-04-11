@@ -1,5 +1,5 @@
 #!/bin/bash
-# env-vars.sh
+# env-vars
 # AI-friendly environment defaults.
 # Suppresses pagers and noisy output so agents parse stdout cleanly.
 

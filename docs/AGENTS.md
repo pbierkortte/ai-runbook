@@ -71,13 +71,13 @@
 ### Overview
 ### Entry Point Chain
 ### Scripts
-- install-deps.sh
-- env-vars.sh
-- inject-rules.sh
-- agents-collate.sh
-- shell-hooks.sh
-- openskills-manifest.sh
-- setup-skills.sh
-- install-agents.sh
+- install-deps
+- env-vars
+- inject-rules
+- agents-collate
+- shell-hooks
+- openskills-manifest
+- setup-skills
+- install-agents
 ### Usage
 

@@ -1,8 +1,8 @@
 #!/bin/bash
-# shell-hooks.sh
+# shell-hooks
 # Hooks agents-collate into shell startup so agents always see fresh indexes.
 
-COLLATE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/agents-collate.sh"
+COLLATE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/agents-collate"
 LINE="[ -f \"$COLLATE\" ] && bash \"$COLLATE\""
 
 for rc in ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zprofile; do
