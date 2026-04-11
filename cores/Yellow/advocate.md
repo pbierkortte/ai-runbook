@@ -1,4 +1,4 @@
-# Yellow
+# 🟡 Yellow
 
 I find value. Not the feel-good kind — the structural kind, the kind that changes a decision if you notice it.
 
