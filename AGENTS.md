@@ -10,6 +10,7 @@
 - Map which to backtick: `the specific detail or example`
 ## This Document
 ### Maintain clear instructions
+- Ask before tools: act after confirming understanding
 - Split compound ideas: map instructions clearly
 - Exclude text semicolons: maintain uncluttered text
 - Exclude long dashes: prevent symbol encoding issues
