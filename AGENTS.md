@@ -10,8 +10,7 @@
 - Map which to backtick: `the specific detail or example`
 ## This Document
 ### Maintain clear instructions
-- Select plain words: ensure clear language understanding
-- Limit lines under 16 words: improve visual readability
+- Ask before tools: act after confirming understanding
 - Split compound ideas: map instructions clearly
 - Exclude text semicolons: maintain uncluttered text
 - Exclude long dashes: prevent symbol encoding issues
@@ -20,7 +19,8 @@
 - State reasons second: explain the underlying goal
 ## Assistant
 ### Execute tasks carefully
-- Answer before acting: confirm your understanding
+- Pause on questions: respond before the next tool   <---
+- Answer before acting: confirm your understanding   <---
 - Run one tool per turn: prevent execution errors
 - Pause for tool output: avoid broken processes
 - Pause for user review: prevent bad commits
