@@ -14,6 +14,8 @@ A dotfiles repo that treats AI agent behavior as infrastructure.
 - Treat agent behavior like infrastructure.
 - Keep it versioned, diffable, and deployable.
 - Let naming conventions and file placement do the work of configuration.
+- Treat the workspace as disposable.
+- Use the repo as the only persistence.
 
 ## Usage
 
