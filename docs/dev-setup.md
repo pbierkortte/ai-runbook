@@ -13,7 +13,7 @@ bootstrap
   dev-setup
     install-deps
     env-vars
-    inject-rules
+    stage-protocols
     agents-collate
     shell-hooks
     openskills-manifest
@@ -35,19 +35,18 @@ Sets AI-friendly environment defaults.
 Suppresses pagers and noisy output so agents parse stdout cleanly.
 Sets `OPENSKILLS_MANIFEST_PATH` when the Codespaces dotfiles path exists.
 
-### inject-rules
+### stage-protocols
 
-Copies personal rule files into the target workspace root.
+Stages protocol files into the target workspace root.
 Derives the target from `$GITHUB_REPOSITORY` or the first `/workspaces` directory.
-Detects self mode when the target workspace has `rules/MY_RULES.md`.
-In self mode, copies all `*RULES.md` files to the project root.
-In sidecar mode, copies only `MY_RULES.md` to the target workspace.
-Works for any repo name.
+Scans `protocols/*/PROTOCOL.md` and copies each to root as `<dirname>_PROTOCOLS.md`.
+Works in both sidecar mode and self mode.
+Staged files are gitignored so they never pollute commits.
 
 ### agents-collate
 
 Regenerates all AGENTS.md files from markdown headings.
-Runs after inject-rules so copied files are included in the index.
+Runs after stage-protocols so staged files are included in the index.
 Processes each directory that contains an AGENTS.md file.
 
 ### shell-hooks

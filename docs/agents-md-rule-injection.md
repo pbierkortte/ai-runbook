@@ -6,7 +6,7 @@ Heading-only files pass through the collate process completely. Some markdown fi
 
 ## Purpose
 
-Every rule must reach agents. Files like RULES.md contain rules that agents must follow. Every line matters so every line must be surfaced.
+Every rule must reach agents. Protocol files contain rules that agents must follow. Every line matters so every line must be surfaced.
 
 ## Mechanism
 
@@ -14,7 +14,7 @@ Collate extracts lines starting with `#`. A file with only headings has every li
 
 ## Execution Order
 
-The inject-rules script copies MY_RULES.md to the target project root. The collate script runs after to generate AGENTS.md files. This order matters so the file is processed once at its destination.
+The stage-protocols script copies protocol files to the target project root. The collate script runs after to generate AGENTS.md files. This order matters so the files are processed once at their destination.
 
 ## Effect
 
@@ -22,4 +22,4 @@ Agents get full content without opening source files. AGENTS.md contains the ful
 
 ## Source
 
-MY_RULES.md lives in `rules/` and is copied to the project root by `script/inject-rules`. The collate script lives at `script/agents-collate`. Both run in sequence via `script/dev-setup`.
+Protocol files live in `protocols/*/PROTOCOL.md` and are staged to root as `<dirname>_PROTOCOLS.md` by `script/stage-protocols`. The collate script lives at `script/agents-collate`. Both run in sequence via `script/dev-setup`.

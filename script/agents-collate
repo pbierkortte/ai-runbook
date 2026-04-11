@@ -37,7 +37,8 @@ for f in **/AGENTS.md; do
 
         # Output file heading and extracted headings
         {
-          echo "# $md"
+          title="$(printf '%s' "${md%.md}" | tr -cs 'a-zA-Z' ' ')"
+          echo "# $title"
           awk -v max_depth="$max_depth" '
             /^ *```/ { in_code = !in_code; next }
             !in_code && /^ *#/ {
