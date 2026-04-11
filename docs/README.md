@@ -150,6 +150,9 @@ One who wears many hats.
 #### Green
 - [Green](cores/Green/writer.md)
 
+#### Grey
+- [Urok](cores/Grey/coder.md)
+
 #### Maya
 - [Designer](cores/Maya/designer.md)
 - [Tester](cores/Maya/tester.md)
