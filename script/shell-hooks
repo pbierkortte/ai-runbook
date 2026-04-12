@@ -27,6 +27,7 @@ done
 [ -f "$DOTFILES_ROOT/script/hydrate-agents" ] && bash "$DOTFILES_ROOT/script/hydrate-agents"
 EOF
 } > ~/.dotfilesrc
+chmod +x ~/.dotfilesrc
 
 LINE='[ -f ~/.dotfilesrc ] && source ~/.dotfilesrc'
 
