@@ -22,4 +22,4 @@ Agents get full content without opening source files. AGENTS.md contains the ful
 
 ## Source
 
-Protocol files live in `protocols/*/PROTOCOL.md` and are staged to root as `<dirname>_PROTOCOLS.md` by `script/stage-protocols`. `script/hydrate-agents` runs after. Both run in sequence via `script/setup-dev`.
+Protocol files live in `protocols/*/PROTOCOL.md` and are staged to root as `<dirname>_PROTOCOLS.md` by `script/stage-protocols`. `script/hydrate-agents` runs after. Both run in sequence via `script/bootstrap`.
