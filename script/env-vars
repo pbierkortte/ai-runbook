@@ -3,6 +3,8 @@
 # AI-friendly environment defaults.
 # Suppresses pagers and noisy output so agents parse stdout cleanly.
 
+set -euo pipefail
+
 # Git: disable pager and use a simple editor
 command -v git &>/dev/null && export GIT_PAGER=cat GIT_EDITOR="nano"
 

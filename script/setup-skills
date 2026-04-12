@@ -7,6 +7,8 @@
 # ~/.cline/skills  -> ~/.agent/skills
 # ~/.claude/skills -> ~/.agent/skills
 
+set -euo pipefail
+
 # Canonical skills dir
 mkdir -p "$HOME/.agent/skills"
 

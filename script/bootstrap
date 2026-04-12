@@ -6,17 +6,15 @@
 # Usage: bash script/bootstrap
 
 set -euo pipefail
-
-DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
-
-cd "$DIR"
+SCRIPT_PATH=$"(readlink -f "$0")"
+cd "$SCRIPT_PATH/script"
 
 source env-vars
 source setup-git
 source setup-skills
 source install-deps
 source install-agents
-cd "$DIR" && source openskills-manifest
-cd "$DIR" && source stage-protocols
-cd "$DIR" && source hydrate-agents
-cd "$DIR" && source shell-hooks
+source openskills-manifest
+source stage-protocols
+source hydrate-agents
+source shell-hooks

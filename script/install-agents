@@ -2,6 +2,8 @@
 # install-agents
 # Installs AI agents when credentials are available.
 
+set -euo pipefail
+
 # Install Cline if OPENROUTER_API_KEY is set
 if [ -n "${OPENROUTER_API_KEY:-}" ]; then
   npm i -g cline

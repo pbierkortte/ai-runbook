@@ -2,6 +2,8 @@
 # install-deps
 # Installs required tools (yq) if missing.
 
+set -euo pipefail
+
 _bindir="${HOME}/.local/bin"
 mkdir -p "$_bindir"
 if [[ ! -f "${_bindir}/yq" ]]; then
