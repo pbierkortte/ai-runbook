@@ -22,15 +22,13 @@ SCRIPT_PATH="$(readlink -f "$0")"
 PROTOCOLS_DIR="$(dirname "$SCRIPT_PATH")/../protocols"
 
 # Determine the target workspace
-# GITHUB_REPOSITORY is set in both Codespaces and GitHub Actions
-# Only use /workspaces path when the directory exists (Codespaces)
-if [[ -n "${GITHUB_REPOSITORY:-}" ]] && [[ -d "/workspaces/$(basename "$GITHUB_REPOSITORY")" ]]; then
-  TARGET="/workspaces/$(basename "$GITHUB_REPOSITORY")"
-elif [[ -d /workspaces ]]; then
-  TARGET="$(find /workspaces -mindepth 1 -maxdepth 1 -type d 2>/dev/null | head -1)"
-  TARGET="${TARGET:-$PWD}"
+# Default: derive repo root from script location
+# Override: GITHUB_REPOSITORY env var points to the workspace
+REPO_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
+if [[ -n "${GITHUB_REPOSITORY:-}" ]] && [[ -d "$(dirname "$REPO_ROOT")/$(basename "$GITHUB_REPOSITORY")" ]]; then
+  TARGET="$(dirname "$REPO_ROOT")/$(basename "$GITHUB_REPOSITORY")"
 else
-  TARGET="$PWD"
+  TARGET="$REPO_ROOT"
 fi
 
 REPO_NAME="$(basename "$TARGET")"
