@@ -22,4 +22,4 @@ Agents get full content without opening source files. AGENTS.md contains the ful
 
 ## Source
 
-Protocol files live in `protocols/*/PROTOCOL.md` and are staged to root as `<dirname>_PROTOCOLS.md` by `script/stage-protocols`. The collate script lives at `script/agents-collate`. Both run in sequence via `script/dev-setup`.
+Protocol files live in `protocols/*/PROTOCOL.md` and are staged to root as `<dirname>_PROTOCOLS.md` by `script/stage-protocols`. The collate script lives at `script/agents-collate`. Both run in sequence via `script/setup-dev`.

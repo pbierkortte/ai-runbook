@@ -3,14 +3,14 @@
 ## Overview
 
 `script/bootstrap` is the public entry point for setup.
-It sources `script/dev-setup`, which orchestrates the full setup in order.
-`dev-setup` sources each focused script as a step.
+It sources `script/setup-dev`, which orchestrates the full setup in order.
+`setup-dev` sources each focused script as a step.
 
 ## Entry Point Chain
 
 ```
 bootstrap
-  dev-setup
+  setup-dev
     install-deps
     env-vars
     stage-protocols
@@ -83,7 +83,7 @@ bash script/bootstrap
 Or run the orchestrator directly:
 
 ```bash
-bash script/dev-setup
+bash script/setup-dev
 ```
 
 Both produce the same result.

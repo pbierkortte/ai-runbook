@@ -16,8 +16,8 @@ jobs:
         run: bash script/update-contents
       - name: Update Manifest
         run: bash script/update-manifest
-      - name: Dev Setup
-        run: bash script/dev-setup
+      - name: Setup Dev
+        run: bash script/setup-dev
       - name: Commit changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"

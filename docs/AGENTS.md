@@ -67,7 +67,7 @@
 - Why Refresh Token Over Access Token
 - The Docs
 
-# dev setup
+# setup dev
 ## Dev Setup
 ### Overview
 ### Entry Point Chain

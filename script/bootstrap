@@ -6,4 +6,4 @@
 #
 # Usage: bash script/bootstrap
 
-source "$(dirname "${BASH_SOURCE[0]}")/dev-setup"
+source "$(dirname "${BASH_SOURCE[0]}")/setup-dev"

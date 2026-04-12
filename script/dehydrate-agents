@@ -1,0 +1,16 @@
+#!/bin/bash
+# dehydrate-agents
+#
+# Blanks all AGENTS.md files found from where you run it.
+# Prepares for re-hydration via hydrate-agents.
+#
+# Usage: bash script/dehydrate-agents
+
+set -euo pipefail
+
+shopt -s globstar nocaseglob nullglob
+
+for f in **/AGENTS.md; do
+  [ -L "$f" ] && continue
+  > "$f"
+done

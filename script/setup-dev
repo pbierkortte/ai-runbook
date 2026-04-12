@@ -1,9 +1,9 @@
 #!/bin/bash
-# dev-setup
+# setup-dev
 # Sets up an AI-friendly dev environment.
 # Installs tools, configures shells, and wires up skill dirs.
 #
-# Usage: bash script/dev-setup
+# Usage: bash script/setup-dev
 
 set -euo pipefail
 
@@ -12,7 +12,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$DIR/install-deps"
 source "$DIR/env-vars"
 bash "$DIR/stage-protocols"
-bash "$DIR/agents-collate"
+bash "$DIR/hydrate-agents"
 source "$DIR/shell-hooks"
 source "$DIR/setup-skills"
 source "$DIR/openskills-manifest"
