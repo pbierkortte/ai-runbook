@@ -13,15 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: echo script >> $GITHUB_PATH
-      - name: Hydrate Agents
-        run: hydrate-agents
-      - name: Update Contents
-        run: update-contents
-      - name: Update Manifest
-        run: update-manifest
-      - name: Setup Dev
-        run: setup-dev
-      - name: Dehydrate Agents
-        run: dehydrate-agents
-      - name: Commit changes
-        run: commit-changes
+      - run: hydrate-agents
+      - run: update-contents
+      - run: update-manifest
+      - run: setup-dev
+      - run: dehydrate-agents
+      - run: commit-changes
