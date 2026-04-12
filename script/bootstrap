@@ -9,4 +9,14 @@ set -euo pipefail
 
 DIR="$(realpath "${BASH_SOURCE%/*}")"
 
-source "$DIR/shell-hooks"
+cd "$DIR"
+
+source env-vars
+source setup-git
+source setup-skills
+source install-deps
+source install-agents
+source openskills-manifest
+source stage-protocols
+source hydrate-agents
+source shell-hooks
