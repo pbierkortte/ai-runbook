@@ -8,11 +8,6 @@ SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 SCRIPT_DIR="$(dirname "$SCRIPT_PATH")"
 DOTFILES_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-# Remove old direct hydrate-agents hooks
-for rc in ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zprofile; do
-  [ -f "$rc" ] && sed -i '/hydrate-agents/d' "$rc"
-done
-
 # Copy .dotfilesrc to ~ with DOTFILES_ROOT injected
 {
   echo "DOTFILES_ROOT=\"$DOTFILES_ROOT\""
