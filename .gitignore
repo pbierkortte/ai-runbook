@@ -10,3 +10,6 @@
 skills/**/.openskills.json
 .protocols/
 .checkpoints/
+
+/.*PROTOCOL.md
+/*PROTOCOL.md
