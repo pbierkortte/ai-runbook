@@ -1,0 +1,14 @@
+#!/bin/bash
+# commit-changes
+# Commits and pushes any staged changes made by generated file scripts.
+# No-ops cleanly if there is nothing to commit.
+#
+# Usage: bash script/commit-changes
+
+set -euo pipefail
+
+git config --global user.email "github-actions[bot]@users.noreply.github.com"
+git config --global user.name "github-actions[bot]"
+git add -A
+git diff --cached --quiet || git commit -m "Update generated files"
+git push
