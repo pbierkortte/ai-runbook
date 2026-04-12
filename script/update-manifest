@@ -9,6 +9,9 @@
 #
 set -euo pipefail
 
+DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
+cd "$DIR/.."
+
 _bindir="${HOME}/.local/bin"
 mkdir -p "$_bindir"
 if [[ ! -f "${_bindir}/yq" ]]; then

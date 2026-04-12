@@ -16,7 +16,7 @@
 #   - Stages protocols into the project root.
 #   - Detected when the target workspace has a protocols/ directory.
 
-DIR="$(realpath "${BASH_SOURCE%/*}")"
+DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 PROTOCOLS_DIR="$DIR/../protocols"
 
 # Determine the target workspace

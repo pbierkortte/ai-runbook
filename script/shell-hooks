@@ -2,7 +2,7 @@
 # shell-hooks
 # Hooks hydrate-agents into shell startup so agents always see fresh indexes.
 
-DIR="$(realpath "${BASH_SOURCE%/*}")"
+DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 HYDRATE="$DIR/hydrate-agents"
 LINE="[ -f \"$HYDRATE\" ] && bash \"$HYDRATE\""
 

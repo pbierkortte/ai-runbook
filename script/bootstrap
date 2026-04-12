@@ -7,7 +7,7 @@
 
 set -euo pipefail
 
-DIR="$(realpath "${BASH_SOURCE%/*}")"
+DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 cd "$DIR"
 
@@ -16,7 +16,7 @@ source setup-git
 source setup-skills
 source install-deps
 source install-agents
-source openskills-manifest
-source stage-protocols
-source hydrate-agents
-source shell-hooks
+cd "$DIR" && source openskills-manifest
+cd "$DIR" && source stage-protocols
+cd "$DIR" && source hydrate-agents
+cd "$DIR" && source shell-hooks

@@ -13,6 +13,9 @@
 
 set -euo pipefail
 
+DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
+cd "$DIR/.."
+
 shopt -s globstar nocaseglob nullglob
 
 for f in **/AGENTS.md; do
