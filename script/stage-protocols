@@ -27,5 +27,4 @@ for proto in "${PROJECT_PROTOCOLS[@]}" "${DOTFILES_PROTOCOLS[@]}"; do
   
   dest="$TARGET/${prefix}${dirname^^}_PROTOCOL.md"
   cp "$proto" "$dest"
-  echo "stage-protocols: staged $proto → $dest"
 done
