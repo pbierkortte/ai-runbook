@@ -7,14 +7,12 @@ on:
 permissions:
   contents: write
 
-env:
-  GITHUB_PATH: script
-
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - run: echo script >> $GITHUB_PATH
       - name: Hydrate Agents
         run: hydrate-agents
       - name: Update Contents
