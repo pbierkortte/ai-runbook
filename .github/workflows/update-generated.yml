@@ -12,15 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Add scripts to PATH
+        run: echo "script" >> $GITHUB_PATH
       - name: Hydrate Agents
-        run: ./script/hydrate-agents
+        run: hydrate-agents
       - name: Update Contents
-        run: ./script/update-contents
+        run: update-contents
       - name: Update Manifest
-        run: ./script/update-manifest
+        run: update-manifest
       - name: Setup Dev
-        run: ./script/setup-dev
+        run: setup-dev
       - name: Dehydrate Agents
-        run: ./script/dehydrate-agents
+        run: dehydrate-agents
       - name: Commit changes
-        run: ./script/commit-changes
+        run: commit-changes
