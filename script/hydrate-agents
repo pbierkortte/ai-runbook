@@ -16,7 +16,7 @@ SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 
 cd "$(dirname "$SCRIPT_PATH")/.."
 
-shopt -s globstar nocaseglob nullglob
+shopt -s globstar nocaseglob nullglob dotglob
 
 for f in **/AGENTS.md; do
   [ -L "$f" ] && continue

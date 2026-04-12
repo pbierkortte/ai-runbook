@@ -19,7 +19,9 @@
 set -euo pipefail
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 
-PROTOCOLS_DIR="$(dirname "$SCRIPT_PATH")/../protocols"
+DOTFILES_PROTOCOLS_DIR="$(dirname "$SCRIPT_PATH")/../protocols"
+mkdir -p "$DOTFILES_PROTOCOLS_DIR"
+DOTFILES_PROTOCOLS_DIR="$(readlink -f "$DOTFILES_PROTOCOLS_DIR")"
 
 # Determine the target workspace
 # Default: derive repo root from script location
@@ -32,8 +34,23 @@ else
 fi
 
 REPO_NAME="$(basename "$TARGET")"
+PROTOCOLS_DIR="$TARGET/protocols"
+
+rm -f "$TARGET/.protocols"
+ln -s "$DOTFILES_PROTOCOLS_DIR" "$TARGET/.protocols"
 
 staged=0
+
+# .protocols/ → dot name
+for proto in "$DOTFILES_PROTOCOLS_DIR"/*/PROTOCOL.md; do
+  [[ -f "$proto" ]] || continue
+  dirname="$(basename "$(dirname "$proto")")"
+  upper="${dirname^^}"
+  cp "$proto" "$TARGET/.${upper}_PROTOCOLS.md"
+  staged=$((staged + 1))
+done
+
+# protocols/ → no dot name
 for proto in "$PROTOCOLS_DIR"/*/PROTOCOL.md; do
   [[ -f "$proto" ]] || continue
   dirname="$(basename "$(dirname "$proto")")"
@@ -45,3 +62,5 @@ done
 if [[ "$staged" -gt 0 ]]; then
   echo "stage-protocols: staged $staged protocol(s) to $REPO_NAME"
 fi
+
+
