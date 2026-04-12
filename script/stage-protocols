@@ -1,74 +1,35 @@
 #!/bin/bash
 # stage-protocols
 #
-# Stages protocol files into the target workspace root.
+# Stages protocol files from dotfiles and project into the target repo root.
 #
-# Scans protocols/*/PROTOCOL.md and copies each to root as <dirname>_PROTOCOLS.md.
-# Gitignore keeps staged files out of commits.
-# Collate indexes them into AGENTS.md so agents see everything.
+# Scans protocols/*/PROTOCOL.md from the dotfiles repo and the target project.
+# Copies each to the target root as DIRNAME.md, preserving a leading dot if the source dir has one.
+# hydrate-agents picks them up naturally since the root already has AGENTS.md.
 #
-# Sidecar mode (running from a dotfiles clone):
-#   - Stages protocols into the target workspace.
-#   - Works for any repo name.
-#   - Silently skips if no protocols exist.
+# Sidecar mode: set GITHUB_REPOSITORY to the target repo name before running.
 #
-# Self mode (running inside the sidecar repo itself):
-#   - Stages protocols into the project root.
-#   - Detected when the target workspace has a protocols/ directory.
+# Usage: bash script/stage-protocols
 
 set -euo pipefail
-SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+shopt -s globstar nocaseglob nullglob dotglob
 
-DOTFILES_PROTOCOLS_DIR="$(dirname "$SCRIPT_PATH")/../protocols"
-mkdir -p "$DOTFILES_PROTOCOLS_DIR"
-DOTFILES_PROTOCOLS_DIR="$(readlink -f "$DOTFILES_PROTOCOLS_DIR")"
+SCRIPT_PATH="$(readlink -f "$0")"
+DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
+DOTFILES_PROTOCOLS="$DOTFILES_ROOT/protocols"
+TARGET="$DOTFILES_ROOT"
 
-# Determine the target workspace
-# Default: derive repo root from script location
-# Override: GITHUB_REPOSITORY env var points to the workspace
-REPO_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
-if [[ -n "${GITHUB_REPOSITORY:-}" ]] && [[ -d "$(dirname "$REPO_ROOT")/$(basename "$GITHUB_REPOSITORY")" ]]; then
-  TARGET="$(dirname "$REPO_ROOT")/$(basename "$GITHUB_REPOSITORY")"
-else
-  TARGET="$REPO_ROOT"
+if [[ -n "${GITHUB_REPOSITORY:-}" ]] && [[ -d "$(dirname "$DOTFILES_ROOT")/$(basename "$GITHUB_REPOSITORY")" ]]; then
+  TARGET="$(dirname "$DOTFILES_ROOT")/$(basename "$GITHUB_REPOSITORY")"
 fi
 
-REPO_NAME="$(basename "$TARGET")"
-PROTOCOLS_DIR="$TARGET/protocols"
-
-# Staged protocols land in a hidden dir with its own AGENTS.md
-# so hydrate-agents indexes them cleanly by dir name
-STAGED_DIR="$TARGET/.protocols-staged"
-rm -rf "$STAGED_DIR"
-mkdir -p "$STAGED_DIR"
-touch "$STAGED_DIR/AGENTS.md"
-
-staged=0
-
-# sidecar mode only: symlink .protocols/ to dotfiles and stage dot-prefixed files
-if [[ "$TARGET" != "$REPO_ROOT" ]]; then
-  rm -f "$TARGET/.protocols"
-  ln -s "$DOTFILES_PROTOCOLS_DIR" "$TARGET/.protocols"
-
-  # dotfiles protocols → .DIRNAME.md (hidden)
-  for proto in "$DOTFILES_PROTOCOLS_DIR"/*/PROTOCOL.md; do
-    [[ -f "$proto" ]] || continue
-    dirname="$(basename "$(dirname "$proto")")"
-    cp "$proto" "$STAGED_DIR/.${dirname^^}.md"
-    staged=$((staged + 1))
-  done
-fi
-
-# project protocols → DIRNAME.md
-for proto in "$PROTOCOLS_DIR"/*/PROTOCOL.md; do
-  [[ -f "$proto" ]] || continue
+for proto in "$DOTFILES_PROTOCOLS"/*/PROTOCOL.md "$TARGET/protocols"/*/PROTOCOL.md; do
   dirname="$(basename "$(dirname "$proto")")"
-  cp "$proto" "$STAGED_DIR/${dirname^^}.md"
-  staged=$((staged + 1))
+  if [[ "$dirname" == .* ]]; then
+    dest="$TARGET/.${dirname^^}.md"
+  else
+    dest="$TARGET/${dirname^^}.md"
+  fi
+  cp "$proto" "$dest"
+  echo "stage-protocols: staged $(basename "$dest") to $(basename "$TARGET")"
 done
-
-if [[ "$staged" -gt 0 ]]; then
-  echo "stage-protocols: staged $staged protocol(s) to $REPO_NAME"
-fi
-
-
