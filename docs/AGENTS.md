@@ -75,7 +75,7 @@
 - install-deps
 - env-vars
 - stage-protocols
-- agents-collate
+- hydrate-agents
 - shell-hooks
 - openskills-manifest
 - setup-skills

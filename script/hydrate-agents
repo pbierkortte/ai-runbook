@@ -1,5 +1,5 @@
 #!/bin/bash
-# agents-collate 
+# hydrate-agents
 #
 # A Card Catalog for AI Agents
 #
@@ -9,7 +9,7 @@
 # Scales to 1000s of docs with no context overhead and no special dbs.
 # No vector DB, no embeddings, just this script.
 #
-# Usage: bash script/agents-collate
+# Usage: bash script/hydrate-agents
 
 set -euo pipefail
 

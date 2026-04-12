@@ -125,7 +125,7 @@ Bootstrap hooks collate into shell startup by appending a trigger to each RC fil
 Run it manually with:
 
 ```sh
-source script/agents-collate
+source script/hydrate-agents
 ```
 
 ## Contents

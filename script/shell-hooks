@@ -1,8 +1,8 @@
 #!/bin/bash
 # shell-hooks
-# Hooks agents-collate into shell startup so agents always see fresh indexes.
+# Hooks hydrate-agents into shell startup so agents always see fresh indexes.
 
-COLLATE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/agents-collate"
+COLLATE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/hydrate-agents"
 LINE="[ -f \"$COLLATE\" ] && bash \"$COLLATE\""
 
 for rc in ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zprofile; do

@@ -14,7 +14,7 @@ bootstrap
     install-deps
     env-vars
     stage-protocols
-    agents-collate
+    hydrate-agents
     shell-hooks
     openskills-manifest
     setup-skills
@@ -43,7 +43,7 @@ Scans `protocols/*/PROTOCOL.md` and copies each to root as `<dirname>_PROTOCOLS.
 Works in both sidecar mode and self mode.
 Staged files are gitignored so they never pollute commits.
 
-### agents-collate
+### hydrate-agents
 
 Regenerates all AGENTS.md files from markdown headings.
 Runs after stage-protocols so staged files are included in the index.
