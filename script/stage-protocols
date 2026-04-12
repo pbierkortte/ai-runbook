@@ -11,23 +11,20 @@ shopt -s globstar nocaseglob nullglob dotglob
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
 TARGET="$DOTFILES_ROOT"
-
-# 1. Project Protocols
 PROJECT_PROTOCOLS=("$DOTFILES_ROOT"/protocols/*/PROTOCOL.md)
-for proto in "${PROJECT_PROTOCOLS[@]}"; do
-  dirname="$(basename "$(dirname "$proto")")"
-  dest="$TARGET/${dirname^^}_PROTOCOL.md"
-  cp "$proto" "$dest"
-  echo "stage-protocols: staged project $proto → $dest"
-done
-
-# 2. Dotfiles Protocols (if they exist)
-# Look for a dotfiles directory relative to the repository root
 DOTFILES_PERSISTED_DIR="$(cd "$DOTFILES_ROOT/.." && pwd)/dotfiles"
 DOTFILES_PROTOCOLS=("$DOTFILES_PERSISTED_DIR"/protocols/*/PROTOCOL.md)
-for proto in "${DOTFILES_PROTOCOLS[@]}"; do
+
+for proto in "${PROJECT_PROTOCOLS[@]}" "${DOTFILES_PROTOCOLS[@]}"; do
   dirname="$(basename "$(dirname "$proto")")"
-  dest="$TARGET/.${dirname^^}_PROTOCOL.md"
+  
+  if [[ "$proto" == *"$DOTFILES_PERSISTED_DIR"* ]]; then
+    prefix="."
+  else
+    prefix=""
+  fi
+  
+  dest="$TARGET/${prefix}${dirname^^}_PROTOCOL.md"
   cp "$proto" "$dest"
-  echo "stage-protocols: staged dotfiles $proto → $dest"
+  echo "stage-protocols: staged $proto → $dest"
 done
