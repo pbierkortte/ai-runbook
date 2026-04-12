@@ -1,31 +1,20 @@
 #!/bin/bash
 # stage-protocols
-#
-# Stages protocol files from dotfiles and project into the target repo root.
-#
-# Scans protocols/*/PROTOCOL.md from the dotfiles repo and the target project.
-# Copies each to the target root as DIRNAME_PROTOCOL.md.
-# hydrate-agents picks them up naturally since the root already has AGENTS.md.
-#
-# Sidecar mode: set GITHUB_REPOSITORY to the target repo name before running.
+# Copies protocols from protocols/ to the repo root as {DIRNAME}_PROTOCOL.md
+# so hydrate-agents can index them into AGENTS.md.
 #
 # Usage: bash script/stage-protocols
 
 set -euo pipefail
 shopt -s globstar nocaseglob nullglob dotglob
 
-SCRIPT_PATH="$(readlink -f "$0")"
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
-DOTFILES_PROTOCOLS="$DOTFILES_ROOT/protocols/*/PROTOCOL.md"
 TARGET="$DOTFILES_ROOT"
 
-if [[ -n "${GITHUB_REPOSITORY:-}" ]] && [[ -d "$(dirname "$DOTFILES_ROOT")/$(basename "$GITHUB_REPOSITORY")" ]]; then
-  TARGET="$(dirname "$DOTFILES_ROOT")/$(basename "$GITHUB_REPOSITORY")"
-fi
+DOTFILES_PROTOCOLS=("$DOTFILES_ROOT"/protocols/*/PROTOCOL.md)
 
-TARGET_PROTOCOLS="$TARGET/protocols/*/PROTOCOL.md"
-
-for proto in $DOTFILES_PROTOCOLS $TARGET_PROTOCOLS; do
+for proto in "${DOTFILES_PROTOCOLS[@]}"; do
   dirname="$(basename "$(dirname "$proto")")"
   dest="$TARGET/${dirname^^}_PROTOCOL.md"
   cp "$proto" "$dest"
