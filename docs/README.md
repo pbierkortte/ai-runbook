@@ -122,10 +122,18 @@ Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty
 
 Bootstrap hooks collate into shell startup by appending a trigger to each RC file. It also sets `BASH_ENV` so non-interactive shells pick it up.
 
-Run it manually with:
+AGENTS.md files are stored empty in the repo and hydrated at runtime. `script/dehydrate-agents` resets them back to empty before committing so diffs stay clean and content stays authoritative at runtime.
+
+Run hydration manually with:
 
 ```sh
-source script/hydrate-agents
+bash script/hydrate-agents
+```
+
+Run dehydration manually with:
+
+```sh
+bash script/dehydrate-agents
 ```
 
 ## Contents
