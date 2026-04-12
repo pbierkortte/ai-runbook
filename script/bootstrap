@@ -1,9 +1,20 @@
 #!/bin/bash
 # bootstrap
-#
 # Sets up an AI-friendly dev environment.
 # Installs tools, configures shells, and wires up skill dirs.
 #
 # Usage: bash script/bootstrap
 
-source "$(dirname "${BASH_SOURCE[0]}")/setup-dev"
+set -euo pipefail
+
+DIR="$(realpath "${BASH_SOURCE%/*}")"
+
+source "$DIR/install-deps"
+source "$DIR/env-vars"
+source "$DIR/stage-protocols"
+source "$DIR/setup-git"
+source "$DIR/hydrate-agents"
+source "$DIR/shell-hooks"
+source "$DIR/setup-skills"
+source "$DIR/openskills-manifest"
+source "$DIR/install-agents"
