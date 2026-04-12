@@ -23,8 +23,11 @@ done
 # Stages protocols then hydrates AGENTS.md so agents always see current state.
 # DOTFILES_ROOT is injected by shell-hooks when this file is copied to ~/.dotfilesrc.
 
-[ -f "$DOTFILES_ROOT/script/stage-protocols" ] && bash "$DOTFILES_ROOT/script/stage-protocols"
-[ -f "$DOTFILES_ROOT/script/hydrate-agents" ] && bash "$DOTFILES_ROOT/script/hydrate-agents"
+# Only run in agent-enabled repos
+if [ -f AGENTS.md ]; then
+  [ -f "$DOTFILES_ROOT/script/stage-protocols" ] && bash "$DOTFILES_ROOT/script/stage-protocols"
+  [ -f "$DOTFILES_ROOT/script/hydrate-agents" ] && bash "$DOTFILES_ROOT/script/hydrate-agents"
+fi
 EOF
 } > ~/.dotfilesrc
 chmod +x ~/.dotfilesrc
