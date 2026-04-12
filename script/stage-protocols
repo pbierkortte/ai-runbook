@@ -9,9 +9,16 @@
 set -euo pipefail
 shopt -s globstar nocaseglob nullglob dotglob
 
+TARGET="$(pwd)"
+
+# Only stage protocols if this is an agent-enabled repo
+if [ ! -f "$TARGET/AGENTS.md" ]; then
+  rm -f "$TARGET"/*_PROTOCOL.md
+  return 0 2>/dev/null || exit 0
+fi
+
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
-TARGET="$(pwd)"
 PROJECT_PROTOCOLS=("$DOTFILES_ROOT"/protocols/*/PROTOCOL.md)
 DOTFILES_PERSISTED_DIR="$(cd "$DOTFILES_ROOT/.." && pwd)/dotfiles"
 DOTFILES_PROTOCOLS=("$DOTFILES_PERSISTED_DIR"/protocols/*/PROTOCOL.md)
@@ -24,7 +31,7 @@ for proto in "${PROJECT_PROTOCOLS[@]}" "${DOTFILES_PROTOCOLS[@]}"; do
   else
     prefix=""
   fi
-  
+
   dest="$TARGET/${prefix}${dirname^^}_PROTOCOL.md"
   cp "$proto" "$dest"
 done
