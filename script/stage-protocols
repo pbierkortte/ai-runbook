@@ -4,6 +4,7 @@
 # so hydrate-agents can index them into AGENTS.md.
 #
 # Usage: bash script/stage-protocols
+# Stages protocols from local (NAME_PROTOCOL.md) and dotfiles (DOT_NAME_PROTOCOL.md)
 
 set -euo pipefail
 shopt -s globstar nocaseglob nullglob dotglob
