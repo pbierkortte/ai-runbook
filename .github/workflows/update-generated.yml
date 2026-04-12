@@ -13,14 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Hydrate Agents
-        run: bash script/hydrate-agents
+        run: ./script/hydrate-agents
       - name: Update Contents
-        run: bash script/update-contents
+        run: ./script/update-contents
       - name: Update Manifest
-        run: bash script/update-manifest
+        run: ./script/update-manifest
       - name: Setup Dev
-        run: bash script/setup-dev
+        run: ./script/setup-dev
       - name: Dehydrate Agents
-        run: bash script/dehydrate-agents
+        run: ./script/dehydrate-agents
       - name: Commit changes
-        run: bash script/commit-changes
+        run: ./script/commit-changes
