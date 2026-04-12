@@ -16,6 +16,5 @@ jobs:
       - run: hydrate-agents
       - run: update-contents
       - run: update-manifest
-      - run: setup-dev
       - run: dehydrate-agents
       - run: commit-changes
