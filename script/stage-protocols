@@ -11,7 +11,7 @@ shopt -s globstar nocaseglob nullglob dotglob
 
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
-TARGET="$DOTFILES_ROOT"
+TARGET="$(pwd)"
 PROJECT_PROTOCOLS=("$DOTFILES_ROOT"/protocols/*/PROTOCOL.md)
 DOTFILES_PERSISTED_DIR="$(cd "$DOTFILES_ROOT/.." && pwd)/dotfiles"
 DOTFILES_PROTOCOLS=("$DOTFILES_PERSISTED_DIR"/protocols/*/PROTOCOL.md)
