@@ -36,26 +36,34 @@ fi
 REPO_NAME="$(basename "$TARGET")"
 PROTOCOLS_DIR="$TARGET/protocols"
 
-rm -f "$TARGET/.protocols"
-ln -s "$DOTFILES_PROTOCOLS_DIR" "$TARGET/.protocols"
+# Staged protocols land in a hidden dir with its own AGENTS.md
+# so hydrate-agents indexes them cleanly by dir name
+STAGED_DIR="$TARGET/.protocols-staged"
+rm -rf "$STAGED_DIR"
+mkdir -p "$STAGED_DIR"
+touch "$STAGED_DIR/AGENTS.md"
 
 staged=0
 
-# .protocols/ → dot name
-for proto in "$DOTFILES_PROTOCOLS_DIR"/*/PROTOCOL.md; do
-  [[ -f "$proto" ]] || continue
-  dirname="$(basename "$(dirname "$proto")")"
-  upper="${dirname^^}"
-  cp "$proto" "$TARGET/.${upper}_PROTOCOLS.md"
-  staged=$((staged + 1))
-done
+# sidecar mode only: symlink .protocols/ to dotfiles and stage dot-prefixed files
+if [[ "$TARGET" != "$REPO_ROOT" ]]; then
+  rm -f "$TARGET/.protocols"
+  ln -s "$DOTFILES_PROTOCOLS_DIR" "$TARGET/.protocols"
 
-# protocols/ → no dot name
+  # dotfiles protocols → .DIRNAME.md (hidden)
+  for proto in "$DOTFILES_PROTOCOLS_DIR"/*/PROTOCOL.md; do
+    [[ -f "$proto" ]] || continue
+    dirname="$(basename "$(dirname "$proto")")"
+    cp "$proto" "$STAGED_DIR/.${dirname^^}.md"
+    staged=$((staged + 1))
+  done
+fi
+
+# project protocols → DIRNAME.md
 for proto in "$PROTOCOLS_DIR"/*/PROTOCOL.md; do
   [[ -f "$proto" ]] || continue
   dirname="$(basename "$(dirname "$proto")")"
-  upper="${dirname^^}"
-  cp "$proto" "$TARGET/${upper}_PROTOCOLS.md"
+  cp "$proto" "$STAGED_DIR/${dirname^^}.md"
   staged=$((staged + 1))
 done
 
