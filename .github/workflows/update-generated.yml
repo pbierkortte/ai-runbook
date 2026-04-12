@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: echo script >> $GITHUB_PATH
-      - run: hydrate-agents
+      - run: bootstrap
+      - run: dehydrate-agents
       - run: update-contents
       - run: update-manifest
-      - run: dehydrate-agents
       - run: commit-changes
