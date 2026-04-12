@@ -9,16 +9,4 @@ set -euo pipefail
 
 DIR="$(realpath "${BASH_SOURCE%/*}")"
 
-source "$DIR/commit-changes"
-source "$DIR/dehydrate-agents"
-source "$DIR/env-vars"
-source "$DIR/hydrate-agents"
-source "$DIR/install-agents"
-source "$DIR/install-deps"
-source "$DIR/openskills-manifest"
-source "$DIR/setup-git"
-source "$DIR/setup-skills"
 source "$DIR/shell-hooks"
-source "$DIR/stage-protocols"
-source "$DIR/update-contents"
-source "$DIR/update-manifest"
