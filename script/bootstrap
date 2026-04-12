@@ -6,8 +6,8 @@
 # Usage: bash script/bootstrap
 
 set -euo pipefail
-SCRIPT_PATH=$"(readlink -f "$0")"
-cd "$SCRIPT_PATH/script"
+SCRIPT_PATH="$(readlink -f "$0")"
+cd "$(dirname "$SCRIPT_PATH")"
 
 source env-vars
 source setup-git
