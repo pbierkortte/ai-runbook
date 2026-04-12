@@ -3,7 +3,7 @@
 # Hooks hydrate-agents into shell startup so agents always see fresh indexes.
 
 set -euo pipefail
-SCRIPT_PATH="$(readlink -f "$0")"
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 
 HYDRATE="$(dirname "$SCRIPT_PATH")/hydrate-agents"
 LINE="[ -f \"$HYDRATE\" ] && bash \"$HYDRATE\""

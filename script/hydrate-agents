@@ -12,7 +12,7 @@
 # Usage: bash script/hydrate-agents
 
 set -euo pipefail
-SCRIPT_PATH="$(readlink -f "$0")"
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 
 cd "$(dirname "$SCRIPT_PATH")/.."
 

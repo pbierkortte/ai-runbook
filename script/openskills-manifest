@@ -8,7 +8,7 @@
 # Usage: bash script/openskills-manifest
 #
 set -euo pipefail
-SCRIPT_PATH="$(readlink -f "$0")"
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 
 cd "$(dirname "$SCRIPT_PATH")/.."
 

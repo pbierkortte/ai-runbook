@@ -17,7 +17,7 @@
 #   - Detected when the target workspace has a protocols/ directory.
 
 set -euo pipefail
-SCRIPT_PATH="$(readlink -f "$0")"
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 
 PROTOCOLS_DIR="$(dirname "$SCRIPT_PATH")/../protocols"
 
