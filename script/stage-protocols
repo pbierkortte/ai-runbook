@@ -19,7 +19,7 @@ for proto in "${PROJECT_PROTOCOLS[@]}" "${DOTFILES_PROTOCOLS[@]}"; do
   dirname="$(basename "$(dirname "$proto")")"
   
   if [[ "$proto" == *"$DOTFILES_PERSISTED_DIR"* ]]; then
-    prefix="."
+    prefix="DOT_"
   else
     prefix=""
   fi
