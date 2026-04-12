@@ -51,7 +51,7 @@ Processes each directory that contains an AGENTS.md file.
 
 ### shell-hooks
 
-Appends a collate trigger to `~/.bashrc`, `~/.bash_profile`, `~/.zshrc`, and `~/.zprofile`.
+Appends a `hydrate-agents` trigger to `~/.bashrc`, `~/.bash_profile`, `~/.zshrc`, and `~/.zprofile`.
 Sets `BASH_ENV` so non-interactive bash sessions also run the hook.
 Ensures agents always see a fresh `AGENTS.md` index.
 

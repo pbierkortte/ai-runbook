@@ -116,11 +116,11 @@ Rules live in `RULES.md` files scoped to the directory they apply to. Write them
 
 One rule per line keeps each statement atomic so agents can follow it.
 
-#### Collate Script
+#### Hydrate and Dehydrate Scripts
 
 Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty `AGENTS.md` to a directory and the docs there get noticed.
 
-Bootstrap hooks collate into shell startup by appending a trigger to each RC file. It also sets `BASH_ENV` so non-interactive shells pick it up.
+Bootstrap hooks `hydrate-agents` into shell startup by appending a trigger to each RC file. It also sets `BASH_ENV` so non-interactive shells pick it up.
 
 AGENTS.md files are stored empty in the repo and hydrated at runtime. `script/dehydrate-agents` resets them back to empty before committing so diffs stay clean and content stays authoritative at runtime.
 
