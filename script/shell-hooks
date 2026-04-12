@@ -1,18 +1,31 @@
 #!/bin/bash
 # shell-hooks
-# Hooks hydrate-agents into shell startup so agents always see fresh indexes.
+# Copies .dotfilesrc to ~ with the dotfiles root baked in.
+# Hooks it into shell startup so agents always see fresh indexes.
 
 set -euo pipefail
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname "$SCRIPT_PATH")"
+DOTFILES_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-HYDRATE="$(dirname "$SCRIPT_PATH")/hydrate-agents"
-LINE="[ -f \"$HYDRATE\" ] && bash \"$HYDRATE\""
+# Remove old direct hydrate-agents hooks
+for rc in ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zprofile; do
+  [ -f "$rc" ] && sed -i '/hydrate-agents/d' "$rc"
+done
+
+# Copy .dotfilesrc to ~ with DOTFILES_ROOT injected
+{
+  echo "DOTFILES_ROOT=\"$DOTFILES_ROOT\""
+  cat "$SCRIPT_DIR/.dotfilesrc"
+} > ~/.dotfilesrc
+
+LINE='[ -f ~/.dotfilesrc ] && source ~/.dotfilesrc'
 
 for rc in ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zprofile; do
   grep -qsF "$LINE" "$rc" || echo "$LINE" >> "$rc"
 done
 
-# BASH_ENV makes non-interactive bash source .bashrc so hydrate-agents runs
+# BASH_ENV makes non-interactive bash source .bashrc so .dotfilesrc runs
 BASH_ENV_LINE='export BASH_ENV="$HOME/.bashrc"'
 for rc in ~/.bashrc ~/.bash_profile; do
   grep -qsF "$BASH_ENV_LINE" "$rc" || echo "$BASH_ENV_LINE" >> "$rc"
