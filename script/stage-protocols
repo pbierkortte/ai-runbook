@@ -23,13 +23,15 @@ if [[ -n "${GITHUB_REPOSITORY:-}" ]] && [[ -d "$(dirname "$DOTFILES_ROOT")/$(bas
   TARGET="$(dirname "$DOTFILES_ROOT")/$(basename "$GITHUB_REPOSITORY")"
 fi
 
-for proto in "$DOTFILES_PROTOCOLS"/*/PROTOCOL.md "$TARGET/protocols"/*/PROTOCOL.md; do
-  dirname="$(basename "$(dirname "$proto")")"
-  if [[ "$dirname" == .* ]]; then
-    dest="$TARGET/.${dirname^^}.md"
-  else
-    dest="$TARGET/${dirname^^}.md"
-  fi
-  cp "$proto" "$dest"
-  echo "stage-protocols: staged $(basename "$dest") to $(basename "$TARGET")"
-done
+  for proto in "$DOTFILES_PROTOCOLS"/*/PROTOCOL.md "$TARGET/protocols"/*/PROTOCOL.md; do
+    dirname="$(basename "$(dirname "$proto")")"
+    dot=''
+    if [[ "$dirname" == .* ]]; then
+      dot='.'
+      # Remove the leading dot from dirname for the filename conversion
+      dirname="${dirname#.}"
+    fi
+    dest="$TARGET/${dot}${dirname^^}_PROTOCOL.md"
+    cp "$proto" "$dest"
+    echo "stage-protocols: staged $(basename "$dest") to $(basename "$TARGET")"
+  done
