@@ -12,12 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Hydrate Agents
+        run: bash script/hydrate-agents
       - name: Update Contents
         run: bash script/update-contents
       - name: Update Manifest
         run: bash script/update-manifest
       - name: Setup Dev
         run: bash script/setup-dev
+      - name: Dehydrate Agents
+        run: bash script/dehydrate-agents
       - name: Commit changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
