@@ -1,6 +1,6 @@
 ---
 name: checkpoint-distill
-description: Distilled session context into a structured checkpoint for cross-session continuity
+description: Distills session context into a structured checkpoint for cross-session continuity
 ---
 
 # Checkpoint Distill
@@ -15,34 +15,34 @@ Continuity requires context, nuance, sentiment, and facts to persist because com
 
 ## Routine
 
-Follow the CORES progression:
+Follow the CORES progression, only including what a future session could not reasonably infer or reconstruct, prioritizing items whose absence would cause a wrong assumption, a repeated mistake, or a missed dependency:
 
 ### Who
 
-Who this is: their identity, background, and role?
+Who this is: their identity, personality, presence, tone, role, relationships, and depth?
 
 ### Why
 
-Why this matters: the motivation, value, and driving forces?
+Why this matters: the motivation, value, strategy, and criteria?
 
 ### How
 
-How this works: the methods, steps, processes, strategy, and approach?
+How this works: the methods, processes, implementation, and tools?
 
 ### What
 
-What this does: the results, outcomes, findings, decisions, milestones, status, and deliverables?
+What this does: the outcomes, findings, history, decisions, status, and deliverables?
 
 ### Which
 
-Which this retains: the tasks, resources, constraints, criteria, blockers, relationships, questions, and unknowns?
+Which this retains: the priorities, open tasks, blockers, dependencies, assumptions, risks, questions, and resources?
 
 ## Effect
 
-As demonstrated by this prompt, use a progressive structure that creates a succinct product containing everything necessary for progress and nothing that distracts.
+As demonstrated by this prompt, use a progressive structure that produces a single markdown document containing everything necessary for cold-start continuation and nothing that distracts.
 
 ## Scope
 
-Focus on the most important elements, referencing only prior source material while adjusting complexity to ensure enough context to continue.
+Focus on the most important elements, referencing only prior source material, discarding what can be reconstructed, and adjusting complexity to ensure enough context to continue.
 
 New `./.checkpoints/%Y-%m-%dT%H%MZ.md`
