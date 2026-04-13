@@ -35,7 +35,7 @@ What this does: the outcomes, findings, history, decisions, status, and delivera
 
 ### Which
 
-Which this retains: the priorities, open tasks, blockers, dependencies, assumptions, risks, questions, and resources?
+Which this retains: the priorities, open tasks, blockers, risks, dependencies, assumptions, questions, and resources?
 
 ## Effect
 
