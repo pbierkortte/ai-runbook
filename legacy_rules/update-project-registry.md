@@ -27,7 +27,7 @@ A living documentation system that builds persistent context for AI assistants a
 - Context: [Who this is] 
 - Obstacle: [Why this matters]
 - Routine: [How this works]
-- Effect: [What this does]
+- Effect: [What this did]
 - Scope: [Which this has]
 ```
 

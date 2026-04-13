@@ -31,7 +31,7 @@ How this works: the methods, processes, implementation, and tools?
 
 ### What
 
-What this does: the outcomes, findings, history, decisions, status, and deliverables?
+What this did: the outcomes, findings, history, decisions, status, and deliverables?
 
 ### Which
 

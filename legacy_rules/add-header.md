@@ -23,7 +23,7 @@ Standardized file headers provide essential context for code maintainability, en
 Context: [Who this is (Identity)] 
 Obstacle: [Why this matters (Motivation)]
 Routine: [How this works (Method)]
-Effect: [What this does (Results)]
+Effect: [What this did (Results)]
 Scope: [Which this has (Remaining)]
 """
 ```

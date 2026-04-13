@@ -22,7 +22,7 @@ Follow the C/O/R/E/S progression. Who/Why/How/What/Which are content prompts, no
 - Context ← Who this is: their identity, personality, presence, tone, role, relationships, and depth
 - Obstacle ← Why this matters: the motivation, value, strategy, and criteria
 - Routine ← How this works: the methods, processes, implementation, and tools
-- Effect ← What this does: the outcomes, findings, history, decisions, status, and deliverables
+- Effect ← What this did: the outcomes, findings, history, decisions, status, and deliverables
 - Scope ← Which this retains: the priorities, open tasks, blockers, risks, dependencies, assumptions, questions, and resources
 
 First tool call produces only:
