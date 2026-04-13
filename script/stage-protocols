@@ -9,11 +9,11 @@
 set -euo pipefail
 shopt -s globstar nocaseglob nullglob dotglob
 
-TARGET="$(git rev-parse --show-toplevel)"
+REPO_ROOT="$(git rev-parse --show-toplevel)"
 
 # Only stage protocols if this is an agent-enabled repo
-if [ ! -f "$TARGET/AGENTS.md" ]; then
-  rm -f "$TARGET"/*_PROTOCOL.md
+if [ ! -f "$REPO_ROOT/AGENTS.md" ]; then
+  rm -f "$REPO_ROOT"/*_PROTOCOL.md
   return 0 2>/dev/null || exit 0
 fi
 
@@ -32,6 +32,6 @@ for proto in "${PROJECT_PROTOCOLS[@]}" "${DOTFILES_PROTOCOLS[@]}"; do
     prefix=""
   fi
 
-  dest="$TARGET/${prefix}${dirname^^}_PROTOCOL.md"
+  dest="$REPO_ROOT/${prefix}${dirname^^}_PROTOCOL.md"
   cp "$proto" "$dest"
 done
