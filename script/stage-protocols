@@ -9,7 +9,7 @@
 set -euo pipefail
 shopt -s globstar nocaseglob nullglob dotglob
 
-TARGET="$(pwd)"
+TARGET="$(git rev-parse --show-toplevel)"
 
 # Only stage protocols if this is an agent-enabled repo
 if [ ! -f "$TARGET/AGENTS.md" ]; then

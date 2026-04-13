@@ -7,7 +7,7 @@
 
 set -euo pipefail
 
-TARGET="$(pwd)"
+TARGET="$(git rev-parse --show-toplevel)"
 
 # Configure git info for agent-enabled repos
 if [ -f "$TARGET/AGENTS.md" ]; then
