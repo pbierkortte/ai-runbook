@@ -42,7 +42,7 @@ Fill the 5 slots (C/O/R/E/S):
 - Obstacle: Why this matters
 - Routine: How this works
 - Effect: What this does
-- Scope: What this retains
+- Scope: Which this retains
 
 The result is a reusable structure for defining and evolving personality modules. 
 
