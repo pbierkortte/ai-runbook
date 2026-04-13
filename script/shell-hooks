@@ -20,6 +20,7 @@ DOTFILES_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 # Only run in agent-enabled repos
 if [ -f AGENTS.md ]; then
+  [ -f "$DOTFILES_ROOT/script/setup-git" ] && bash "$DOTFILES_ROOT/script/setup-git"
   [ -f "$DOTFILES_ROOT/script/stage-protocols" ] && bash "$DOTFILES_ROOT/script/stage-protocols"
   [ -f "$DOTFILES_ROOT/script/hydrate-agents" ] && bash "$DOTFILES_ROOT/script/hydrate-agents"
 fi
