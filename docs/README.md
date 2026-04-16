@@ -197,6 +197,7 @@ One who wears many hats.
 - [Codebase Analysis](skills/codebase-analysis/SKILL.md)
 - [Coding Bookmark](skills/coding-bookmark/SKILL.md)
 - [continuous-improvement-initiative](skills/continuous-improvement-initiative/SKILL.md)
+- [Docs Consistency](skills/docs-consistency/SKILL.md)
 - [Filename Generator](skills/filename-generator/SKILL.md)
 - [Lilypad Loop](skills/lilypad-loop/SKILL.md)
 - [Slack Personality Self-Assessment](skills/mbti-self-assessment-slack/SKILL.md)

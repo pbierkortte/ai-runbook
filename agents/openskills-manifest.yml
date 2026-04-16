@@ -23,6 +23,9 @@
 - source: skills/continuous-improvement-initiative
   sourceType: local
   localPath: skills/continuous-improvement-initiative
+- source: skills/docs-consistency
+  sourceType: local
+  localPath: skills/docs-consistency
 - source: skills/filename-generator
   sourceType: local
   localPath: skills/filename-generator
