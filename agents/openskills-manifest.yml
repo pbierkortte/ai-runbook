@@ -17,6 +17,9 @@
 - source: skills/codebase-analysis
   sourceType: local
   localPath: skills/codebase-analysis
+- source: skills/coding-bookmark
+  sourceType: local
+  localPath: skills/coding-bookmark
 - source: skills/continuous-improvement-initiative
   sourceType: local
   localPath: skills/continuous-improvement-initiative
