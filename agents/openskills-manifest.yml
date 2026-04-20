@@ -38,6 +38,9 @@
 - source: skills/obsidian-md-cli-docs
   sourceType: local
   localPath: skills/obsidian-md-cli-docs
+- source: skills/obsidian-md-cli-help
+  sourceType: local
+  localPath: skills/obsidian-md-cli-help
 - source: skills/repo-to-prompt
   sourceType: local
   localPath: skills/repo-to-prompt

@@ -202,6 +202,7 @@ One who wears many hats.
 - [Lilypad Loop](skills/lilypad-loop/SKILL.md)
 - [Slack Personality Self-Assessment](skills/mbti-self-assessment-slack/SKILL.md)
 - [obsidian-md-cli-docs](skills/obsidian-md-cli-docs/SKILL.md)
+- [obsidian-md-cli-help](skills/obsidian-md-cli-help/SKILL.md)
 - [Repo to Prompt](skills/repo-to-prompt/SKILL.md)
 
 <!-- SKILLS END -->
