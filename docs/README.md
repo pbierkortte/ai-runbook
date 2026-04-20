@@ -147,41 +147,41 @@ One who wears many hats.
 <!-- CORES START -->
 
 #### Black
-- [Black](cores/Black/assessor.md)
+- [Black](../cores/Black/assessor.md)
 
 #### Blue
-- [Blue](cores/Blue/director.md)
+- [Blue](../cores/Blue/director.md)
 
 #### Evan
-- [Architect](cores/Evan/architect.md)
-- [Coder](cores/Evan/coder.md)
-- [Debugger](cores/Evan/debugger.md)
+- [Architect](../cores/Evan/architect.md)
+- [Coder](../cores/Evan/coder.md)
+- [Debugger](../cores/Evan/debugger.md)
 
 #### Green
-- [Green](cores/Green/writer.md)
+- [Green](../cores/Green/writer.md)
 
 #### Grey
-- [Urok](cores/Grey/coder.md)
+- [Urok](../cores/Grey/coder.md)
 
 #### Maya
-- [Designer](cores/Maya/designer.md)
-- [Tester](cores/Maya/tester.md)
+- [Designer](../cores/Maya/designer.md)
+- [Tester](../cores/Maya/tester.md)
 
 #### Orange
-- [Orange](cores/Orange/boss.md)
+- [Orange](../cores/Orange/boss.md)
 
 #### Otis
-- [Editor](cores/Otis/editor.md)
-- [Writer](cores/Otis/writer.md)
+- [Editor](../cores/Otis/editor.md)
+- [Writer](../cores/Otis/writer.md)
 
 #### Red
-- [Red](cores/Red/critic.md)
+- [Red](../cores/Red/critic.md)
 
 #### White
-- [White](cores/White/researcher.md)
+- [White](../cores/White/researcher.md)
 
 #### Yellow
-- [Yellow](cores/Yellow/advocate.md)
+- [Yellow](../cores/Yellow/advocate.md)
 
 <!-- CORES END -->
 
@@ -189,21 +189,21 @@ One who wears many hats.
 
 <!-- SKILLS START -->
 
-- [Audio Transcription](skills/audio-transcription/SKILL.md)
-- [Audiovisual Transcription](skills/audiovisual-transcription/SKILL.md)
-- [Checkpoint Comprehensive](skills/checkpoint-comprehensive/SKILL.md)
-- [Checkpoint Distill](skills/checkpoint-distill/SKILL.md)
-- [The Cooperative Initiative](skills/co-operative-initiative/SKILL.md)
-- [Codebase Analysis](skills/codebase-analysis/SKILL.md)
-- [Coding Bookmark](skills/coding-bookmark/SKILL.md)
-- [continuous-improvement-initiative](skills/continuous-improvement-initiative/SKILL.md)
-- [Docs Consistency](skills/docs-consistency/SKILL.md)
-- [Filename Generator](skills/filename-generator/SKILL.md)
-- [Lilypad Loop](skills/lilypad-loop/SKILL.md)
-- [Slack Personality Self-Assessment](skills/mbti-self-assessment-slack/SKILL.md)
-- [obsidian-md-cli-docs](skills/obsidian-md-cli-docs/SKILL.md)
-- [obsidian-md-cli-help](skills/obsidian-md-cli-help/SKILL.md)
-- [Repo to Prompt](skills/repo-to-prompt/SKILL.md)
+- [Audio Transcription](../skills/audio-transcription/SKILL.md)
+- [Audiovisual Transcription](../skills/audiovisual-transcription/SKILL.md)
+- [Checkpoint Comprehensive](../skills/checkpoint-comprehensive/SKILL.md)
+- [Checkpoint Distill](../skills/checkpoint-distill/SKILL.md)
+- [The Cooperative Initiative](../skills/co-operative-initiative/SKILL.md)
+- [Codebase Analysis](../skills/codebase-analysis/SKILL.md)
+- [Coding Bookmark](../skills/coding-bookmark/SKILL.md)
+- [continuous-improvement-initiative](../skills/continuous-improvement-initiative/SKILL.md)
+- [Docs Consistency](../skills/docs-consistency/SKILL.md)
+- [Filename Generator](../skills/filename-generator/SKILL.md)
+- [Lilypad Loop](../skills/lilypad-loop/SKILL.md)
+- [Slack Personality Self-Assessment](../skills/mbti-self-assessment-slack/SKILL.md)
+- [obsidian-md-cli-docs](../skills/obsidian-md-cli-docs/SKILL.md)
+- [obsidian-md-cli-help](../skills/obsidian-md-cli-help/SKILL.md)
+- [Repo to Prompt](../skills/repo-to-prompt/SKILL.md)
 
 <!-- SKILLS END -->
 
@@ -211,19 +211,19 @@ One who wears many hats.
 
 <!-- TOOLS START -->
 
-- [Company Reconnaissance](tools/job_company_recon.md)
-- [Cover Letter Checker](tools/job_cover_letter_checker.md)
-- [Resume Cover Letter Coach](tools/job_cover_letter_coach.md)
-- [Interview Chances](tools/job_interview_chances.md)
-- [Post-Interview Follow-Up Email Generator](tools/job_interview_follow_up_email.md)
-- [Interview Preparation Coach](tools/job_interview_prep_coaching.md)
-- [Job Recruitment Response Template ](tools/job_recruitment_response_template.md)
-- [Resume Proof Reading](tools/job_resume_proof_reading.md)
-- [LinkedIn Proof Reader](tools/linkedin_proof_reader.md)
-- [AntiSummary](tools/llm_anti_summary.md)
-- [Chain of Thought Meta-Prompting](tools/llm_cot_meta_prompting.md)
-- [Print Full Conversation](tools/llm_print_full_conversation.md)
-- [Slack Communication Analyzer](tools/slack_comm_analyzer.md)
+- [Company Reconnaissance](../tools/job_company_recon.md)
+- [Cover Letter Checker](../tools/job_cover_letter_checker.md)
+- [Resume Cover Letter Coach](../tools/job_cover_letter_coach.md)
+- [Interview Chances](../tools/job_interview_chances.md)
+- [Post-Interview Follow-Up Email Generator](../tools/job_interview_follow_up_email.md)
+- [Interview Preparation Coach](../tools/job_interview_prep_coaching.md)
+- [Job Recruitment Response Template ](../tools/job_recruitment_response_template.md)
+- [Resume Proof Reading](../tools/job_resume_proof_reading.md)
+- [LinkedIn Proof Reader](../tools/linkedin_proof_reader.md)
+- [AntiSummary](../tools/llm_anti_summary.md)
+- [Chain of Thought Meta-Prompting](../tools/llm_cot_meta_prompting.md)
+- [Print Full Conversation](../tools/llm_print_full_conversation.md)
+- [Slack Communication Analyzer](../tools/slack_comm_analyzer.md)
 
 <!-- TOOLS END -->
 
