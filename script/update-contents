@@ -33,7 +33,7 @@ for DIR in $WHO_DIRS; do
   HAT_FILES=$(find "$DIR" -maxdepth 1 -type f -name "*.md" | sort)
   for FILE in $HAT_FILES; do
     HAT=$(grep '^# ' "$FILE" | head -n 1 | sed 's/^# //')
-    CORES_CONTENTS+="\n- [$HAT](../$FILE)"
+    CORES_CONTENTS+="\n- [$HAT](/$FILE)"
   done
 done
 
@@ -80,7 +80,7 @@ for DIR in $SKILL_DIRS; do
     TITLE=$(basename "$DIR")
   fi
 
-  SKILLS_CONTENTS+="\n- [$TITLE](../$SKILL_FILE)"
+  SKILLS_CONTENTS+="\n- [$TITLE](/$SKILL_FILE)"
 done
 
 SKILLS_CONTENTS+="\n\n<!-- SKILLS END -->"
@@ -116,7 +116,7 @@ for FILE in $TOOLS_FILES; do
   if [ -z "$TITLE" ]; then
     TITLE=$(basename "$FILE" .md)
   fi
-  CONTENTS+="\n- [$TITLE](../$FILE_PATH)"
+  CONTENTS+="\n- [$TITLE](/$FILE_PATH)"
 done
 
 CONTENTS+="\n\n<!-- TOOLS END -->"
