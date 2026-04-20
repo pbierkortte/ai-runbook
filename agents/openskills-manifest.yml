@@ -35,6 +35,9 @@
 - source: skills/mbti-self-assessment-slack
   sourceType: local
   localPath: skills/mbti-self-assessment-slack
+- source: skills/obsidian-md-cli-docs
+  sourceType: local
+  localPath: skills/obsidian-md-cli-docs
 - source: skills/repo-to-prompt
   sourceType: local
   localPath: skills/repo-to-prompt
