@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+export PATH="$HOME/.local/bin:$PATH"
+
+out='# generated DO NOT EDIT!'
+out+=$'\n'"$(find skills -name SKILL.md -printf '%h\n' | sort |
+  jq -R '{source: ., sourceType: "local", localPath: .}' |
+  jq -s '.' | yq -P -p=json '.')"
+echo "$out" > agents/openskills-manifest.yml

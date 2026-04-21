@@ -1,7 +1,4 @@
 #!/bin/bash
-# Link Skills
-## Create a shared skills directory
-
 set -euo pipefail
 
 mkdir -p "$HOME/.agent/skills"

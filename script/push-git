@@ -1,7 +1,4 @@
 #!/bin/bash
-# Push Commit
-## Commit and push generated files
-
 set -euo pipefail
 
 git config --global user.email 'github-actions[bot]@users.noreply.github.com'

@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+
+if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
+  npm i -g cline
+  cline auth -p openrouter -k "$OPENROUTER_API_KEY" -m openrouter/auto
+fi

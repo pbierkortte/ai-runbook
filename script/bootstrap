@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+
+"$DIR/install-yq"
+"$DIR/install-skills"
+"$DIR/rebuild-manifest"
+"$DIR/install-cline"
+"$DIR/install-claude"
+"$DIR/link-skills"
+"$DIR/stage-protocols"
+"$DIR/hydrate-agents"
+"$DIR/configure-git"
+"$DIR/write-dotfilesrc"
+"$DIR/wire-shell"
+"$DIR/refresh-docs"

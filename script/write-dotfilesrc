@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
+
+{
+  echo "DOTFILES_ROOT=\"$DOTFILES_ROOT\""
+  cat <<'EOF'
+if [ -f AGENTS.md ]; then
+  "$DOTFILES_ROOT/script/stage-protocols"
+  "$DOTFILES_ROOT/script/hydrate-agents"
+  "$DOTFILES_ROOT/script/configure-git"
+fi
+EOF
+} > ~/.dotfilesrc
+chmod +x ~/.dotfilesrc

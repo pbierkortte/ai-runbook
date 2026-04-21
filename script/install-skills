@@ -1,0 +1,25 @@
+#!/bin/bash
+set -euo pipefail
+export PATH="$HOME/.local/bin:$PATH"
+
+MANIFEST='agents/openskills-manifest.yml'
+
+for dir in $(yq '.[].source' "$MANIFEST"); do
+  mkdir -p "$dir"
+  yq -o=json ".[] | select(.source == \"$dir\")" "$MANIFEST" > "$dir/.openskills.json"
+  touch "$dir/SKILL.md"
+done
+
+has_remote="$(yq '.[0].repoUrl // ""' "$MANIFEST")"
+if [[ -n "$has_remote" ]]; then
+  count="$(yq 'length' "$MANIFEST")"
+  for i in $(seq 0 $((count - 1))); do
+    repo="$(yq ".[$i].repoUrl" "$MANIFEST" | sed 's|https://github.com/||')"
+    subpath="$(yq ".[$i].subpath" "$MANIFEST")"
+    path="${repo}/${subpath}"
+    echo "Installing: $path"
+    npx -y openskills install -g -u -y "$path"
+  done
+else
+  npx -y openskills install -g -u -y ./
+fi
