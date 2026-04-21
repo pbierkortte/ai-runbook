@@ -25,3 +25,15 @@ if [[ ! -f "${_bindir}/yq" ]]; then
   chmod +x "$_bin"
 fi
 export PATH="$_bindir:$PATH"
+
+_manifest_path="agents/openskills-manifest.yml"
+if [[ -n "${OPENSKILLS_MANIFEST_PATH:-}" ]]; then
+  export MANIFEST="$OPENSKILLS_MANIFEST_PATH"
+elif [[ -f "$HOME/$_manifest_path" ]]; then
+  export MANIFEST="$HOME/$_manifest_path"
+elif [[ -f "$_manifest_path" ]]; then
+  export MANIFEST="$_manifest_path"
+else
+  echo "warning: openskills manifest not found, skipping" >&2
+  export MANIFEST=""
+fi

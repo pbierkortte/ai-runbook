@@ -1,71 +1,23 @@
 #!/usr/bin/env bash
-#
-# install-skills — Skills Metadata Generator
-#
-# Splits agents/openskills-manifest.yml into per-skill .openskills.json
-# files then runs openskills install.
-#
-# Usage: bash script/install-skills
-#
+# install-skills
+# Installs skills from agents/openskills-manifest.yml via openskills CLI.
+
 set -euo pipefail
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
-
 cd "$(dirname "$SCRIPT_PATH")/.."
 
-_bindir="${HOME}/.local/bin"
-mkdir -p "$_bindir"
-if [[ ! -f "${_bindir}/yq" ]]; then
-  _os="$(uname -s | tr '[:upper:]' '[:lower:]')"
-  _arch="$(uname -m)"
-  case "$_os" in
-    linux*)           _os="linux"   ;;
-    darwin*)          _os="darwin"  ;;
-    mingw*|msys*|cygwin*) _os="windows" ;;
-  esac
-  case "$_arch" in
-    x86_64|amd64) _arch="amd64" ;;
-    arm64|aarch64) _arch="arm64" ;;
-  esac
-  _bin="${_bindir}/yq"
-  _url="https://github.com/mikefarah/yq/releases/latest/download/yq_${_os}_${_arch}"
-  [[ "$_os" == "windows" ]] && { _bin="${_bindir}/yq.exe"; _url="${_url}.exe"; }
-  wget "$_url" -O "$_bin"
-  chmod +x "$_bin"
-fi
-export PATH="$_bindir:$PATH"
+[[ -z "${MANIFEST:-}" ]] && { echo "warning: MANIFEST not set, skipping" >&2; exit 0; }
 
-manifest_path="agents/openskills-manifest.yml"
-
-if [[ -n "${OPENSKILLS_MANIFEST_PATH:-}" ]]; then
-  manifest="$OPENSKILLS_MANIFEST_PATH"
-elif [[ -f "$HOME/$manifest_path" ]]; then
-  manifest="$HOME/$manifest_path"
-elif [[ -f "$manifest_path" ]]; then
-  manifest="$manifest_path"
-else
-  echo "warning: openskills manifest not found, skipping" >&2
-  exit 0
-fi
-
-
-for dir in $(yq '.[].source' "$manifest"); do
-  mkdir -p "$dir"
-  yq -o=json ".[] | select(.source == \"$dir\")" "$manifest" > "$dir/.openskills.json"
-done
-
-# Check if manifest has remote entries (repoUrl) or local entries
-has_remote=$(yq '.[0].repoUrl // ""' "$manifest")
+has_remote=$(yq '.[0].repoUrl // ""' "$MANIFEST")
 if [[ -n "$has_remote" ]]; then
-  # Remote: install each skill individually by owner/repo/subpath
-  count=$(yq 'length' "$manifest")
+  count=$(yq 'length' "$MANIFEST")
   for i in $(seq 0 $((count - 1))); do
-    repo=$(yq ".[$i].repoUrl" "$manifest" | sed 's|https://github.com/||')
-    subpath=$(yq ".[$i].subpath" "$manifest")
+    repo=$(yq ".[$i].repoUrl" "$MANIFEST" | sed 's|https://github.com/||')
+    subpath=$(yq ".[$i].subpath" "$MANIFEST")
     install_path="${repo}/${subpath}"
     echo "Installing: $install_path"
-    npx -y openskills install -g -u -y "$install_path" || echo "  ⚠ Failed: $install_path"
+    npx -y openskills install -g -u -y "$install_path" || echo "  failed: $install_path"
   done
 else
-  # Local: SKILL.md files exist in current tree
   npx -y openskills install -g -u -y ./
 fi
