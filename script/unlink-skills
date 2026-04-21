@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+for dir in "$HOME/.agents" "$HOME/.cline" "$HOME/.claude"; do
+  [[ -L "$dir/skills" ]] && rm -f "$dir/skills"
+done
+[[ -L "$HOME/.agent/skills" ]] && rm -f "$HOME/.agent/skills"
+[[ -d "$HOME/.agent/skills" ]] && rmdir "$HOME/.agent/skills" 2>/dev/null || true
+[[ -d "$HOME/.agent" ]] && rmdir "$HOME/.agent" 2>/dev/null || true

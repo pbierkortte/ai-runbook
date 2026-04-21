@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+
+"$DIR/unwire-shell"
+"$DIR/unwrite-dotfilesrc"
+"$DIR/unconfigure-git"
+"$DIR/unstage-protocols"
+"$DIR/unlink-skills"

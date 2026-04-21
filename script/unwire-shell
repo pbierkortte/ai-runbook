@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euo pipefail
+
+for rc in ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zprofile; do
+  [[ -f "$rc" ]] || continue
+  sed -i '/^\[ -f ~\/\.dotfilesrc \] && source ~\/\.dotfilesrc$/d' "$rc"
+done
+
+for rc in ~/.bashrc ~/.bash_profile; do
+  [[ -f "$rc" ]] || continue
+  sed -i '/^export BASH_ENV="\$HOME\/\.bashrc"$/d' "$rc"
+done
