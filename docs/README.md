@@ -188,7 +188,6 @@ One who wears many hats.
 ### Skills
 
 <!-- SKILLS START -->
-
 - [Audio Transcription](/skills/audio-transcription/SKILL.md)
 - [Audiovisual Transcription](/skills/audiovisual-transcription/SKILL.md)
 - [Checkpoint Comprehensive](/skills/checkpoint-comprehensive/SKILL.md)
@@ -210,7 +209,6 @@ One who wears many hats.
 ### Tools
 
 <!-- TOOLS START -->
-
 - [Company Reconnaissance](/tools/job_company_recon.md)
 - [Cover Letter Checker](/tools/job_cover_letter_checker.md)
 - [Resume Cover Letter Coach](/tools/job_cover_letter_coach.md)
