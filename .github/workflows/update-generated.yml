@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - run: echo script >> $GITHUB_PATH
-      - run: bootstrap
-      - run: dehydrate-agents
-      - run: update-contents
-      - run: update-manifest
-      - run: commit-changes
+      - run: bash script/bootstrap.sh
+      - run: bash script/prepare-git.sh dehydrate
+      - run: bash script/push-commit.sh
