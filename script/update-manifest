@@ -3,7 +3,7 @@
 # update-manifest — Manifest Generator
 #
 # Gathers skill directories into agents/openskills-manifest.yml.
-# Reverse of script/openskills-manifest which splits it back out.
+# Reverse of script/install-skills which splits it back out.
 #
 # Usage: bash script/update-manifest
 #

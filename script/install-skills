@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# openskills-manifest — Skills Metadata Generator
+# install-skills — Skills Metadata Generator
 #
 # Splits agents/openskills-manifest.yml into per-skill .openskills.json
 # files then runs openskills install.
 #
-# Usage: bash script/openskills-manifest
+# Usage: bash script/install-skills
 #
 set -euo pipefail
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"

@@ -1,5 +1,5 @@
 #!/bin/bash
-# shell-hooks
+# install-hooks
 # Copies .dotfilesrc to ~ with the dotfiles root baked in.
 # Hooks it into shell startup so agents always see fresh indexes.
 
@@ -16,7 +16,7 @@ DOTFILES_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 # .dotfilesrc
 # Sourced on shell startup to keep AI agent indexes fresh.
 # Stages protocols then hydrates AGENTS.md so agents always see current state.
-# DOTFILES_ROOT is injected by shell-hooks when this file is copied to ~/.dotfilesrc.
+# DOTFILES_ROOT is injected by install-hooks when this file is copied to ~/.dotfilesrc.
 
 # Only run in agent-enabled repos
 if [ -f AGENTS.md ]; then
