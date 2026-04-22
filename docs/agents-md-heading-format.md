@@ -13,62 +13,12 @@ Each source file gets its own section
 Headings are promoted by one level
 Deepest headings become dash list items
 
-## Example
-
-### Source Document (claude-code-codespaces-auth.md)
-
-```markdown
-# Claude Code Authentication for GitHub Codespaces
-## What Each Developer Sets as Codespace Secrets
-## What Your Codespace Bootstrap Must Do
-## Why Refresh Token Over Access Token
-## The Docs
-```
-
-### AGENTS.md Entry
-
-```markdown
-# claude-code-codespaces-auth.md
-## Claude Code Authentication for GitHub Codespaces
-- What Each Developer Sets as Codespace Secrets
-- What Your Codespace Bootstrap Must Do
-- Why Refresh Token Over Access Token
-- The Docs
-```
-
 ## Transformation Rules
 
-Filename becomes a level 1 heading (`#`)
+Filename becomes a level 1 heading (`#`) with the `.md` extension stripped and non-alphabetic characters replaced with spaces
 Original `#` becomes `##`
 Original `##` becomes `###`
 Deepest heading level becomes dash list items (`-`)
-
-## Multi-Level Example
-
-### Source Document (README.md)
-
-```markdown
-# AI Runbook
-## Purpose
-## Usage
-### Dotfiles Setup
-### CORES
-## Contents
-### Skills
-```
-
-### AGENTS.md Entry
-
-```markdown
-# README.md
-## AI Runbook
-### Purpose
-### Usage
-- Dotfiles Setup
-- CORES
-### Contents
-- Skills
-```
 
 ## Benefits
 
