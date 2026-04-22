@@ -30,7 +30,15 @@
 ### Spawn agents for parallelizable work: Not to read files
 
 ## Write reliable software
+
 ### Enable TypeScript strict mode: Prevent codebase errors
 ### Enforce single quotes: Maintain consistent style
 ### Omit code semicolons: Match project style
 ### Apply functional patterns: Ensure predictable code
+
+## Ship only what was asked with proof
+
+### Surface assumptions: Prevent silent wrong turns
+### Avoid overcomplication: Match code scope to task scope
+### Make surgical changes: Limit edits to requested lines
+### Enable autonomous loops: Define verifiable success criteria
