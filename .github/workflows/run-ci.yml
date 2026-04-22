@@ -10,6 +10,8 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      ENABLE_DOTFILES: '1'
     steps:
       - uses: actions/checkout@v6
       - run: script/run-ci
