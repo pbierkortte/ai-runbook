@@ -165,7 +165,7 @@ One who wears many hats.
 - [🟣 Magenta](/cores/Magenta/CATALYST.md)
 
 #### Red
-- [🔴 Red](/cores/Red/ARTIST.md)
+- [🔴 Red](/cores/Red/SENTINEL.md)
 
 #### White
 - [⚪ White](/cores/White/CONNECTOR.md)
