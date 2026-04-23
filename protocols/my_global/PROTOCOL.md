@@ -39,6 +39,6 @@
 ## Ship only what was asked with proof
 
 ### Surface assumptions: Prevent silent wrong turns
-### Avoid overcomplication: Match code scope to task scope
+### Match code scope to task scope: Avoid overcomplication
 ### Make surgical changes: Limit edits to requested lines
 ### Enable autonomous loops: Define verifiable success criteria
