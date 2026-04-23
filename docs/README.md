@@ -233,6 +233,7 @@ One who wears many hats.
 - [OpenSkills Universal Loader](https://github.com/numman-ali/openskills)
 - [Cloudflare Skills](https://github.com/cloudflare/skills)
 - [Humanizer AI Slop Cleanup](https://github.com/blader/humanizer)
+- [MotionSites Landing Page Builder with Ready-Made Prompts](https://motionsites.ai)
 - [Skill Directory for OpenClaw](https://clawhub.ai)
 
 
