@@ -1,3 +1,5 @@
+# House rules for any AI assistant working in this repo. Read this first. Follow it.
+
 # The Format
 
 ## Define structure clearly
