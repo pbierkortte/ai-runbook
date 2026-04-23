@@ -112,7 +112,7 @@ An `AGENTS.md` at the repo root activates agent features in supported IDEs. It d
 
 #### Surfacing Rules
 
-Rules live in `RULES.md` files scoped to the directory they apply to. Write them as headings and they surface into the index automatically. RULES.md follows its own rules and serves as the example.
+Rules live in `RULE.md` files scoped to the directory they apply to. Write them as headings and they surface into the index automatically. `rules/house/RULE.md` follows its own rules and serves as the example.
 
 One rule per line keeps each statement atomic so agents can follow it.
 
