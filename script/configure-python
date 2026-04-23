@@ -1,4 +1,3 @@
-#!/bin/bash
-set -euo pipefail
-
-# TODO: add python configuration
+export PIP_QUIET=1
+export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONDONTWRITEBYTECODE=1

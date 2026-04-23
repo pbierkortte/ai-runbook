@@ -11,7 +11,7 @@ if [ -f AGENTS.md ]; then
   "$DOTFILES_ROOT/script/stage-protocols"
   "$DOTFILES_ROOT/script/hydrate-agents"
   "$DOTFILES_ROOT/script/configure-git"
-  "$DOTFILES_ROOT/script/configure-python"
+  source "$DOTFILES_ROOT/script/configure-python"
 fi
 EOF
 } > ~/.dotfilesrc
