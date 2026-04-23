@@ -120,7 +120,7 @@ One rule per line keeps each statement atomic so agents can follow it.
  
 Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty `AGENTS.md` to a directory and the docs there get noticed.
  
-Before hydrating, it runs `script/stage-rules`, which automatically collects rules from both the local `rules/` directory (staged as `{NAME}_RULE.md`) and any relative `../dotfiles/rules/` directory (staged as `DOT_{NAME}_RULE.md`). Staged rules are kept out of project commits via `.git/info/exclude`.
+Before hydrating, it runs `script/stage-rules`, which automatically collects rules from both the local `rules/` directory (staged as `{NAME}_RULES.md`) and any relative `../dotfiles/rules/` directory (staged as `DOT_{NAME}_RULES.md`). Staged rules are kept out of project commits via `.git/info/exclude`.
 
 Bootstrap creates `~/.dotfilesrc` with an `AGENTS.md` guard so the hooks only fire in agent-enabled repos. It also sets `BASH_ENV` so non-interactive shells pick it up. Both `stage-rules` and `hydrate-agents` operate on the current working directory, not the dotfiles installation path.
 

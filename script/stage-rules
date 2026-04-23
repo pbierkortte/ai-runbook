@@ -15,5 +15,5 @@ for proto in "$DOTFILES_ROOT"/rules/*/RULE.md "$DOTFILES_PERSISTED_DIR"/rules/*/
   else
     prefix=''
   fi
-  cp "$proto" "$REPO_ROOT/${prefix}${name^^}_RULE.md"
+  cp "$proto" "$REPO_ROOT/${prefix}${name^^}_RULES.md"
 done

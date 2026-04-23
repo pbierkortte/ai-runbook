@@ -22,4 +22,4 @@ Agents get full content without opening source files. AGENTS.md contains the ful
 
 ## Source
 
-Rule files live in `rules/*/RULE.md` and are staged to root as `<NAME>_RULE.md` by `script/stage-rules`. `script/hydrate-agents` runs after. Both run in sequence via `script/bootstrap`.
+Rule files live in `rules/*/RULE.md` and are staged to root as `<NAME>_RULES.md` by `script/stage-rules`. `script/hydrate-agents` runs after. Both run in sequence via `script/bootstrap`.
