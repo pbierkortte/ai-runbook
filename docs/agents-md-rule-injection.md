@@ -6,7 +6,7 @@ Heading-only files pass through the hydrate-agents process completely. Some mark
 
 ## Purpose
 
-Every rule must reach agents. Protocol files contain rules that agents must follow. Every line matters so every line must be surfaced.
+Every rule must reach agents. Rule files contain rules that agents must follow. Every line matters so every line must be surfaced.
 
 ## Mechanism
 
@@ -14,7 +14,7 @@ Every rule must reach agents. Protocol files contain rules that agents must foll
 
 ## Execution Order
 
-The stage-protocols script copies protocol files to the target project root. `hydrate-agents` runs after to generate AGENTS.md files. This order matters so the files are processed once at their destination.
+The stage-rules script copies rule files to the target project root. `hydrate-agents` runs after to generate AGENTS.md files. This order matters so the files are processed once at their destination.
 
 ## Effect
 
@@ -22,4 +22,4 @@ Agents get full content without opening source files. AGENTS.md contains the ful
 
 ## Source
 
-Protocol files live in `protocols/*/PROTOCOL.md` and are staged to root as `<NAME>_PROTOCOL.md` by `script/stage-protocols`. `script/hydrate-agents` runs after. Both run in sequence via `script/bootstrap`.
+Rule files live in `rules/*/RULE.md` and are staged to root as `<NAME>_RULE.md` by `script/stage-rules`. `script/hydrate-agents` runs after. Both run in sequence via `script/bootstrap`.

@@ -7,7 +7,7 @@ DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 DOTFILES_PERSISTED_DIR="$(cd "$DOTFILES_ROOT/.." && pwd)/dotfiles"
 
-for proto in "$DOTFILES_ROOT"/protocols/*/PROTOCOL.md "$DOTFILES_PERSISTED_DIR"/protocols/*/PROTOCOL.md; do
+for proto in "$DOTFILES_ROOT"/rules/*/RULE.md "$DOTFILES_PERSISTED_DIR"/rules/*/RULE.md; do
   [[ -f "$proto" ]] || continue
   name="$(basename "$(dirname "$proto")")"
   if [[ "$proto" == *"$DOTFILES_PERSISTED_DIR"* ]]; then
@@ -15,5 +15,5 @@ for proto in "$DOTFILES_ROOT"/protocols/*/PROTOCOL.md "$DOTFILES_PERSISTED_DIR"/
   else
     prefix=''
   fi
-  cp "$proto" "$REPO_ROOT/${prefix}${name^^}_PROTOCOL.md"
+  rm -f "$REPO_ROOT/${prefix}${name^^}_RULE.md"
 done
