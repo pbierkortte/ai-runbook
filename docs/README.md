@@ -247,6 +247,7 @@ One who wears many hats.
 - [Humanizer AI Slop Cleanup](https://github.com/blader/humanizer)
 - [MotionSites Landing Page Builder with Ready-Made Prompts](https://motionsites.ai)
 - [Skill Directory for OpenClaw](https://clawhub.ai)
+- [BMad-Method](https://github.com/bmadcode/BMAD-METHOD)
 
 
 ### Links
