@@ -21,7 +21,7 @@ A dotfiles repo that treats AI agent behavior as infrastructure.
 
 ### Dotfiles Setup
 
-Fork this repo and select it as your [dotfiles repository](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#dotfiles) in Codespaces settings. Set `ENABLE_DOTFILES=1` as a Codespace secret to activate bootstrap (see [Dotfiles Opt-In](docs/dotfiles-optin.md)). Add any other environment variables as Codespace secrets. Every new codespace runs `script/bootstrap` automatically.
+Fork this repo and select it as your [dotfiles repository](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#dotfiles) in Codespaces settings. Set `ENABLE_DOTFILES=1` as a Codespace secret to activate bootstrap (see [Dotfiles Opt-In](dotfiles-optin.md)). Add any other environment variables as Codespace secrets. Every new codespace runs `script/bootstrap` automatically.
 
 Run the bootstrap script to install tools, configure agents, and wire up skill directories.
 
