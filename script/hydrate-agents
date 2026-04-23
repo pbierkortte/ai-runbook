@@ -12,9 +12,8 @@ for f in **/AGENTS.md; do
     for md in *.md; do
       [[ -f "$md" && ! -L "$md" && "${md,,}" != agents*.md ]] || continue
       {
-        title="$(printf '%s' "${md%.md}" | tr -cs 'a-zA-Z' ' ')"
         echo
-        echo "# $title"
+        echo "# $md"
         echo
         awk '
           BEGIN { n = 0; in_code = 0 }
