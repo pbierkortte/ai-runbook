@@ -32,7 +32,7 @@ for f in **/AGENTS.md; do
             n = RLENGTH
             sub(/^#+ */, "")
             if (n == max_depth) {
-              print "- " $0
+              print "* " $0
             } else {
               prefix = ""
               for (i = 0; i <= n; i++) prefix = prefix "#"
