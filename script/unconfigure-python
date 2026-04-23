@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 unset PIP_QUIET
 unset PYTHONPATH
 unset PYTHONDONTWRITEBYTECODE
