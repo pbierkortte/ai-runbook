@@ -2,9 +2,9 @@
 set -euo pipefail
 DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
 
-"$DIR/unwire-shell"
-"$DIR/unwrite-dotfilesrc"
-"$DIR/unconfigure-git"
+source "$DIR/unwire-shell"
+source "$DIR/unwrite-dotfilesrc"
+source "$DIR/unconfigure-git"
 source "$DIR/unconfigure-python"
-"$DIR/unstage-rules"
-"$DIR/unlink-skills"
+source "$DIR/unstage-rules"
+source "$DIR/unlink-skills"
