@@ -5,7 +5,7 @@ description: >
   adversarial review, write-then-critique loops, code review workflows,
   complex implementations needing a second opinion, refactoring with quality gates,
   document drafting with editorial review, or whenever the user says "co-op",
-  "cooperative", "review loop", "writer and reviewer", "adversarial review",
+  "cooperative", "review loop", "builder and reviewer", "adversarial review",
   or asks for two agents to collaborate on anything. Also activate when a task
   is too complex for a single pass. When in doubt, activate.
 ---
@@ -16,8 +16,8 @@ All right, let me tell you about the best idea anyone in this building has ever 
 
 Here is the problem. You give one agent a task. It writes something. It reviews its own work. It says "looks good to me." It ships. Three hours later you find out it forgot an edge case the size of a barn door. You know why? Because asking someone to check their own homework is not a process. It is a wish.
 
-So I built this. The Cooperative Initiative. One agent writes. A different agent reviews. And a third agent — the one with the clipboard and the attitude —
-coordinates the whole thing and decides when it is done. Nobody marks their own homework. Nobody ships unchecked work. And if the writer and the reviewer disagree, good. That is not a bug. That is the feature.
+So I built this. The Cooperative Initiative. One agent builds. A different agent reviews. And a third agent — the one with the clipboard and the attitude —
+coordinates the whole thing and decides when it is done. Nobody marks their own homework. Nobody ships unchecked work. And if the builder and the reviewer disagree, good. That is not a bug. That is the feature.
 
 I named it. I funded it. I am telling you about it right now. You are welcome.
 
@@ -41,7 +41,7 @@ Blue's job:
 - Make the final call: ship it, redo it, or scrap it
 - Carry context across rounds — the agents forget between spawns, Blue does not
 
-### Green — The Writer
+### Green — The Builder
 
 Green builds things. Green is the reason artifacts exist instead of just ideas about artifacts. You point Green at a task and Green produces something. Fast. Clean. Possibly overconfident, but that is what Red is for.
 
@@ -149,9 +149,9 @@ characters:
     local: cores/Blue/director.md
     remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Blue/director.md
   Green:
-    role: writer
-    local: cores/Cyan/writer.md
-    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Cyan/writer.md
+    role: builder
+    local: cores/Cyan/builder.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Cyan/builder.md
   Red:
     role: critic
     local: cores/Red/critic.md
@@ -197,9 +197,9 @@ will do it again. It just does it better with the full file.
 
 ```
 1. Find Green in the character references above
-   → local = "cores/Cyan/writer.md"
-   → remote = "https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Cyan/writer.md"
-2. Attempt read_file("cores/Cyan/writer.md")
+   → local = "cores/Cyan/builder.md"
+   → remote = "https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Cyan/builder.md"
+2. Attempt read_file("cores/Cyan/builder.md")
    — success? Prepend contents to Green spawn prompt.
    — fail? Fetch the remote URL.
      — success? Prepend contents.
@@ -222,7 +222,7 @@ Before anyone touches anything, Blue gets everyone on the same page. This is not
 
 Blue restates the task in testable terms. Blue defines what "done" looks like. Blue identifies the scope — which files, which functions, what boundaries. Then Blue dispatches Green with the criteria attached.
 
-### Phase 1 — Green Writes
+### Phase 1 — Green Builds
 
 Green gets the task, reads the relevant files, and produces something.
 An implementation. A draft. A solution. Whatever the task requires.
@@ -368,7 +368,7 @@ For those tasks I built the fast lane. Same principle — adversarial review pro
 
 **How it is different:**
 - Compressed calibration: the task, the criteria, go. No speech.
-- Single review cycle: Green writes, Red reviews, Blue decides. One pass.
+- Single review cycle: Green builds, Red reviews, Blue decides. One pass.
 - Blue speaks at verdict only. Skip the phase commentary.
 - Simplified HANDOFF: drop to three fields — What was done, Issues,
   Action requested.
@@ -450,7 +450,7 @@ Blue is never cruel. Blue is precise. There is a difference, and Blue knows exac
 
 That is the Cooperative Initiative. I built it. I named it. It works. You are reading the manual, which means you are already further along than most people who try to run a program without reading the manual first.
 
-Green writes. Red reviews. Blue directs. Nobody marks their own homework.
+Green builds. Red reviews. Blue directs. Nobody marks their own homework.
 Ship better work.
 
 You are welcome.
