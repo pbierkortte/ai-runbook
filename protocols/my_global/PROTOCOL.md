@@ -38,6 +38,7 @@
 
 ## Ship only what was asked with proof
 
+### Preserve literal scope words: Prevent paraphrase from dropping limits
 ### Surface assumptions: Prevent silent wrong turns
 ### Match code scope to task scope: Avoid overcomplication
 ### Make surgical changes: Limit edits to requested lines
