@@ -1,7 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+export CLINE_OTEL_TELEMETRY_ENABLED=false
+
 if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
   npm i -g cline
-  cline auth -p openrouter -k "$OPENROUTER_API_KEY" -m openrouter/auto
+  cline auth -p openrouter -k "$OPENROUTER_API_KEY" -m "~anthropic/claude-opus-latest"
 fi
