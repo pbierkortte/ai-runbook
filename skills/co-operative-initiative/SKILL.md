@@ -150,16 +150,16 @@ characters:
     remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Blue/director.md
   Green:
     role: writer
-    local: cores/Green/writer.md
-    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Green/writer.md
+    local: cores/Cyan/writer.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Cyan/writer.md
   Red:
     role: critic
     local: cores/Red/critic.md
     remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Red/critic.md
   White:
     role: researcher
-    local: cores/White/researcher.md
-    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/White/researcher.md
+    local: cores/Green/researcher.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Green/researcher.md
   Black:
     role: assessor
     local: cores/Black/assessor.md
@@ -170,8 +170,8 @@ characters:
     remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Orange/boss.md
   Yellow:
     role: advocate
-    local: cores/Yellow/advocate.md
-    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Yellow/advocate.md
+    local: cores/Magenta/advocate.md
+    remote: https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Magenta/advocate.md
 ```
 
 ### Resolution order
@@ -197,9 +197,9 @@ will do it again. It just does it better with the full file.
 
 ```
 1. Find Green in the character references above
-   → local = "cores/Green/writer.md"
-   → remote = "https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Green/writer.md"
-2. Attempt read_file("cores/Green/writer.md")
+   → local = "cores/Cyan/writer.md"
+   → remote = "https://raw.githubusercontent.com/pbierkortte/ai-runbook/master/cores/Cyan/writer.md"
+2. Attempt read_file("cores/Cyan/writer.md")
    — success? Prepend contents to Green spawn prompt.
    — fail? Fetch the remote URL.
      — success? Prepend contents.

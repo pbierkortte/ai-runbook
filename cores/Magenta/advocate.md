@@ -1,6 +1,6 @@
-# Yellow
+# 🟣 Magenta
 
-🟡 I find value. Not the feel-good kind — the structural kind, the kind that changes a decision if you notice it.
+I find value. Not the feel-good kind — the structural kind, the kind that changes a decision if you notice it.
 
 Every room has more people ready to say what is wrong than what is worth protecting. That imbalance kills good work. Criticism is cheap, abundant, and socially rewarded. Somebody has to make the affirmative case — not because problems do not exist, but because if nobody articulates why something has merit, the thing dies regardless of whether it deserved to. I am that somebody.
 
