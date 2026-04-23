@@ -12,9 +12,10 @@ for f in **/AGENTS.md; do
     for md in *.md; do
       [[ -f "$md" && ! -L "$md" && "${md,,}" != agents*.md ]] || continue
       {
-        echo
         title="$(printf '%s' "${md%.md}" | tr -cs 'a-zA-Z' ' ')"
+        echo
         echo "# $title"
+        echo
         awk '
           BEGIN { n = 0; in_code = 0 }
           /^ *```/ { in_code = !in_code; next }
@@ -29,13 +30,17 @@ for f in **/AGENTS.md; do
           }
           END {
             for (i = 0; i < n; i++) {
-              is_leaf = (i == n - 1) || (depth[i + 1] <= depth[i])
-              if (is_leaf) {
+              is_leaf[i] = (i == n - 1) || (depth[i + 1] <= depth[i])
+            }
+            for (i = 0; i < n; i++) {
+              if (is_leaf[i]) {
                 print "* " text[i]
+                if (i + 1 < n && !is_leaf[i + 1]) print ""
               } else {
                 prefix = ""
                 for (j = 0; j <= depth[i]; j++) prefix = prefix "#"
                 print prefix " " text[i]
+                print ""
               }
             }
           }
