@@ -157,31 +157,18 @@ One who wears many hats.
 #### Cyan
 - [🔷 Cyan](/cores/Cyan/EXECUTOR.md)
 
-#### Evan
-- [Architect](/cores/Evan/architect.md)
-- [Coder](/cores/Evan/coder.md)
-- [Debugger](/cores/Evan/debugger.md)
+#### Gray
+- [Urok](/cores/Gray/coder.md)
 
 #### Green
 - [🟢 Green](/cores/Green/ENGINEER.md)
 - [Green](/cores/Green/writer.md)
 
-#### Grey
-- [Urok](/cores/Grey/coder.md)
-
 #### Magenta
 - [🟣 Magenta](/cores/Magenta/CATALYST.md)
 
-#### Maya
-- [Designer](/cores/Maya/designer.md)
-- [Tester](/cores/Maya/tester.md)
-
 #### Orange
 - [Orange](/cores/Orange/boss.md)
-
-#### Otis
-- [Editor](/cores/Otis/editor.md)
-- [Writer](/cores/Otis/writer.md)
 
 #### Red
 - [🔴 Red](/cores/Red/ARTIST.md)
