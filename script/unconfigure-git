@@ -6,5 +6,5 @@ set -euo pipefail
 git config --unset filter.agents.clean 2>/dev/null || true
 git config --unset filter.agents.smudge 2>/dev/null || true
 
-[[ "${GIT_EDITOR:-}" == "nano" ]] && unset GIT_EDITOR || true
-[[ "${GIT_PAGER:-}" == "cat" ]] && unset GIT_PAGER || true
+git config --unset core.editor 2>/dev/null || true
+git config --unset core.pager 2>/dev/null || true
