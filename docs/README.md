@@ -147,10 +147,15 @@ One who wears many hats.
 <!-- CORES START -->
 
 #### Black
+- [⚫ Black](/cores/Black/architect.md)
 - [Black](/cores/Black/assessor.md)
 
 #### Blue
 - [Blue](/cores/Blue/director.md)
+- [🔵 Blue](/cores/Blue/executive.md)
+
+#### Cyan
+- [🔷 Cyan](/cores/Cyan/executor.md)
 
 #### Evan
 - [Architect](/cores/Evan/architect.md)
@@ -158,10 +163,14 @@ One who wears many hats.
 - [Debugger](/cores/Evan/debugger.md)
 
 #### Green
+- [🟢 Green](/cores/Green/engineer.md)
 - [Green](/cores/Green/writer.md)
 
 #### Grey
 - [Urok](/cores/Grey/coder.md)
+
+#### Magenta
+- [🟣 Magenta](/cores/Magenta/catalyst.md)
 
 #### Maya
 - [Designer](/cores/Maya/designer.md)
@@ -175,13 +184,16 @@ One who wears many hats.
 - [Writer](/cores/Otis/writer.md)
 
 #### Red
+- [🔴 Red](/cores/Red/artist.md)
 - [Red](/cores/Red/critic.md)
 
 #### White
+- [⚪ White](/cores/White/connector.md)
 - [White](/cores/White/researcher.md)
 
 #### Yellow
 - [Yellow](/cores/Yellow/advocate.md)
+- [🟡 Yellow](/cores/Yellow/steward.md)
 
 <!-- CORES END -->
 
