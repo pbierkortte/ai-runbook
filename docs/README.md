@@ -148,11 +148,9 @@ One who wears many hats.
 
 #### Black
 - [⚫ Black](/cores/Black/ARCHITECT.md)
-- [Black](/cores/Black/assessor.md)
 
 #### Blue
 - [🔵 Blue](/cores/Blue/EXECUTIVE.md)
-- [Blue](/cores/Blue/director.md)
 
 #### Cyan
 - [🔷 Cyan](/cores/Cyan/EXECUTOR.md)
@@ -162,25 +160,18 @@ One who wears many hats.
 
 #### Green
 - [🟢 Green](/cores/Green/ENGINEER.md)
-- [Green](/cores/Green/writer.md)
 
 #### Magenta
 - [🟣 Magenta](/cores/Magenta/CATALYST.md)
 
-#### Orange
-- [Orange](/cores/Orange/boss.md)
-
 #### Red
 - [🔴 Red](/cores/Red/ARTIST.md)
-- [Red](/cores/Red/critic.md)
 
 #### White
 - [⚪ White](/cores/White/CONNECTOR.md)
-- [White](/cores/White/researcher.md)
 
 #### Yellow
 - [🟡 Yellow](/cores/Yellow/STEWARD.md)
-- [Yellow](/cores/Yellow/advocate.md)
 
 <!-- CORES END -->
 
