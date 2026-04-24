@@ -44,3 +44,6 @@
 - source: skills/repo-to-prompt
   sourceType: local
   localPath: skills/repo-to-prompt
+- source: skills/round-table
+  sourceType: local
+  localPath: skills/round-table
