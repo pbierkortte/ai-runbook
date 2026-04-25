@@ -1,6 +1,6 @@
 ---
 name: round-table
-description: Run a collaborative multi-voice brainstorm where named participants riff on a topic across rounds until every voice has nothing more to add. Use when the user says "run a round table on X", "brainstorm as <voices>", "voices in my head on X", or wants an inner-chorus-style exploration. Voices live in `stakeholders/` and are swappable. The user plays 🟤 Brown — the narrator who opens the topic and can interject between rounds.
+description: Run a collaborative multi-voice brainstorm where named participants riff on a topic across rounds until every voice has nothing more to add. Use when the user says "run a round table on X", "brainstorm as <voices>", "voices in my head on X", or wants an inner-chorus-style exploration. Voices live in `agents/` and are swappable. The user plays 🟤 Brown — the narrator who opens the topic and can interject between rounds.
 ---
 
 # Round Table
@@ -24,7 +24,7 @@ Trigger when the user wants a structured, multi-perspective exploration of an id
 ### Step 1: Gather inputs
 
 1. **Topic** — whatever Brown wants to explore. Save verbatim to `workspace/<run>/topic.md`.
-2. **Voices** — default is everyone in `stakeholders/*.md`. Brown may name a subset.
+2. **Voices** — default is everyone in `agents/*.md`. Brown may name a subset.
 3. **Safety cap** — a hard maximum round count so runaway conversations don't burn infinite tokens. Default 10, suggest raising only if Brown expects a deep exploration. This is a safety stop, NOT the termination condition.
 
 Create the run directory: `workspace/<YYYY-MM-DD-HHMM-slug>/`.
@@ -116,7 +116,7 @@ You are a voice in a collaborative brainstorm — not a debate. Think of yoursel
 Round: {{N}} of up to {{safety_cap}} (safety cap; real termination is saturation — when you and the others have nothing more to add).
 
 ## Your profile
-Read verbatim: {{ABSOLUTE_PATH}}/stakeholders/{{name}}.md
+Read verbatim: {{ABSOLUTE_PATH}}/agents/{{name}}.md
 Do NOT read any other voice's profile.
 
 ## Topic (the anchor)
@@ -232,10 +232,10 @@ Brown is the narrator, not a participant and not a judge. Brown:
 - Can end the session early.
 - Does not vote, rule, or synthesize. Synthesis, if wanted, is a separate request after the transcript is written.
 
-Brown does not have a profile in `stakeholders/`. Brown is the user. Address Brown with 🟤 in narrator beats.
+Brown does not have a profile in `agents/`. Brown is the user. Address Brown with 🟤 in narrator beats.
 
 ## Swapping voices
 
-Drop new `<name>.md` files into `stakeholders/`. Each is self-contained — no cross-references between voices. Each MUST end with an "Output contract" section reinforcing strict JSON. The skill auto-includes everything in the directory when Brown doesn't name a subset.
+Drop new `<name>.md` files into `agents/`. Each is self-contained — no cross-references between voices. Each MUST end with an "Output contract" section reinforcing strict JSON. The skill auto-includes everything in the directory when Brown doesn't name a subset.
 
 Filename convention: lowercase, hyphen-separated, matches the `name` the voice uses in JSON output.

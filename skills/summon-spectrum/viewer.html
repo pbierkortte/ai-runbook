@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>🟤 Round Table Viewer</title>
+<style>
+  :root {
+    --bg: #faf8f5;
+    --fg: #2a2a2a;
+    --muted: #6a6a6a;
+    --card: #fff;
+    --border: #e4ded4;
+    --brown: #7a5c3e;
+    --code: #f3efe7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55;
+  }
+  header { background: var(--card); border-bottom: 1px solid var(--border); padding: 1.25rem 2rem; }
+  header h1 { margin: 0; font-size: 1.5rem; }
+  header p { margin: .3rem 0 0; color: var(--muted); font-size: .9rem; }
+  main { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 4rem; }
+  .drop {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 3rem 1rem;
+    text-align: center;
+    background: var(--card);
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+  }
+  .drop.hover { border-color: var(--brown); background: #fdf6ec; }
+  .drop p { margin: .3rem 0; color: var(--muted); }
+  .drop .big { font-size: 1.05rem; color: var(--fg); }
+  input[type=file] { display: none; }
+  .topic {
+    background: var(--card);
+    border-left: 4px solid var(--brown);
+    border: 1px solid var(--border);
+    border-left-width: 4px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+  }
+  .topic-label { color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .3rem; }
+  .legend { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; padding: 0; margin: 0 0 1.5rem; font-size: .85rem; color: var(--muted); }
+  .legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: .35rem; vertical-align: middle; }
+  details.round {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  summary.round-summary {
+    padding: .85rem 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    background: #f5f1eb;
+    user-select: none;
+  }
+  summary.round-summary:hover { background: #efe9de; }
+  .round-body { padding: 1rem 1.25rem; }
+  .brown-note {
+    background: #fdf6ec;
+    border-left: 3px solid var(--brown);
+    padding: .6rem .9rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    font-size: .9rem;
+  }
+  .brown-header { color: var(--brown); font-size: .85rem; margin-bottom: .2rem; }
+  .voices-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+  .voice { background: var(--card); border: 1px solid var(--border); border-radius: 5px; overflow: hidden; display: flex; flex-direction: column; }
+  .voice-header {
+    color: #fff; padding: .5rem .85rem; display: flex; align-items: center; gap: .5rem; font-weight: 600;
+  }
+  .voice-status {
+    margin-left: auto; font-size: .7rem; padding: .1rem .5rem;
+    background: rgba(255,255,255,0.22); border-radius: 8px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: .05em;
+  }
+  .voice-status.done { background: rgba(0,0,0,0.25); }
+  .voice-body { padding: .85rem 1rem; font-size: .92rem; }
+  .voice-body p { margin: 0 0 .75rem; }
+  .voice-body p:last-child { margin-bottom: 0; }
+  .voice-body code { background: var(--code); padding: .08rem .3rem; border-radius: 3px; font-family: ui-monospace, monospace; font-size: .86em; }
+  .links {
+    margin-top: .75rem; padding-top: .75rem; border-top: 1px dashed var(--border); font-size: .82rem;
+  }
+  .links-label { color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-size: .7rem; margin-bottom: .25rem; }
+  .links ul { margin: 0; padding-left: 1.1rem; }
+  .links.invites ul { list-style: none; padding-left: 0; }
+  .done-reason { margin-top: .75rem; padding: .4rem .6rem; background: var(--code); font-size: .82rem; color: var(--muted); border-radius: 3px; }
+  .parse-failed { opacity: .6; }
+  .parse-failed .voice-header { background: #6b6b6b; }
+  details.transcript-block { margin-top: 2rem; background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: .75rem 1rem; }
+  details.transcript-block summary { cursor: pointer; font-weight: 600; color: var(--muted); }
+  details.transcript-block pre { white-space: pre-wrap; font-size: .8rem; margin-top: .75rem; }
+  .empty { text-align: center; padding: 3rem 1rem; color: var(--muted); }
+  .error { color: #9e2a2b; background: #fbe9e9; border: 1px solid #f0c8c8; padding: .7rem 1rem; border-radius: 4px; margin: 1rem 0; }
+  @media (max-width: 600px) {
+    main { padding: 1rem; }
+    .voices-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🟤 Round Table Viewer</h1>
+  <p>Drop a run folder here (or click to pick one). The page reads <code>topic.md</code>, <code>round-N/*.json</code>, and <code>brown.md</code> right in your browser — nothing uploaded, no server.</p>
+</header>
+<main>
+  <label class="drop" id="drop" for="picker">
+    <p class="big">📁 Drop a run folder here or click to pick</p>
+    <p>Expected layout: <code>topic.md</code> + <code>round-0/*.json</code> + <code>round-1/*.json</code> …</p>
+    <input type="file" id="picker" webkitdirectory multiple>
+  </label>
+  <div id="view"></div>
+</main>
+
+<script>
+"use strict";
+
+// ---------- palette (auto-assigned; voice names don't matter) ----------
+const PALETTE = [
+  "#2c7da0", "#5a4e8a", "#9c4a1a", "#2a6f47",
+  "#bc4749", "#386641", "#735d78", "#457b9d",
+  "#9e2a2b", "#7b4b94", "#0077b6", "#6a4c93"
+];
+const colorFor = (() => {
+  const map = new Map();
+  return (name) => {
+    if (!map.has(name)) map.set(name, PALETTE[map.size % PALETTE.length]);
+    return map.get(name);
+  };
+})();
+
+function prettyName(n) {
+  return (n || "?").replace(/[-_]/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+}
+
+// ---------- minimal markdown: bold, italic, code, paragraphs ----------
+function escapeHtml(s) {
+  return (s || "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
+  }[c]));
+}
+function md(text) {
+  if (!text) return "";
+  let t = escapeHtml(text);
+  t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  t = t.replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<em>$2</em>");
+  t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
+  const paras = t.trim().split(/\n\s*\n/);
+  return paras.map(p => "<p>" + p.replace(/\n/g, "<br>") + "</p>").join("");
+}
+
+// ---------- file ingestion ----------
+//
+// The FileList from <input webkitdirectory> contains every file with a
+// relative path. We pick out: topic.md, transcript.md, round-N/*.json,
+// round-N/brown.md. Root is inferred from the shallowest path that contains
+// topic.md or a round-N dir.
+
+async function readText(fileOrEntry) {
+  // handle both real File objects and our wrapper {file, path}
+  const f = fileOrEntry.file || fileOrEntry;
+  return await f.text();
+}
+
+async function ingest(entries) {
+  // entries is an array of { file, path } — `path` is the key, `file` is the real File.
+  // Callers are responsible for building this array (the picker and the drop handler both do).
+  // find the run root: directory whose immediate contents include topic.md
+  // OR a round-0 dir. If multiple candidates, pick the shortest path.
+  const candidates = new Set();
+  for (const e of entries) {
+    const parts = e.path.split("/");
+    if (parts[parts.length - 1] === "topic.md") {
+      candidates.add(parts.slice(0, -1).join("/"));
+    }
+    // or files inside round-N: the root is the parent of the round dir
+    const roundIdx = parts.findIndex(p => /^round-\d+$/.test(p));
+    if (roundIdx > -1) {
+      candidates.add(parts.slice(0, roundIdx).join("/"));
+    }
+  }
+  if (candidates.size === 0) {
+    throw new Error("No topic.md or round-N directory found in the dropped folder.");
+  }
+  const root = [...candidates].sort((a, b) => a.length - b.length)[0];
+  const relPrefix = root ? root + "/" : "";
+
+  const run = {
+    runName: root || "(root)",
+    topic: "",
+    transcript: "",
+    rounds: new Map(), // round_number -> { brown_note, voices: [] }
+  };
+
+  for (const e of entries) {
+    if (!e.path.startsWith(relPrefix)) continue;
+    const rel = e.path.slice(relPrefix.length);
+    if (rel === "topic.md") {
+      run.topic = await readText(e.file);
+      continue;
+    }
+    if (rel === "transcript.md") {
+      run.transcript = await readText(e.file);
+      continue;
+    }
+    const m = rel.match(/^round-(\d+)\/(.+)$/);
+    if (!m) continue;
+    const roundNum = parseInt(m[1], 10);
+    const inner = m[2];
+    if (!run.rounds.has(roundNum)) {
+      run.rounds.set(roundNum, { brown_note: "", voices: [] });
+    }
+    const rd = run.rounds.get(roundNum);
+    if (inner === "brown.md") {
+      rd.brown_note = await readText(e.file);
+    } else if (inner.endsWith(".json")) {
+      try {
+        const text = await readText(e.file);
+        const data = JSON.parse(text);
+        rd.voices.push(data);
+      } catch (err) {
+        rd.voices.push({
+          name: inner.replace(/\.json$/, ""),
+          round: roundNum,
+          parse_failed: true,
+          error: String(err),
+        });
+      }
+    }
+  }
+
+  // sort rounds & voices
+  const ordered = [...run.rounds.entries()].sort((a, b) => a[0] - b[0]);
+  run.rounds = ordered.map(([n, rd]) => ({
+    round: n,
+    brown_note: rd.brown_note,
+    voices: rd.voices.sort((a, b) => (a.name || "").localeCompare(b.name || "")),
+  }));
+
+  return run;
+}
+
+// ---------- rendering ----------
+function renderVoice(v) {
+  const name = v.name || "?";
+  const color = colorFor(name);
+  if (v.parse_failed) {
+    return `
+      <div class="voice parse-failed">
+        <div class="voice-header">⚠️ ${escapeHtml(name)} <span class="voice-status">parse failed</span></div>
+        <div class="voice-body"><em>${escapeHtml(v.error || "invalid JSON")}</em></div>
+      </div>`;
+  }
+  const done = !!v.done_contributing;
+  const statusLabel = done ? "done" : "active";
+  const builds = Array.isArray(v.builds_on) ? v.builds_on : [];
+  const invs = Array.isArray(v.invitations) ? v.invitations : [];
+
+  const buildsHtml = builds.length === 0 ? "" : `
+    <div class="links builds">
+      <div class="links-label">builds on</div>
+      <ul>${builds.map(b =>
+        `<li><strong>${escapeHtml(b.voice || "")}</strong>: <em>${escapeHtml(b.idea || "")}</em></li>`
+      ).join("")}</ul>
+    </div>`;
+
+  const invsHtml = invs.length === 0 ? "" : `
+    <div class="links invites">
+      <div class="links-label">invitations</div>
+      <ul>${invs.map(i =>
+        `<li>→ <strong>${escapeHtml(i.to || "")}</strong>: ${escapeHtml(i.ask || "")}</li>`
+      ).join("")}</ul>
+    </div>`;
+
+  const doneHtml = v.done_reason
+    ? `<div class="done-reason"><em>${escapeHtml(v.done_reason)}</em></div>`
+    : "";
+
+  return `
+    <div class="voice">
+      <div class="voice-header" style="background:${color}">
+        ${escapeHtml(prettyName(name))}
+        <span class="voice-status ${done ? "done" : ""}">${statusLabel}</span>
+      </div>
+      <div class="voice-body">
+        ${md(v.contribution || "")}
+        ${buildsHtml}
+        ${invsHtml}
+        ${doneHtml}
+      </div>
+    </div>`;
+}
+
+function renderRound(rd) {
+  const done = rd.voices.filter(v => v.done_contributing).length;
+  const total = rd.voices.length;
+  const brownBlock = rd.brown_note.trim() ? `
+    <div class="brown-note">
+      <div class="brown-header">🟤 <strong>Brown (narrator)</strong></div>
+      <div>${md(rd.brown_note)}</div>
+    </div>` : "";
+  return `
+    <details class="round"${rd.round === 0 ? " open" : ""}>
+      <summary class="round-summary">Round ${rd.round} — ${done}/${total} voices done</summary>
+      <div class="round-body">
+        ${brownBlock}
+        <div class="voices-grid">
+          ${rd.voices.map(renderVoice).join("")}
+        </div>
+      </div>
+    </details>`;
+}
+
+function render(run) {
+  // legend
+  const names = [];
+  for (const rd of run.rounds) {
+    for (const v of rd.voices) {
+      if (v.name && !names.includes(v.name)) names.push(v.name);
+    }
+  }
+  const legend = `
+    <ul class="legend">
+      <li><span class="dot" style="background:#7a5c3e"></span>🟤 Brown (narrator)</li>
+      ${names.map(n =>
+        `<li><span class="dot" style="background:${colorFor(n)}"></span>${escapeHtml(prettyName(n))}</li>`
+      ).join("")}
+    </ul>`;
+
+  const topic = run.topic.trim()
+    ? `<div class="topic"><div class="topic-label">Topic</div>${md(run.topic)}</div>`
+    : "";
+
+  const transcript = run.transcript.trim() ? `
+    <details class="transcript-block">
+      <summary>📜 Raw transcript (markdown source)</summary>
+      <pre>${escapeHtml(run.transcript)}</pre>
+    </details>` : "";
+
+  const rounds = run.rounds.length === 0
+    ? `<div class="empty">No rounds found in this folder.</div>`
+    : run.rounds.map(renderRound).join("");
+
+  return `
+    <p style="color:var(--muted);font-family:ui-monospace,monospace;font-size:.8rem">${escapeHtml(run.runName)}</p>
+    ${topic}
+    ${legend}
+    ${rounds}
+    ${transcript}`;
+}
+
+// ---------- wire it up ----------
+const drop = document.getElementById("drop");
+const picker = document.getElementById("picker");
+const view = document.getElementById("view");
+
+async function handleEntries(entries) {
+  if (!entries || entries.length === 0) return;
+  view.innerHTML = `<div class="empty">Reading ${entries.length} files…</div>`;
+  try {
+    const run = await ingest(entries);
+    view.innerHTML = render(run);
+    drop.style.display = "none";
+  } catch (err) {
+    view.innerHTML = `<div class="error">⚠️ ${escapeHtml(err.message)}</div>`;
+    console.error(err);
+  }
+}
+
+// Picker: FileList → [{file, path}]
+picker.addEventListener("change", e => {
+  const entries = [];
+  for (const f of e.target.files) {
+    const p = (f.webkitRelativePath || f.name).replace(/\\/g, "/");
+    entries.push({ file: f, path: p });
+  }
+  handleEntries(entries);
+});
+
+// Drag-and-drop: walk the entry tree and build {file, path} pairs without
+// mutating File objects (webkitRelativePath is not settable on real Files).
+drop.addEventListener("dragover", e => { e.preventDefault(); drop.classList.add("hover"); });
+drop.addEventListener("dragleave", () => drop.classList.remove("hover"));
+drop.addEventListener("drop", async e => {
+  e.preventDefault();
+  drop.classList.remove("hover");
+  const items = e.dataTransfer.items;
+  if (!items || items.length === 0) return;
+  const entries = [];
+  const walk = async (entry, pathPrefix) => {
+    if (entry.isFile) {
+      const f = await new Promise(res => entry.file(res));
+      entries.push({ file: f, path: pathPrefix + entry.name });
+    } else if (entry.isDirectory) {
+      const reader = entry.createReader();
+      const readBatch = () => new Promise(res => reader.readEntries(res));
+      let batch;
+      while ((batch = await readBatch()).length) {
+        for (const child of batch) await walk(child, pathPrefix + entry.name + "/");
+      }
+    }
+  };
+  const tasks = [];
+  for (const item of items) {
+    const entry = item.webkitGetAsEntry && item.webkitGetAsEntry();
+    if (entry) tasks.push(walk(entry, ""));
+  }
+  await Promise.all(tasks);
+  handleEntries(entries);
+});
+</script>
+</body>
+</html>
