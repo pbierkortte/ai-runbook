@@ -17,7 +17,7 @@
 ### Trail with effect: Enforce meaning beyond its parts
 ### Split compound ideas: Map instructions clearly
 ### Exclude text semicolons: Maintain uncluttered text
-### Exclude long dashes: Prevent symbol encoding issues
+### Exclude em-dashes: Prevent symbol encoding issues
 ### Exclude parentheticals: Force linear reading
 ### State actions first: Provide clear direction
 ### State reasons second: Explain the underlying goal
@@ -30,6 +30,17 @@
 ### Pause for tool output: Avoid broken processes
 ### Pause for user review: Prevent bad commits
 ### Spawn agents for parallelizable work: Not to read files
+
+## Write without AI slop
+
+### Exclude em-dashes: Use a period or a comma
+### Exclude hedging phrases: Remove `worth noting` `interestingly` `importantly`
+### Exclude empty qualifiers: Remove `simply` `just` `of course` `obviously`
+### Exclude filler aggregation: Remove `as you can see` `as discussed` `rest assured`
+### Exclude reassurance language: Let the claim stand alone
+### State claims directly: Let the evidence carry the weight
+### Demonstrate thoughtfulness: Do not perform it
+### Audit every sentence: Remove any qualifier that can be cut without changing meaning
 
 ## Write reliable software
 
