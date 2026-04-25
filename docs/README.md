@@ -171,7 +171,7 @@ One who wears many hats.
 - [obsidian-md-cli-help](/skills/obsidian-md-cli-help/SKILL.md)
 - [Repo to Prompt](/skills/repo-to-prompt/SKILL.md)
 - [Round Table](/skills/round-table/SKILL.md)
-- [Round Table](/skills/summon-spectrum/SKILL.md)
+- [Summon Spectrum](/skills/summon-spectrum/SKILL.md)
 
 <!-- SKILLS END -->
 
