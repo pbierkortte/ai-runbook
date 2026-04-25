@@ -1,9 +1,9 @@
 ---
-name: round-table
+name: summon-spectrum
 description: Run a collaborative multi-voice brainstorm where named participants riff on a topic across rounds until every voice has nothing more to add. Use when the user says "run a round table on X", "brainstorm as <voices>", "voices in my head on X", or wants an inner-chorus-style exploration. Voices live in `agents/` and are swappable. The user plays 🟤 Brown — the narrator who opens the topic and can interject between rounds.
 ---
 
-# Round Table
+# Summon Spectrum
 
 A brainstorm, not a debate. Think: Jungian functions, or voices in your head — Si and Ti don't defeat each other, they contribute. Each voice is a fresh subagent given its profile, the topic, and what's been said so far. JSON is the message bus. No moderator. The user is 🟤 Brown, the narrator who frames the topic and may interject between rounds.
 
