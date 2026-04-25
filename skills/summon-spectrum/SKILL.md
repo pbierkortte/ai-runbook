@@ -25,7 +25,7 @@ Trigger when the user wants a structured, multi-perspective exploration of an id
 
 1. **Topic** — whatever Brown wants to explore. Save verbatim to `workspace/<run>/topic.md`.
 2. **Voices** — default is everyone in `agents/*.md`. Brown may name a subset.
-3. **Safety cap** — a hard maximum round count so runaway conversations don't burn infinite tokens. Default 10, suggest raising only if Brown expects a deep exploration. This is a safety stop, NOT the termination condition.
+3. **Safety cap** — a hard maximum round count so runaway conversations don't burn infinite tokens. Default 3, suggest raising only if Brown expects a deep exploration. This is a safety stop, NOT the termination condition.
 
 Create the run directory: `workspace/<YYYY-MM-DD-HHMM-slug>/`.
 
