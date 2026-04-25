@@ -146,32 +146,9 @@ One who wears many hats.
 
 <!-- CORES START -->
 
-#### Black
-- [⚫ Black](/cores/Black/ARCHITECT.md)
+#### extras
 
-#### Blue
-- [🔵 Blue](/cores/Blue/EXECUTIVE.md)
-
-#### Cyan
-- [🔷 Cyan](/cores/Cyan/EXECUTOR.md)
-
-#### Gray
-- [Urok](/cores/Gray/coder.md)
-
-#### Green
-- [🟢 Green](/cores/Green/ENGINEER.md)
-
-#### Magenta
-- [🟣 Magenta](/cores/Magenta/CATALYST.md)
-
-#### Red
-- [🔴 Red](/cores/Red/SENTINEL.md)
-
-#### White
-- [⚪ White](/cores/White/CONNECTOR.md)
-
-#### Yellow
-- [🟡 Yellow](/cores/Yellow/STEWARD.md)
+#### spectrum
 
 <!-- CORES END -->
 
@@ -194,6 +171,7 @@ One who wears many hats.
 - [obsidian-md-cli-help](/skills/obsidian-md-cli-help/SKILL.md)
 - [Repo to Prompt](/skills/repo-to-prompt/SKILL.md)
 - [Round Table](/skills/round-table/SKILL.md)
+- [Round Table](/skills/summon-spectrum/SKILL.md)
 
 <!-- SKILLS END -->
 

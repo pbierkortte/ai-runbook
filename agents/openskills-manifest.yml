@@ -47,3 +47,6 @@
 - source: skills/round-table
   sourceType: local
   localPath: skills/round-table
+- source: skills/summon-spectrum
+  sourceType: local
+  localPath: skills/summon-spectrum
