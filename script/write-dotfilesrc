@@ -8,9 +8,9 @@ DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
   echo "DOTFILES_ROOT=\"$DOTFILES_ROOT\""
   cat <<'EOF'
 if [ -f AGENTS.md ]; then
-  "$DOTFILES_ROOT/script/stage-rules"
-  "$DOTFILES_ROOT/script/hydrate-agents"
-  "$DOTFILES_ROOT/script/configure-git"
+  source "$DOTFILES_ROOT/script/stage-rules"
+  source "$DOTFILES_ROOT/script/hydrate-agents"
+  source "$DOTFILES_ROOT/script/configure-git"
   source "$DOTFILES_ROOT/script/configure-python"
 fi
 EOF
