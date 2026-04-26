@@ -2,22 +2,24 @@
 set -eo pipefail
 shopt -s nullglob
 
-cd "$(git rev-parse --show-toplevel)"
-
-[[ -d rules ]] || exit 0
-
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-DOTFILES_PERSISTED_DIR="$(cd "$DOTFILES_ROOT/.." && pwd)/dotfiles"
 
-for proto in "$DOTFILES_ROOT"/rules/*/RULE.md "$DOTFILES_PERSISTED_DIR"/rules/*/RULE.md; do
+[[ -d "$REPO_ROOT/rules" || -d "$DOTFILES_ROOT/rules" ]] || exit 0
+
+rm -f "$REPO_ROOT"/*_RULES.md
+
+for proto in "$REPO_ROOT"/rules/*/RULE.md; do
   [[ -f "$proto" ]] || continue
   name="$(basename "$(dirname "$proto")")"
-  if [[ "$proto" == *"$DOTFILES_PERSISTED_DIR"* ]]; then
-    prefix='DOT_'
-  else
-    prefix=''
-  fi
-  cp "$proto" "$REPO_ROOT/${prefix}${name^^}_RULES.md"
+  cp "$proto" "$REPO_ROOT/${name^^}_RULES.md"
 done
+
+if [[ "$DOTFILES_ROOT" != "$REPO_ROOT" ]]; then
+  for proto in "$DOTFILES_ROOT"/rules/*/RULE.md; do
+    [[ -f "$proto" ]] || continue
+    name="$(basename "$(dirname "$proto")")"
+    cp "$proto" "$REPO_ROOT/DOT_${name^^}_RULES.md"
+  done
+fi
