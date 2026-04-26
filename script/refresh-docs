@@ -13,13 +13,10 @@ replace_section() {
 }
 
 cores='<!-- CORES START -->'
-for d in $(find cores -mindepth 1 -maxdepth 1 -type d | sort); do
-  cores+=$'\n\n#### '"$(basename "$d")"
-  for f in $(find "$d" -maxdepth 1 -type f -name '*.md' | sort); do
-    t="$(grep -m1 '^# ' "$f" | sed 's/^# //')"
-    [[ -z "$t" ]] && t="$(basename "$f" .md)"
-    cores+=$'\n- ['"$t"']('/"$f"')'
-  done
+for f in $(find cores -type f -name '*.md' | sort); do
+  t="$(grep -m1 '^# ' "$f" | sed 's/^# //')"
+  [[ -z "$t" ]] && t="$(basename "$f" .md)"
+  cores+=$'\n- ['"$t"']('/"$f"')'
 done
 cores+=$'\n\n<!-- CORES END -->'
 replace_section '<!-- CORES START -->' '<!-- CORES END -->' "$cores"
