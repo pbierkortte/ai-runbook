@@ -1,13 +1,13 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
 DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
 
 cat > ~/.dotfilesrc <<EOF
 #!/bin/bash
-"$DOTFILES_ROOT/script/stage-rules"
-"$DOTFILES_ROOT/script/hydrate-agents"
+source "$DOTFILES_ROOT/script/stage-rules"
+source "$DOTFILES_ROOT/script/hydrate-agents"
 EOF
 
 chmod +x ~/.dotfilesrc

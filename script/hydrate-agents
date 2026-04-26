@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 shopt -s globstar nocaseglob nullglob dotglob
 
 cd "$(git rev-parse --show-toplevel)"
