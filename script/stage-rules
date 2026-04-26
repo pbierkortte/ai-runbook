@@ -3,8 +3,12 @@ set -eo pipefail
 shopt -s nullglob
 
 SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+
 DOTFILES_ROOT="$(cd "$(dirname "$SCRIPT_PATH")/.." && pwd)"
+DOTFILES_REPO_NAME="ai-runbook"
+
 REPO_ROOT="$(git rev-parse --show-toplevel)"
+REPO_NAME=$(basename "$REPO_ROOT")
 
 [[ -d "$REPO_ROOT/rules" || -d "$DOTFILES_ROOT/rules" ]] || exit 0
 
@@ -16,7 +20,7 @@ for proto in "$REPO_ROOT"/rules/*/RULE.md; do
   cp "$proto" "$REPO_ROOT/${name^^}_RULES.md"
 done
 
-if [[ "$DOTFILES_ROOT" != "$REPO_ROOT" ]]; then
+if [[ "$REPO_NAME" != "$DOTFILES_REPO_NAME" ]]; then
   for proto in "$DOTFILES_ROOT"/rules/*/RULE.md; do
     [[ -f "$proto" ]] || continue
     name="$(basename "$(dirname "$proto")")"
