@@ -29,7 +29,7 @@ Run the bootstrap script to install tools, configure agents, and wire up skill d
 bash script/bootstrap
 ```
 
-Bootstrap also sets AI-friendly defaults like `GIT_PAGER=cat` and `NPM_CONFIG_LOGLEVEL=warn` to suppress pagers and noisy output so agents can parse tool results cleanly.
+Bootstrap also sets AI-friendly defaults to suppress pagers and noisy output so agents can parse tool results cleanly.
 
 ### CORES
 
@@ -52,7 +52,7 @@ Curiously, this aligns with the “personality spheres” concept from a certain
 
 Set these to install and configure AI agents automatically.
 
-`OPENROUTER_API_KEY`: Installs Cline globally and runs auth with the `openrouter/auto` model.
+`OPENROUTER_API_KEY`: Installs Cline globally and authenticates it.
 
 `ANTHROPIC_API_KEY`: Installs Claude Code globally. Pay-as-you-go via the Anthropic Console.
 
@@ -83,13 +83,13 @@ npx openskills update
 Slash command:
 
 ```shell
-/conventional-commit
+/docs-consistency
 ```
 
 Or just ask naturally:
 
 ```shell
-do a conventional commit
+audit my docs for consistency
 ```
 
 #### List
@@ -122,7 +122,7 @@ Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty
  
 Before hydrating, it runs `script/stage-rules`, which automatically collects rules from both the local `rules/` directory (staged as `{NAME}_RULES.md`) and any relative `../dotfiles/rules/` directory (staged as `DOT_{NAME}_RULES.md`). Staged rules are kept out of project commits via `.git/info/exclude`.
 
-Bootstrap creates `~/.dotfilesrc` with an `AGENTS.md` guard so the hooks only fire in agent-enabled repos. It also sets `BASH_ENV` so non-interactive shells pick it up. Both `stage-rules` and `hydrate-agents` operate on the current working directory, not the dotfiles installation path.
+Bootstrap wires the hooks so they only fire in agent-enabled repos and so non-interactive shells pick them up. Both `stage-rules` and `hydrate-agents` operate on the current working directory, not the dotfiles installation path.
 
 AGENTS.md files are stored empty in the repo and hydrated at runtime. `script/dehydrate-agents` resets them back to empty before committing so diffs stay clean and content stays authoritative at runtime.
 
