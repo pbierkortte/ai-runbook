@@ -21,5 +21,6 @@ The specific things that go wrong most often:
 - Phantom concepts: terms in docs that don't exist in code. If the code doesn't have it, the doc invented it.
 - Terminology drift: same thing called different names across docs or between docs and code.
 - Broken links: relative paths that don't resolve from the file they're in.
+- Inline code: remove from documentation prose unless it is a usage example or critical explanation.
 
 Source of truth is the code. When docs and code disagree, docs lose, unless the code is the bug, in which case say so. Prefer removing volatile numbers over updating them. Fix correctness, not style. Awkward but accurate stays; wrong but pretty goes. Commit messages are documentation too, so say why, not just what.
