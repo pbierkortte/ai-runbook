@@ -58,8 +58,6 @@ Set these to install and configure AI agents automatically.
 
 `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` + `CLAUDE_CODE_OAUTH_SCOPES` **Experimental**: Installs Claude Code globally for subscription users. See [Claude Code Authentication for GitHub Codespaces](claude-code-codespaces-auth.md) for setup.
 
-In GitHub Codespaces, `GITHUB_REPOSITORY` is detected automatically to set the skills manifest path.
-
 ### Skills
 
 #### Naming
