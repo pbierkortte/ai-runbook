@@ -8,6 +8,7 @@ cat > ~/.dotfilesrc <<EOF
 #!/bin/bash
 source "$DOTFILES_ROOT/script/stage-rules"
 source "$DOTFILES_ROOT/script/hydrate-agents"
+source "$DOTFILES_ROOT/script/configure-git"
 EOF
 
 chmod +x ~/.dotfilesrc
