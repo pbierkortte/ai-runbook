@@ -143,7 +143,7 @@ bash script/dehydrate-agents
 One who wears many hats.
 
 <!-- CORES START -->
-- [Urok](/cores/extras/Gray/coder.md)
+- [🪨 Urok](/cores/extras/Gray/coder.md)
 - [⚫ Black](/cores/spectrum/Black/ARCHITECT.md)
 - [🔵 Blue](/cores/spectrum/Blue/EXECUTIVE.md)
 - [🔷 Cyan](/cores/spectrum/Cyan/EXECUTOR.md)
