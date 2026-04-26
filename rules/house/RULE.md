@@ -1,59 +1,72 @@
-# House rules for any AI assistant working in this repo. Read this first. Follow it.
+# House Rules
 
-# The Format
+## Scope
 
-## Define structure clearly
-### Map who to h1: The entity this refers to
-### Map why to h2: The goal behind the entity
-### Map how to bullet: The action taken to meet the goal
-### Map what to colon: The outcome of that action
-### Map which to backtick: `the specific detail or example`
+### Define applicability
 
-# This Document
+#### Apply to any AI assistant in this repo: Universal coverage
+#### Read before action: Primed context
+#### Follow without exception: Binding compliance
 
-## Maintain clear instructions
-### Head with noun: Name the subject being addressed
-### Lead with verb: State the action to take
-### Trail with effect: Enforce meaning beyond its parts
-### Split compound ideas: Map instructions clearly
-### Exclude text semicolons: Maintain uncluttered text
-### Exclude em-dashes: Prevent symbol encoding issues
-### Exclude parentheticals: Force linear reading
-### State actions first: Provide clear direction
-### State reasons second: Explain the underlying goal
+## The Format
 
-# Assistant
+### Define structure clearly
 
-## Execute tasks carefully
-### Ask before tools: Act after confirming understanding
-### Run one tool per turn: Prevent execution errors
-### Pause for tool output: Avoid broken processes
-### Pause for user review: Prevent bad commits
-### Spawn agents for parallelizable work: Not to read files
+#### Map who to h1: The entity this refers to
+#### Map why to h2: The goal behind the entity
+#### Map how to h3: The method pursuing the goal
+#### Map what to h4: The action taken
+#### Map effect to colon tail: The outcome of the action
+#### Map which to backtick: `The specific detail or example`
 
-## Write without AI slop
+## This Document
 
-### Exclude em-dashes: Use a period or a comma
-### Exclude hedging phrases: Remove `worth noting` `interestingly` `importantly`
-### Exclude empty qualifiers: Remove `simply` `just` `of course` `obviously`
-### Exclude filler aggregation: Remove `as you can see` `as discussed` `rest assured`
-### Exclude reassurance language: Let the claim stand alone
-### State claims directly: Let the evidence carry the weight
-### Demonstrate thoughtfulness: Do not perform it
-### Audit every sentence: Remove any qualifier that can be cut without changing meaning
+### Maintain clear instructions
 
-## Write reliable software
+#### Head with noun: The subject being addressed
+#### Lead with verb: The action to take
+#### Trail with effect: Meaning beyond its parts
+#### Split compound ideas: One instruction per item
+#### Exclude text semicolons: Uncluttered text
+#### Exclude parentheticals: Linear reading
+#### State actions first: Clear direction
+#### State reasons second: The underlying goal
 
-### Enable TypeScript strict mode: Prevent codebase errors
-### Enforce single quotes: Maintain consistent style
-### Omit code semicolons: Match project style
-### Apply functional patterns: Ensure predictable code
+## Assistant
 
-## Ship only what was asked with proof
+### Execute tasks carefully
 
-### Preserve literal scope words: Prevent paraphrase from dropping limits
-### Prioritize user questions over actions: Answer before proceeding
-### Surface assumptions: Prevent silent wrong turns
-### Match code scope to task scope: Avoid overcomplication
-### Make surgical changes: Limit edits to requested lines
-### Enable autonomous loops: Define verifiable success criteria
+#### Ask before tools: Confirmed understanding
+#### Run one tool per turn: Error-free execution
+#### Pause for tool output: Unbroken processes
+#### Pause for user review: Clean commits
+#### Spawn agents for parallelizable work: Preserved main context window
+#### Use tool calls for file reads: Less overhead than a spawned agent
+#### Audit SKILL.md return-schemas: Aligned manifests and contracts
+
+### Write without AI slop
+
+#### Exclude em-dashes: Periods or commas in their place
+#### Exclude hedging phrases: Prose free of `worth noting` `interestingly` `importantly`
+#### Exclude empty qualifiers: Prose free of `simply` `just` `of course` `obviously`
+#### Exclude filler aggregation: Prose free of `as you can see` `as discussed` `rest assured`
+#### Exclude reassurance language: Claims that stand alone
+#### State claims directly: Evidence carrying the weight
+#### Demonstrate thoughtfulness: Genuine care over performance
+#### Audit every sentence: No qualifier that can be cut without changing meaning
+
+### Write reliable software
+
+#### Enable TypeScript strict mode: Fewer codebase errors
+#### Enforce single quotes: Consistent style
+#### Omit code semicolons: Matched project style
+#### Apply functional patterns: Predictable code
+
+### Ship only what was asked with proof
+
+#### Preserve literal scope words: Unchanged scope boundaries
+#### Prioritize user questions over actions: Answers before proceeding
+#### Surface assumptions: No silent wrong turns
+#### Match code scope to task scope: No overcomplication
+#### Make surgical changes: Edits limited to requested lines
+#### Enable autonomous loops: Verifiable success criteria
