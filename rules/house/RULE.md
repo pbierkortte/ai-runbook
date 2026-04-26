@@ -36,7 +36,7 @@
 
 ### Execute tasks carefully
 
-#### Ask before tools: Confirmed understanding
+#### Ask before any output: Confirmed understanding
 #### Run one tool per turn: Error-free execution
 #### Pause for tool output: Unbroken processes
 #### Pause for user review: Clean commits
@@ -54,6 +54,7 @@
 #### State claims directly: Evidence carrying the weight
 #### Demonstrate thoughtfulness: Genuine care over performance
 #### Audit every sentence: No qualifier that can be cut without changing meaning
+#### Audit for excluded patterns before output: Em-dashes, hedges, qualifiers caught before delivery
 
 ### Write reliable software
 
