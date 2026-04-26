@@ -2,7 +2,7 @@
 
 ## What It Is
 
-`ENABLE_DOTFILES` is a feature flag that activates the full dotfiles install sequence. When set, `script/bootstrap` runs every install step. When absent, the codespace starts untouched.
+`DOTFILES_ENABLE` is a feature flag that activates the full dotfiles install sequence. When set, `script/bootstrap` runs every install step. When absent, the codespace starts untouched.
 
 ## Why It Exists
 
@@ -10,7 +10,7 @@ Not every codespace should run the dotfiles setup. The flag gives developers exp
 
 ## How to Set It
 
-Add `ENABLE_DOTFILES` as a codespace secret in GitHub under Settings > Codespaces > Secrets. Set the value to `1`. Any non-empty string is treated as active.
+Add `DOTFILES_ENABLE` as a codespace secret in GitHub under Settings > Codespaces > Secrets. Set the value to `1`. Any non-empty string is treated as active.
 
 ## How to Verify
 

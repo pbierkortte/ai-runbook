@@ -2,7 +2,7 @@
 set -euo pipefail
 DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
 
-[[ -n "${ENABLE_DOTFILES:-}" ]] || exit 0
+[[ -n "${DOTFILES_ENABLE:-}" ]] || exit 0
 
 source "$DIR/install-yq"
 source "$DIR/install-skills"
