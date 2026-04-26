@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 if [[ -n "${ANTHROPIC_API_KEY:-}" ]] || [[ -n "${CLAUDE_CODE_OAUTH_REFRESH_TOKEN:-}" ]]; then
   curl -fsSL https://claude.ai/install.sh | bash

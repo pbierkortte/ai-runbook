@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 bindir="$HOME/.local/bin"
 mkdir -p "$bindir"

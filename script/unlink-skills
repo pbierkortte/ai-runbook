@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 for dir in "$HOME/.agents" "$HOME/.cline" "$HOME/.claude"; do
   [[ -L "$dir/skills" ]] && rm -f "$dir/skills"

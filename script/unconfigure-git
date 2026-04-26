@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 [[ -f .git/info/attributes ]] && sed -i '/^AGENTS\.md filter=agents$/d' .git/info/attributes
 [[ -f .git/info/exclude ]] && sed -i '/^\*_PROTOCOL\.md$/d' .git/info/exclude
