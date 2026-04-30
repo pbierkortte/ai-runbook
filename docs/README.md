@@ -197,13 +197,13 @@ One who wears many hats.
 ### Docs
 
 <!-- DOCS START -->
-### [AGENTS.md Heading Format](/docs/agents-md-heading-format.md)
-### [Rule Injection](/docs/agents-md-rule-injection.md)
-### [Claude Code Authentication for GitHub Codespaces](/docs/claude-code-codespaces-auth.md)
-### [Dotfiles Opt-In](/docs/dotfiles-optin.md)
-### [Git Configuration](/docs/git-config.md)
-### [Python Configuration](/docs/python-config.md)
-### [Spectrum](/docs/spectrum.md)
+#### [AGENTS.md Heading Format](/docs/agents-md-heading-format.md)
+#### [Rule Injection](/docs/agents-md-rule-injection.md)
+#### [Claude Code Authentication for GitHub Codespaces](/docs/claude-code-codespaces-auth.md)
+#### [Dotfiles Opt-In](/docs/dotfiles-optin.md)
+#### [Git Configuration](/docs/git-config.md)
+#### [Python Configuration](/docs/python-config.md)
+#### [Spectrum](/docs/spectrum.md)
 <!-- DOCS END -->
 
 ## Resources
