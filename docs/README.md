@@ -197,7 +197,7 @@ One who wears many hats.
 
 <!-- TOOLS END -->
 
-### Docs
+## Docs
 
 <!-- DOCS START -->
 #### [AGENTS.md Heading Format](/docs/agents-md-heading-format.md)
