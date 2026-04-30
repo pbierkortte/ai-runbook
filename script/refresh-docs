@@ -18,7 +18,7 @@ for f in $(find cores -type f -name '*.md' | sort); do
   [[ -z "$t" ]] && t="$(basename "$f" .md)"
   cores+=$'\n- ['"$t"']('/"$f"')'
 done
-cores+=$'\n\n<!-- CORES END -->'
+cores+=$'\n<!-- CORES END -->'
 replace_section '<!-- CORES START -->' '<!-- CORES END -->' "$cores"
 
 skills='<!-- SKILLS START -->'
@@ -30,7 +30,7 @@ for d in $(find skills -mindepth 1 -maxdepth 1 -type d | sort); do
   [[ -z "$t" ]] && t="$(basename "$d")"
   skills+=$'\n- ['"$t"']('/"$f"')'
 done
-skills+=$'\n\n<!-- SKILLS END -->'
+skills+=$'\n<!-- SKILLS END -->'
 replace_section '<!-- SKILLS START -->' '<!-- SKILLS END -->' "$skills"
 
 tools='<!-- TOOLS START -->'
@@ -39,7 +39,7 @@ for f in $(find tools -type f -name '*.md' | sort); do
   [[ -z "$t" ]] && t="$(basename "$f" .md)"
   tools+=$'\n- ['"$t"']('/"$f"')'
 done
-tools+=$'\n\n<!-- TOOLS END -->'
+tools+=$'\n<!-- TOOLS END -->'
 replace_section '<!-- TOOLS START -->' '<!-- TOOLS END -->' "$tools"
 
 docs='<!-- DOCS START -->'
@@ -49,5 +49,5 @@ for f in $(find docs -maxdepth 1 -type f -name '*.md' | sort); do
   [[ -z "$t" ]] && t="$(basename "$f" .md)"
   docs+=$'\n#### ['"$t"']('/"$f"')'
 done
-docs+=$'\n\n<!-- DOCS END -->'
+docs+=$'\n<!-- DOCS END -->'
 replace_section '<!-- DOCS START -->' '<!-- DOCS END -->' "$docs"
