@@ -47,7 +47,7 @@ for f in $(find docs -maxdepth 1 -type f -name '*.md' | sort); do
   [[ "$(basename "$f")" =~ ^(README|AGENTS|LICENSE)\.md$ ]] && continue
   t="$(grep -m1 '^# ' "$f" | sed 's/^# //')"
   [[ -z "$t" ]] && t="$(basename "$f" .md)"
-  docs+=$'\n### ['"$t"']('/"$f"')'
+  docs+=$'\n#### ['"$t"']('/"$f"')'
 done
 docs+=$'\n<!-- DOCS END -->'
 replace_section '<!-- DOCS START -->' '<!-- DOCS END -->' "$docs"
