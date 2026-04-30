@@ -136,6 +136,18 @@ Run dehydration manually with:
 bash script/dehydrate-agents
 ```
 
+## Docs
+
+<!-- DOCS START -->
+### [AGENTS.md Heading Format](/docs/agents-md-heading-format.md)
+### [Rule Injection](/docs/agents-md-rule-injection.md)
+### [Claude Code Authentication for GitHub Codespaces](/docs/claude-code-codespaces-auth.md)
+### [Dotfiles Opt-In](/docs/dotfiles-optin.md)
+### [Git Configuration](/docs/git-config.md)
+### [Python Configuration](/docs/python-config.md)
+### [Spectrum](/docs/spectrum.md)
+<!-- DOCS END -->
+
 ## Contents
 
 ### Cores
@@ -193,18 +205,6 @@ One who wears many hats.
 - [Print Full Conversation](/tools/llm_print_full_conversation.md)
 - [Slack Communication Analyzer](/tools/slack_comm_analyzer.md)
 <!-- TOOLS END -->
-
-## Docs
-
-<!-- DOCS START -->
-#### [AGENTS.md Heading Format](/docs/agents-md-heading-format.md)
-#### [Rule Injection](/docs/agents-md-rule-injection.md)
-#### [Claude Code Authentication for GitHub Codespaces](/docs/claude-code-codespaces-auth.md)
-#### [Dotfiles Opt-In](/docs/dotfiles-optin.md)
-#### [Git Configuration](/docs/git-config.md)
-#### [Python Configuration](/docs/python-config.md)
-#### [Spectrum](/docs/spectrum.md)
-<!-- DOCS END -->
 
 ## Resources
 
