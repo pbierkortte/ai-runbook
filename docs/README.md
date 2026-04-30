@@ -152,7 +152,6 @@ One who wears many hats.
 - [🔴 Red](/cores/spectrum/Red/SENTINEL.md)
 - [⚪ White](/cores/spectrum/White/CONNECTOR.md)
 - [🟡 Yellow](/cores/spectrum/Yellow/STEWARD.md)
-
 <!-- CORES END -->
 
 ### Skills
@@ -175,7 +174,6 @@ One who wears many hats.
 - [Repo to Prompt](/skills/repo-to-prompt/SKILL.md)
 - [Round Table](/skills/round-table/SKILL.md)
 - [Summon Spectrum](/skills/summon-spectrum/SKILL.md)
-
 <!-- SKILLS END -->
 
 ### Tools
@@ -194,7 +192,6 @@ One who wears many hats.
 - [Chain of Thought Meta-Prompting](/tools/llm_cot_meta_prompting.md)
 - [Print Full Conversation](/tools/llm_print_full_conversation.md)
 - [Slack Communication Analyzer](/tools/slack_comm_analyzer.md)
-
 <!-- TOOLS END -->
 
 ## Docs
@@ -207,7 +204,6 @@ One who wears many hats.
 #### [Git Configuration](/docs/git-config.md)
 #### [Python Configuration](/docs/python-config.md)
 #### [Spectrum](/docs/spectrum.md)
-
 <!-- DOCS END -->
 
 ## Resources
