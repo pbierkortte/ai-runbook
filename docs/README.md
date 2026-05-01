@@ -118,11 +118,11 @@ One rule per line keeps each statement atomic so agents can follow it.
  
 Scans markdown headings and regenerates every `AGENTS.md` it finds. Add an empty `AGENTS.md` to a directory and the docs there get noticed.
  
-Before hydrating, it runs `script/stage-rules`, which automatically collects rules from both the local `rules/` directory (staged as `{NAME}_RULES.md`) and any relative `../dotfiles/rules/` directory (staged as `DOT_{NAME}_RULES.md`). Staged rules are kept out of project commits via `.git/info/exclude`.
+Before hydrating, it runs `script/stage-rules`, which automatically collects rules from both the local `rules/` directory (staged as `{NAME}_RULES.md`) and the dotfiles repo's own `rules/` directory (staged as `DOT_{NAME}_RULES.md`). Staged rules are kept out of project commits via `.git/info/exclude`.
 
 Bootstrap wires the hooks so they only fire in agent-enabled repos and so non-interactive shells pick them up. Both `stage-rules` and `hydrate-agents` operate on the current working directory, not the dotfiles installation path.
 
-AGENTS.md files are stored empty in the repo and hydrated at runtime. `script/dehydrate-agents` resets them back to empty before committing so diffs stay clean and content stays authoritative at runtime.
+AGENTS.md files are stored with only the auto-generated comment header in the repo and hydrated at runtime. `script/dehydrate-agents` resets them back to the header before committing so diffs stay clean and content stays authoritative at runtime.
 
 Run hydration manually with:
 
