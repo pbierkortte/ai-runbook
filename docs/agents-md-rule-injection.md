@@ -10,7 +10,7 @@ Every rule must reach agents. Rule files contain rules that agents must follow. 
 
 ## Mechanism
 
-`hydrate-agents` extracts lines starting with `#`. A file with only headings has every line extracted. The deepest heading level becomes dash list items in the output.
+`hydrate-agents` extracts lines starting with `#`. A file with only headings has every line extracted. The deepest heading level becomes asterisk list items in the output.
 
 ## Execution Order
 
