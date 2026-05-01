@@ -27,7 +27,7 @@ claude auth login
 
 That `claude auth login` will see the `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` env var and exchange it directly — no browser popup, no interactive prompt. After that, Claude Code works normally in the Codespace.
 
-The bootstrap script handles edge cases automatically. It skips login if `ANTHROPIC_API_KEY` is set or if `CLAUDE_CODE_OAUTH_SCOPES` is missing.
+The bootstrap script handles edge cases automatically. It skips login if `ANTHROPIC_API_KEY` is set.
 
 ## Why Refresh Token Over Access Token
 
