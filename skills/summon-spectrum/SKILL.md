@@ -25,14 +25,14 @@ Trigger when the user wants a structured, multi-perspective exploration of an id
 
 1. **Topic** — whatever Brown wants to explore. Save verbatim to `workspace/<run>/topic.md`.
 2. **Voices** — default is everyone in `agents/*.md`, in this canonical order:
-   1. ⚫ Black — ARCHITECT
-   2. 🔴 Red — SENTINEL
-   3. 🟢 Green — ENGINEER
-   4. 🟡 Yellow — STEWARD
-   5. 🔵 Blue — EXECUTIVE
-   6. 🟣 Magenta — CATALYST
-   7. 🔷 Cyan — EXECUTOR
-   8. ⚪ White — CONNECTOR
+   1. ⚫ architect
+   2. 🔴 sentinel
+   3. 🟢 engineer
+   4. 🟡 steward
+   5. 🔵 executive
+   6. 🟣 catalyst
+   7. 🔷 executor
+   8. ⚪ connector
 
    Brown may name a subset.
 3. **Safety cap** — a hard maximum round count so runaway conversations don't burn infinite tokens. Default 3, suggest raising only if Brown expects a deep exploration. This is a safety stop, NOT the termination condition.
