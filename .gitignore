@@ -1,12 +1,6 @@
 
-# IDEs
-.cline/
-.vscode/
-.idea/
-.cursor/
-.windsurf/
-.zed/
-.kilo/
+.*/
+!.github/
 
 skills/**/.openskills.json
 .checkpoints/
