@@ -11,14 +11,14 @@ Agents read the catalog and drill into full docs on demand
 AGENTS.md files use proper Markdown heading syntax
 Each source file gets its own section
 Headings are promoted by one level
-Deepest headings become dash list items
+Deepest headings become asterisk list items
 
 ## Transformation Rules
 
 Filename becomes a level 1 heading (`#`) with the `.md` extension stripped and non-alphabetic characters replaced with spaces
 Original `#` becomes `##`
 Original `##` becomes `###`
-Deepest heading level becomes dash list items (`-`)
+Deepest heading level becomes asterisk list items (`*`)
 
 ## Benefits
 
