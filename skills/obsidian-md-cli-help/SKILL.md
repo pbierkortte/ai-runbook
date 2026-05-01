@@ -4,6 +4,8 @@ description: Anything you can do in Obsidian can be done from the command line.
 compatibility: Requires Obsidian 1.12+
 ---
 
+# Obsidian CLI Help
+
 Obsidian CLI lets you control Obsidian from your terminal.
 
 The user wants to drive Obsidian from the shell, and you don't have the current CLI syntax memorized.
