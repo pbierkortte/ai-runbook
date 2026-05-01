@@ -13,13 +13,17 @@ if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
         "apiKey": "$OPENROUTER_API_KEY"
       },
       "models": {
-        "auto": {
-          "id": "openrouter/auto"
+        "claude-sonnet-latest": {
+          "id": "~anthropic/claude-sonnet-latest"
+        },
+        "claude-haiku-latest": {
+          "id": "~anthropic/claude-haiku-latest"
         }
       }
     }
   },
-  "model": "openrouter/auto"
+  "model": "openrouter/claude-sonnet-latest",
+  "small_model": "openrouter/claude-haiku-latest"
 }
 EOF
 fi
