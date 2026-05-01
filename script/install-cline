@@ -6,10 +6,10 @@ export CLINE_OTEL_TELEMETRY_ENABLED=false
 if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
   npm install -g cline
   mkdir -p "$HOME/.cline/data"
-  cat > "$HOME/.cline/data/globalState.json" <<'EOF'
+  cat > "$HOME/.cline/data/globalState.json" <<EOF
 {
   "apiProvider": "openrouter",
-  "openRouterApiKey": "{env:OPENROUTER_API_KEY}",
+  "openRouterApiKey": "$OPENROUTER_API_KEY",
   "apiModelId": "~anthropic/claude-sonnet-latest"
 }
 EOF
