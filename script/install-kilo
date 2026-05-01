@@ -11,10 +11,15 @@ if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
     "openrouter": {
       "options": {
         "apiKey": "{env:OPENROUTER_API_KEY}"
+      },
+      "models": {
+        "auto": {
+          "id": "openrouter/auto"
+        }
       }
     }
   },
-  "model": "openrouter/~anthropic/claude-sonnet-latest"
+  "model": "openrouter/auto"
 }
 EOF
 fi
