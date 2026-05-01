@@ -52,11 +52,11 @@ Curiously, this aligns with the “personality spheres” concept from a certain
 
 Set these to install and configure AI agents automatically.
 
-`OPENROUTER_API_KEY`: Installs Cline and Kilo globally and authenticates both with OpenRouter.
+`KILO_CODE_ENABLE`: Installs Kilo globally. Set `OPENROUTER_API_KEY` to configure it with OpenRouter.
 
-`ANTHROPIC_API_KEY`: Installs Claude Code globally. Pay-as-you-go via the Anthropic Console.
+`CLINE_CODE_ENABLE`: Installs Cline globally. Set `OPENROUTER_API_KEY` to configure it with OpenRouter.
 
-`CLAUDE_CODE_OAUTH_REFRESH_TOKEN` + `CLAUDE_CODE_OAUTH_SCOPES` **Experimental**: Installs Claude Code globally for subscription users. See [Claude Code Authentication for GitHub Codespaces](docs/claude-code-codespaces-auth.md) for setup.
+`CLAUDE_CODE_ENABLE`: Installs Claude Code globally. Set `ANTHROPIC_API_KEY` for pay-as-you-go via the Anthropic Console, or set `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` + `CLAUDE_CODE_OAUTH_SCOPES` for subscription users. See [Claude Code Authentication for GitHub Codespaces](docs/claude-code-codespaces-auth.md) for setup.
 
 ### Skills
 
