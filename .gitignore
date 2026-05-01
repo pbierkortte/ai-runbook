@@ -6,8 +6,8 @@
 .cursor/
 .windsurf/
 .zed/
+.kilo/
 
 skills/**/.openskills.json
 .checkpoints/
 TODO.md
-
