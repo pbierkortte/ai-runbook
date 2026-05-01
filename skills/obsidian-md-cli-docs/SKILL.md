@@ -4,6 +4,8 @@ description: Load the official Obsidian CLI documentation for troubleshooting, m
 compatibility: Requires Obsidian 1.12+
 ---
 
+# Obsidian CLI Docs
+
 Obsidian CLI lets you control Obsidian from your terminal.
 
 The user wants deeper context than `obsidian help` provides, and you don't have the full docs in context.
