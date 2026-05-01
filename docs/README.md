@@ -144,14 +144,14 @@ One who wears many hats.
 
 <!-- CORES START -->
 - [🪨 Urok](/cores/extras/Gray/coder.md)
-- [⚫ Black](/cores/spectrum/Black/ARCHITECT.md)
-- [🔵 Blue](/cores/spectrum/Blue/EXECUTIVE.md)
-- [🔷 Cyan](/cores/spectrum/Cyan/EXECUTOR.md)
-- [🟢 Green](/cores/spectrum/Green/ENGINEER.md)
-- [🟣 Magenta](/cores/spectrum/Magenta/CATALYST.md)
-- [🔴 Red](/cores/spectrum/Red/SENTINEL.md)
-- [⚪ White](/cores/spectrum/White/CONNECTOR.md)
-- [🟡 Yellow](/cores/spectrum/Yellow/STEWARD.md)
+- [⚫ Black](/cores/spectrum/architect.md)
+- [🟣 Magenta](/cores/spectrum/catalyst.md)
+- [⚪ White](/cores/spectrum/connector.md)
+- [🟢 Green](/cores/spectrum/engineer.md)
+- [🔵 Blue](/cores/spectrum/executive.md)
+- [🔷 Cyan](/cores/spectrum/executor.md)
+- [🔴 Red](/cores/spectrum/sentinel.md)
+- [🟡 Yellow](/cores/spectrum/steward.md)
 <!-- CORES END -->
 
 ### Skills
