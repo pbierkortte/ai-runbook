@@ -1,0 +1,20 @@
+#!/bin/bash
+set -eo pipefail
+
+if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
+  npm install -g @kilocode/cli
+  mkdir -p "$HOME/.config/kilo"
+  cat > "$HOME/.config/kilo/opencode.json" <<'EOF'
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "provider": {
+    "openrouter": {
+      "options": {
+        "apiKey": "{env:OPENROUTER_API_KEY}"
+      }
+    }
+  },
+  "model": "openrouter/~anthropic/claude-sonnet-latest"
+}
+EOF
+fi

@@ -52,7 +52,7 @@ Curiously, this aligns with the “personality spheres” concept from a certain
 
 Set these to install and configure AI agents automatically.
 
-`OPENROUTER_API_KEY`: Installs Cline globally and authenticates it.
+`OPENROUTER_API_KEY`: Installs Cline and Kilo globally and authenticates both with OpenRouter.
 
 `ANTHROPIC_API_KEY`: Installs Claude Code globally. Pay-as-you-go via the Anthropic Console.
 
