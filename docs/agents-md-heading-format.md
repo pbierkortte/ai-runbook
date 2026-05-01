@@ -15,7 +15,7 @@ Deepest headings become asterisk list items
 
 ## Transformation Rules
 
-Filename becomes a level 1 heading (`#`) with the `.md` extension stripped and non-alphabetic characters replaced with spaces
+Filename becomes a level 1 heading (`#`) using the raw filename as-is
 Original `#` becomes `##`
 Original `##` becomes `###`
 Deepest heading level becomes asterisk list items (`*`)
