@@ -1,9 +1,8 @@
 #!/bin/bash
 set -eo pipefail
 
-export CLINE_OTEL_TELEMETRY_ENABLED=false
-
-if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
+if [[ -n "${CLINE_CODE_ENABLE:-}" ]]; then
+  export CLINE_OTEL_TELEMETRY_ENABLED=false
   npm install -g cline
   mkdir -p "$HOME/.cline/data"
   cat > "$HOME/.cline/data/globalState.json" <<EOF
