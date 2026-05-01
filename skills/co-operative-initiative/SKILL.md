@@ -142,13 +142,13 @@ are always available, even when the skill is installed standalone via
 
 ### Character references
 
-- **Blue** — [director](agents/Blue/director.md)
-- **Green** — [builder](agents/Cyan/builder.md)
-- **Red** — [critic](agents/Red/critic.md)
-- **White** — [researcher](agents/Green/researcher.md)
-- **Black** — [assessor](agents/Black/assessor.md)
-- **Orange** — [boss](agents/Orange/boss.md)
-- **Yellow** — [advocate](agents/Magenta/advocate.md)
+- **Blue** — [director](agents/Blue.md)
+- **Green** — [builder](agents/Cyan.md)
+- **Red** — [critic](agents/Red.md)
+- **White** — [researcher](agents/Green.md)
+- **Black** — [assessor](agents/Black.md)
+- **Orange** — [boss](agents/Orange.md)
+- **Yellow** — [advocate](agents/Magenta.md)
 
 ### What Blue does with them
 
