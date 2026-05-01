@@ -56,7 +56,7 @@ Set these to install and configure AI agents automatically.
 
 `ANTHROPIC_API_KEY`: Installs Claude Code globally. Pay-as-you-go via the Anthropic Console.
 
-`CLAUDE_CODE_OAUTH_REFRESH_TOKEN` + `CLAUDE_CODE_OAUTH_SCOPES` **Experimental**: Installs Claude Code globally for subscription users. See [Claude Code Authentication for GitHub Codespaces](claude-code-codespaces-auth.md) for setup.
+`CLAUDE_CODE_OAUTH_REFRESH_TOKEN` + `CLAUDE_CODE_OAUTH_SCOPES` **Experimental**: Installs Claude Code globally for subscription users. See [Claude Code Authentication for GitHub Codespaces](docs/claude-code-codespaces-auth.md) for setup.
 
 ### Skills
 
