@@ -4,6 +4,13 @@ set -eo pipefail
 export CLINE_OTEL_TELEMETRY_ENABLED=false
 
 if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
-  npm i -g cline
-  cline auth -p "openrouter" -k "$OPENROUTER_API_KEY" -m "~anthropic/claude-sonnet-latest"
+  npm install -g cline
+  mkdir -p "$HOME/.cline/data"
+  cat > "$HOME/.cline/data/globalState.json" <<'EOF'
+{
+  "apiProvider": "openrouter",
+  "openRouterApiKey": "{env:OPENROUTER_API_KEY}",
+  "apiModelId": "~anthropic/claude-sonnet-latest"
+}
+EOF
 fi
