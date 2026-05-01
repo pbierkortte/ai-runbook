@@ -1,12 +1,12 @@
 #!/bin/bash
 set -eo pipefail
 
-if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
+if [[ -n "${KILO_CODE_ENABLE:-}" ]]; then
   npm install -g @kilocode/cli
   mkdir -p "$HOME/.config/kilo"
   cat > "$HOME/.config/kilo/opencode.json" <<EOF
 {
-  "\$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://app.kilo.ai/config.json",
   "provider": {
     "openrouter": {
       "options": {
