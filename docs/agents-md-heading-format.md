@@ -5,13 +5,14 @@
 AGENTS.md files are auto-generated table-of-contents files
 They provide AI agents with a card catalog of available documentation
 Agents read the catalog and drill into full docs on demand
+They also include the full content of staged `*_RULES.md` files injected before the table-of-contents entries
 
 ## Format Structure
 
 AGENTS.md files use proper Markdown heading syntax
 Each source file gets its own section
 Headings are promoted by one level
-Deepest headings become asterisk list items
+Leaf headings become asterisk list items
 
 ## Transformation Rules
 
@@ -19,7 +20,7 @@ Deepest headings become asterisk list items
 Filename becomes a level 1 heading (`#`) using the raw filename as-is
 Original `#` becomes `##`
 Original `##` becomes `###`
-Deepest heading level becomes asterisk list items (`*`)
+Leaf heading nodes become asterisk list items (`*`)
 
 ## Benefits
 
