@@ -10,7 +10,7 @@ if [[ -n "${KILO_CODE_ENABLE:-}" ]]; then
   "provider": {
     "openrouter": {
       "options": {
-        "apiKey": "$OPENROUTER_API_KEY"
+        "apiKey": "{env:OPENROUTER_API_KEY}"
       },
       "models": {
         "claude-sonnet-latest": {
