@@ -4,7 +4,7 @@ set -eo pipefail
 if [[ -n "${KILO_CODE_ENABLE:-}" ]]; then
   npm install -g @kilocode/cli
   mkdir -p "$HOME/.config/kilo"
-  cat > "$HOME/.config/kilo/opencode.json" <<EOF
+  cat > "$HOME/.config/kilo/opencode.json" <<'EOF'
 {
   "\$schema": "https://app.kilo.ai/config.json",
   "provider": {

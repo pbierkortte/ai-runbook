@@ -5,7 +5,7 @@ if [[ -n "${CLINE_CODE_ENABLE:-}" ]]; then
   export CLINE_OTEL_TELEMETRY_ENABLED=false
   npm install -g cline
   mkdir -p "$HOME/.cline/data"
-  cat > "$HOME/.cline/data/globalState.json" <<EOF
+  cat > "$HOME/.cline/data/globalState.json" <<'EOF'
 {
   "apiProvider": "openrouter",
   "openRouterApiKey": "$OPENROUTER_API_KEY",
