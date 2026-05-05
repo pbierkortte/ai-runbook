@@ -8,8 +8,8 @@ if [[ -n "${CLINE_CODE_ENABLE:-}" ]]; then
   cat > "$HOME/.cline/data/globalState.json" <<'EOF'
 {
   "apiProvider": "openrouter",
-  "openRouterApiKey": "$OPENROUTER_API_KEY",
   "apiModelId": "~anthropic/claude-sonnet-latest"
 }
 EOF
+  cline auth -p openrouter -k "$OPENROUTER_API_KEY"
 fi
