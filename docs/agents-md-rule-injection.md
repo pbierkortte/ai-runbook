@@ -10,7 +10,7 @@ Every rule must reach agents. Rule files contain rules that agents must follow. 
 
 ## Mechanism
 
-`hydrate-agents` extracts lines starting with `#`. A file with only headings has every line extracted. The deepest heading level becomes asterisk list items in the output.
+`hydrate-agents` concatenates `*_RULES.md` and `MANIFEST.md` files into AGENTS.md, stripping only comment lines (lines starting with `<!--`). A heading-only file surfaces completely because all its lines are non-comment. No special heading extraction occurs.
 
 ## Execution Order
 
