@@ -197,6 +197,7 @@ One who wears many hats.
 ### Docs
 
 <!-- DOCS START -->
+#### [AGENTS.md](/docs/MANIFEST.md)
 #### [AGENTS.md Heading Format](/docs/agents-md-heading-format.md)
 #### [Rule Injection](/docs/agents-md-rule-injection.md)
 #### [Claude Code Authentication for GitHub Codespaces](/docs/claude-code-codespaces-auth.md)
