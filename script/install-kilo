@@ -6,7 +6,7 @@ if [[ -n "${KILO_CODE_ENABLE:-}" ]]; then
   mkdir -p "$HOME/.config/kilo"
   cat > "$HOME/.config/kilo/opencode.json" <<EOF
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "\$schema": "https://app.kilo.ai/config.json",
   "provider": {
     "openrouter": {
       "options": {
