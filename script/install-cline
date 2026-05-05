@@ -11,5 +11,5 @@ if [[ -n "${CLINE_CODE_ENABLE:-}" ]]; then
   "apiModelId": "~anthropic/claude-sonnet-latest"
 }
 EOF
-  cline auth -p openrouter -k "$OPENROUTER_API_KEY"
+  cline auth -p openrouter -k "$OPENROUTER_API_KEY" -m "~anthropic/claude-sonnet-latest" -m "~anthropic/claude-sonnet-latest"
 fi
