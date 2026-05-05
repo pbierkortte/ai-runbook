@@ -21,7 +21,7 @@ A dotfiles repo that treats AI agent behavior as infrastructure.
 
 ### Dotfiles Setup
 
-Fork this repo and select it as your [dotfiles repository](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#dotfiles) in Codespaces settings. Set `DOTFILES_ENABLE=1` as a Codespace secret to activate bootstrap (see [Dotfiles Opt-In](docs/dotfiles-optin.md)). Add any other environment variables as Codespace secrets. Every new codespace runs `script/bootstrap` automatically.
+Fork this repo and select it as your [dotfiles repository](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account#dotfiles) in Codespaces settings. Set `DOTFILES_ENABLE=1` as a Codespace secret to activate bootstrap (see [Dotfiles Opt-In](dotfiles-optin.md)). Add any other environment variables as Codespace secrets. Every new codespace runs `script/bootstrap` automatically.
 
 Run the bootstrap script to install tools, configure agents, and wire up skill directories.
 
@@ -56,7 +56,7 @@ Set these to install and configure AI agents automatically.
 
 `CLINE_CODE_ENABLE`: Installs Cline globally. Set `OPENROUTER_API_KEY` to configure it with OpenRouter.
 
-`CLAUDE_CODE_ENABLE`: Installs Claude Code globally. Set `ANTHROPIC_API_KEY` for pay-as-you-go via the Anthropic Console, or set `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` + `CLAUDE_CODE_OAUTH_SCOPES` for subscription users. See [Claude Code Authentication for GitHub Codespaces](docs/claude-code-codespaces-auth.md) for setup.
+`CLAUDE_CODE_ENABLE`: Installs Claude Code globally. Set `ANTHROPIC_API_KEY` for pay-as-you-go via the Anthropic Console, or set `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` + `CLAUDE_CODE_OAUTH_SCOPES` for subscription users. See [Claude Code Authentication for GitHub Codespaces](claude-code-codespaces-auth.md) for setup.
 
 ### Skills
 
